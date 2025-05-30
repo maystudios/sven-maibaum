@@ -1,0 +1,549 @@
+/* css/style.css */
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #1a202c; /* Dunkler Hintergrund für den Track (Tailwind dark-900 Äquivalent) */
+}
+::-webkit-scrollbar-thumb {
+    background: #4a5568; /* Grauer Daumen (Tailwind gray-600 Äquivalent) */
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #718096; /* Helleres Grau beim Hover (Tailwind gray-500 Äquivalent) */
+}
+
+/* Globale Stile, die Tailwind ergänzen oder überschreiben */
+body {
+    font-family: 'Inter', sans-serif; /* Sicherstellen, dass die Schriftart global angewendet wird */
+    background-color: #0a0f1f; /* Sehr dunkles Blau/Schwarz als Haupt-Hintergrund */
+    color: #e2e8f0; /* Helles Grau für Standardtext für guten Kontrast */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.glassmorphism {
+    background: rgba(17, 24, 39, 0.6); /* Entspricht bg-gray-800 mit 60% Opazität */
+    -webkit-backdrop-filter: blur(10px); /* Für Safari */
+    backdrop-filter: blur(10px);
+}
+
+#mobile-menu {
+    transition: transform 0.3s ease-in-out; /* Sanfte Transition für das mobile Menü */
+}
+
+.section-padding {
+     padding-top: 4rem; /* Tailwind pt-16 */
+     padding-bottom: 4rem; /* Tailwind pb-16 */
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+    .section-padding {
+        padding-top: 6rem; /* Tailwind md:pt-24 */
+        padding-bottom: 6rem; /* Tailwind md:pb-24 */
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    opacity: 0;
+}
+
+.fade-in-up.visible {
+    animation-name: fadeInUp;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.project-card, .skill-card, .experience-card {
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+.project-card:hover, .skill-card:hover, .experience-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 0 25px rgba(56, 178, 172, 0.4);
+}
+
+.tech-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+}
+
+.tech-tag-teal { background-color: rgba(56, 178, 172, 0.2); color: #38b2ac; }
+.tech-tag-purple { background-color: rgba(128, 90, 213, 0.2); color: #805ad5; }
+.tech-tag-gray { background-color: rgba(74, 85, 104, 0.2); color: #a0aec0; }
+.tech-tag-blue { background-color: rgba(66, 153, 225, 0.2); color: #4299e1; }
+.tech-tag-green { background-color: rgba(72, 187, 120, 0.2); color: #48bb78; }
+.tech-tag-yellow { background-color: rgba(237, 137, 54, 0.2); color: #ed8936; }
+.tech-tag-red { background-color: rgba(245, 101, 101, 0.2); color: #f56565; }
+.tech-tag-orange { background-color: rgba(221,107,32,0.2); color: #dd6b20;}
+.tech-tag-indigo { background-color: rgba(99, 102, 241, 0.2); color: #6366f1; }
+
+
+.project-detail-container {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.project-detail-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.project-detail-header h1 {
+    font-size: 2.25rem; 
+    line-height: 2.5rem; 
+    font-weight: 800;
+}
+@media (min-width: 768px) {
+    .project-detail-header h1 {
+        font-size: 3rem; 
+        line-height: 1;
+    }
+}
+
+.project-detail-header .project-subtitle {
+    font-size: 1.125rem; 
+    color: #a0aec0; 
+    margin-top: 0.5rem;
+}
+
+.project-detail-content h2 {
+    font-size: 1.875rem; 
+    font-weight: 700; 
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #cbd5e0; 
+}
+.project-detail-content h2.gradient-text {
+     border-bottom: none; 
+}
+
+.project-detail-content h3 {
+    font-size: 1.25rem; 
+    font-weight: 600; 
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #e2e8f0; 
+}
+
+.project-detail-content p {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    color: #a0aec0; 
+}
+
+.project-detail-content ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem; 
+    color: #a0aec0; 
+}
+
+.project-detail-content li {
+    margin-bottom: 0.5rem;
+}
+
+.project-detail-content strong {
+    color: #e2e8f0; 
+    font-weight: 600;
+}
+
+.project-detail-content a:not(.button-like-class) { 
+    color: #38b2ac; 
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+.project-detail-content a:not(.button-like-class):hover {
+    color: #4fd1c5; 
+}
+
+.project-image-full {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 0.75rem; 
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); 
+}
+
+.back-to-portfolio {
+    display: inline-block;
+    margin-top: 3rem;
+    margin-bottom: 1rem; 
+    padding: 0.75rem 1.5rem; 
+    border-radius: 0.5rem; 
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: 500; 
+}
+
+/* Formspree Base Styles - DO NOT EDIT THESE DIRECTLY if possible, use variables */
+/* Copied from user provided CSS */
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root { /* Default Formspree variables, will be overridden by .formspree-form-container */
+  --color-background: #e7e7e7;
+  --color-background-alt: #888888;
+  --color-border-active: #da7105;
+  --color-border-default: #d1d1d1;
+  --color-highlight: #fdcf4c;
+  --color-primary: #b64e08;
+  --color-primary-active: #79320e;
+  --color-text-default: #262626;
+  --color-text-muted: #4f4f4f;
+
+  --font-family-body: "Figtree", system-ui, sans-serif;
+  --font-family-display: "Poppins", system-ui, sans-serif;
+}
+
+*,::before,::after { box-sizing: border-box; }
+* { border: 0; margin: 0; padding: 0; }
+
+/* Scoping Formspree specific body styles to the form container if they were global */
+.formspree-form-container {
+  font-family: var(--font-family-body); /* Use Formspree variable */
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.formspree-form-container button,
+.formspree-form-container input,
+.formspree-form-container optgroup,
+.formspree-form-container select,
+.formspree-form-container textarea {
+  font-family: inherit; /* Will inherit from .formspree-form-container */
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+.formspree-form-container [type="checkbox"],
+.formspree-form-container [type="radio"],
+.formspree-form-container [type="range"] {
+  appearance: none; flex-shrink: 0; padding: 0; user-select: none;
+}
+.formspree-form-container [type="checkbox"]:focus,
+.formspree-form-container [type="radio"]:focus,
+.formspree-form-container [type="range"]:focus {
+  outline: none;
+}
+
+.fs-form { display: grid; row-gap: 1.5rem; }
+.fs-form:where(.fs-layout__2-column) { column-gap: 1.5rem; grid-template-columns: 1fr 1fr; }
+.formspree-form-container fieldset { display: grid; margin: 1.5rem 0; row-gap: 1.5rem; }
+.fs-form:where(.fs-layout__2-column) fieldset { column-gap: 1.5rem; grid-template-columns: 1fr 1fr; grid-column: 1 / -1; }
+.fs-fieldset-title { color: var(--color-text-default); font-family: var(--font-family-display); font-size: 1.25rem; line-height: 1.75rem; margin-bottom: 1.5rem; grid-column: 1 / -1; }
+.fs-field { display: flex; flex-direction: column; row-gap: 0.5rem; }
+.fs-label { color: var(--color-text-default); display: block; font-family: var(--font-family-display); font-size: 0.875rem; line-height: 1.25rem; /* Tailwind text-sm */ }
+.fs-description { color: var(--color-text-muted); display: block; font-size: 0.875rem; line-height: 1.25rem; /* Tailwind text-sm */ }
+.fs-button-group { display: flex; flex-direction: column; column-gap: 1.5rem; } /* Changed to column for full-width button */
+.fs-form:where(.fs-layout__2-column) .fs-button-group { grid-column: 1 / -1; }
+
+.fs-button { 
+    background-color: var(--color-primary); /* Fallback, gradient is preferred */
+    border-radius: 0.5rem; /* Tailwind rounded-lg, anstatt 9999px */
+    color: white; 
+    cursor: pointer; 
+    font-size: 1rem; /* Tailwind text-base */
+    font-weight: 600; /* Tailwind font-semibold */
+    line-height: 1.5rem; /* Tailwind leading-6 */
+    padding: 0.75rem 1.5rem; /* Tailwind py-3 px-6 */
+    transition-duration: 200ms; 
+    transition-property: background-color, background-image, transform; 
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%; /* Button nimmt volle Breite ein */
+    text-align: center;
+}
+.fs-button:hover { 
+    background-color: var(--color-primary-active); /* Fallback */
+    transform: scale(1.02); /* Leichter Scale-Effekt wie bei anderen Buttons */
+}
+.fs-button:focus-visible { 
+    background-color: var(--color-primary-active); /* Fallback */
+    outline: 2px solid var(--color-highlight); /* Outline mit 2px Breite */
+    outline-offset: 2px; /* Leichter Abstand des Outlines */
+}
+
+.fs-input, .fs-select { 
+    appearance: none; 
+    border-radius: 0.5rem; /* Tailwind rounded-lg, anstatt 9999px */
+    border-width: 0; 
+    box-shadow: var(--color-border-default) 0 0 0 1px inset; 
+    color: var(--color-text-default); 
+    font-size: 0.875rem; /* Tailwind text-sm */
+    height: 2.5rem; /* Tailwind h-10 */
+    line-height: 1.25rem; /* Tailwind leading-5 */
+    outline: none; 
+    padding-left: 0.75rem; /* Tailwind px-3 */
+    padding-right: 0.75rem; /* Tailwind px-3 */
+    width: 100%; /* Volle Breite */
+}
+.fs-input:focus-visible, .fs-select:focus-visible { 
+    box-shadow: var(--color-border-active) 0 0 0 2px inset; /* Stärkerer Fokus-Schatten */
+}
+.fs-input::placeholder { color: var(--color-text-muted); }
+
+.fs-checkbox-group,.fs-radio-group { display: flex; flex-direction: column; row-gap: 1rem; }
+.fs-checkbox-field,.fs-radio-field { column-gap: 0.5rem; display: flex; }
+:is(.fs-checkbox-field, .fs-radio-field) .fs-label + .fs-description { margin-top: 0.25rem; }
+.fs-checkbox-wrapper,.fs-radio-wrapper { align-items: center; display: flex; height: 1.25rem; }
+.fs-checkbox,.fs-radio { background-color: var(--color-background); border: 1px solid var(--color-border-default); height: 1.25rem; width: 1.25rem; }
+.fs-checkbox { border-radius: 0.25rem; } /* Tailwind rounded-sm */
+.fs-radio { border-radius: 100%; }
+.fs-checkbox:checked,.fs-radio:checked { background-color: var(--color-primary); background-position: center; background-repeat: no-repeat; background-size: 80% 80%; border-color: transparent; } /* Adjusted background size */
+.fs-checkbox:checked { background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e"); }
+.fs-radio:checked { background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e"); }
+.fs-checkbox:focus-visible,.fs-radio:focus-visible { border-color: var(--color-border-active); outline: 2px solid var(--color-highlight); outline-offset: 1px; }
+.fs-checkbox:checked:focus-visible,.fs-radio:checked:focus-visible { border-color: transparent; }
+
+.fs-select { 
+    background-color: var(--color-background); 
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e"); /* gray-400 for arrow */
+    background-position: right 0.5rem center; /* Adjusted position */
+    background-repeat: no-repeat; 
+    background-size: 1.25em 1.25em; /* Adjusted size */
+    padding-right: 2.5rem; /* Platz für Pfeil */
+}
+
+.fs-slider { background: transparent; cursor: pointer; height: 1.25rem; width: 100%; }
+.fs-slider::-moz-range-track { background-color: var(--color-background); border-radius: 0.5rem; height: 0.5rem; }
+.fs-slider::-webkit-slider-runnable-track { background-color: var(--color-background); border-radius: 0.5rem; height: 0.5rem; }
+.fs-slider::-moz-range-thumb { background-color: var(--color-primary); border: none; border-radius: 50%; height: 1.25rem; width: 1.25rem; }
+.fs-slider::-webkit-slider-thumb { appearance: none; background-color: var(--color-primary); border-radius: 50%; height: 1.25rem; margin-top: -0.375rem; width: 1.25rem; }
+.fs-slider:focus-visible::-moz-range-thumb { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.fs-slider:focus-visible::-webkit-slider-thumb { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.fs-switch { background-color: var(--color-background-alt); background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2.75' fill='white'/%3e%3c/svg%3e"); background-position: left center; background-repeat: no-repeat; border-radius: 1.25rem; cursor: pointer; height: 1.25rem; transition-duration: 200ms; transition-property: background-color, background-position; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); width: 2.5rem; }
+.fs-switch:checked { background-color: var(--color-primary); background-position: right center; }
+.fs-switch:focus-visible { outline: 2px solid var(--color-highlight); outline-offset: 1px; }
+
+.fs-textarea { 
+    appearance: none; 
+    border-radius: 0.5rem; /* Tailwind rounded-lg */
+    border-width: 0; 
+    box-shadow: var(--color-border-default) 0 0 0 1px inset; 
+    color: var(--color-text-default); 
+    font-size: 0.875rem; /* Tailwind text-sm */
+    line-height: 1.25rem; /* Tailwind leading-5 */
+    outline: none; 
+    padding: 0.5rem 0.75rem; /* Tailwind p-2 px-3 */
+    resize: vertical; 
+    width: 100%; /* Volle Breite */
+    min-height: 6rem; /* Mindesthöhe, Tailwind h-24 */
+}
+.fs-textarea:focus-visible { 
+    box-shadow: var(--color-border-active) 0 0 0 2px inset; /* Stärkerer Fokus-Schatten */
+}
+.fs-textarea::placeholder { color: var(--color-text-muted); }
+.col-span-full { grid-column: 1 / -1; }
+.slider-label-container { display: flex; justify-content: space-between; width: 100%; margin-top: 0.25rem; }
+.slider-label-text { font-size: 0.75rem; color: var(--color-text-muted); text-align: center; white-space: nowrap; }
+
+/* Formspree Custom Theme Variables for Sven's Portfolio */
+.formspree-form-container {
+  --color-background: #1f2937;        /* Tailwind gray-800 (Formspree form element background) */
+  --color-background-alt: #374151;   /* Tailwind gray-700 (e.g. switch background, unchecked checkbox) */
+  --color-border-active: #14b8a6;    /* Teal-500 (Focus border) */
+  --color-border-default: #4b5563;  /* Tailwind gray-600 (Default input border) */
+  --color-highlight: #5eead4;       /* Teal-300 (Focus outline for visibility) */
+  --color-primary: #14b8a6;         /* Teal-500 (Primary action elements like checkboxes, button gradient start) */
+  --color-primary-active: #0d9488;  /* Teal-600 (Hover/active for primary elements, button gradient start hover) */
+  --color-text-default: #e5e7eb;    /* Tailwind gray-200 (Main text on form) */
+  --color-text-muted: #9ca3af;      /* Tailwind gray-400 (Description text, placeholder) */
+
+  --font-family-body: 'Inter', sans-serif;
+  --font-family-display: 'Inter', sans-serif; /* Using Inter for all form text */
+}
+
+/* Specific overrides for input fields to match the old form's look */
+.formspree-form-container .fs-input,
+.formspree-form-container .fs-textarea,
+.formspree-form-container .fs-select {
+    background-color: var(--color-background); /* Use themed background for inputs */
+    color: var(--color-text-default);
+    /* box-shadow wird durch Formspree-Variablen gesteuert */
+}
+
+.formspree-form-container .fs-input::placeholder,
+.formspree-form-container .fs-textarea::placeholder {
+    color: var(--color-text-muted); /* Use themed muted text for placeholder */
+}
+
+/* Button styling to match the gradient button of the portfolio */
+.formspree-form-container .fs-button {
+    background-image: linear-gradient(to right, var(--color-primary), #8b5cf6); /* from-teal-500 to-purple-600 */
+    background-color: transparent; /* Important to let gradient show */
+    color: white;
+    /* font-weight: 600; /* Bereits oben bei .fs-button definiert */
+    /* border-radius: 0.5rem; /* Bereits oben bei .fs-button definiert */
+    /* padding: 0.75rem 1.5rem; /* Bereits oben bei .fs-button definiert */
+    /* width: 100%; /* Bereits oben bei .fs-button definiert */
+    /* transition-duration, property, timing-function bereits oben definiert */
+}
+
+.formspree-form-container .fs-button:hover {
+    background-image: linear-gradient(to right, var(--color-primary-active), #7c3aed); /* from-teal-600 to-purple-700 */
+    background-color: transparent; /* Important to let gradient show */
+    /* transform: scale(1.02); /* Bereits oben bei .fs-button:hover definiert */
+}
+
+.formspree-form-container .fs-button:focus-visible {
+    background-image: linear-gradient(to right, var(--color-primary-active), #7c3aed);
+    /* outline & outline-offset bereits oben bei .fs-button:focus-visible definiert */
+}
+
+/* Ensure checkbox/radio use the themed primary color */
+.formspree-form-container .fs-checkbox,
+.formspree-form-container .fs-radio {
+    background-color: var(--color-background-alt); 
+    border: 1px solid var(--color-border-default);
+}
+
+.formspree-form-container .fs-checkbox:checked,
+.formspree-form-container .fs-radio:checked {
+    background-color: var(--color-primary); 
+    border-color: var(--color-primary);
+}
+
+/* Ensure select arrow matches text color */
+.formspree-form-container .fs-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e"); /* var(--color-text-muted) für Pfeil */
+}
+
+/* Styles for Architect Showcase Page - Diagram Components & Modal */
+.diagram-component {
+    border-width: 2px;
+    border-color: #4b5563; /* Tailwind gray-600 */
+    padding: 0.75rem; /* p-3 */
+    border-radius: 0.5rem; /* rounded-lg */
+    text-align: center;
+    cursor: pointer;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.diagram-component:hover {
+    border-color: #14b8a6; /* Teal-500 */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+    transform: scale(1.05);
+}
+
+.diagram-component.hexagon-core { background-color: rgba(128, 90, 213, 0.2); border-color: #805ad5; /* purple-500 */ }
+.diagram-component.adapter { background-color: rgba(59, 130, 246, 0.2); border-color: #3b82f6; /* blue-500 */ }
+.diagram-component.port { background-color: rgba(16, 185, 129, 0.2); border-color: #10b981; /* green-500 */ font-size: 0.75rem; padding: 0.5rem; min-height: 40px; }
+.diagram-component.event-bus { background-color: rgba(239, 68, 68, 0.2); border-color: #ef4444; /* red-500 */ }
+.diagram-component.database { background-color: rgba(107, 114, 128, 0.2); border-color: #9ca3af; /* gray-400 */ }
+
+
+.connector {
+    border-color: #6b7280; /* gray-500 */
+    position: relative;
+}
+.connector.horizontal { width: 100%; height: 2px; background-color: #6b7280; margin-top: 1rem; margin-bottom: 1rem; }
+.connector.vertical { height: 100%; width: 2px; background-color: #6b7280; margin-left: auto; margin-right: auto; }
+
+.arrow {
+    color: #6b7280; /* gray-500 */
+    font-size: 1.5rem; /* Larger arrows */
+}
+
+/* Modal for component details */
+.info-modal {
+    position: fixed;
+    inset: 0px;
+    background-color: rgba(17, 24, 39, 0.75); /* bg-gray-900 bg-opacity-75 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem; /* p-4 */
+    z-index: 60; /* Ensure it's above other content */
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}
+.info-modal-content {
+    /* glassmorphism is already defined */
+    padding: 1.5rem; /* p-6 */
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); /* shadow-2xl */
+    max-width: 42rem; /* max-w-2xl */
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+@media (min-width: 768px) { /* md breakpoint */
+    .info-modal-content {
+        padding: 2rem; /* md:p-8 */
+    }
+}
+
+.info-modal h3 {
+    /* gradient-text is already defined */
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 1rem; /* mb-4 */
+}
+.info-modal p {
+    color: #d1d5db; /* text-gray-300 */
+    margin-bottom: 0.75rem; /* mb-3 */
+    line-height: 1.625; /* leading-relaxed */
+}
+.info-modal ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    color: #d1d5db; /* text-gray-300 */
+    margin-bottom: 0.75rem; /* mb-3 */
+    padding-left: 1rem; /* pl-4 */
+}
+.info-modal ul li {
+    margin-bottom: 0.25rem; /* space-y-1 */
+}
+.info-modal .tech-tag { 
+    margin-top: 0.25rem; 
+}
+
+/* Animation for modal */
+.info-modal.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+.info-modal-content {
+    transform: scale(0.95);
+    transition: transform 0.3s ease-out;
+}
+.info-modal:not(.hidden) .info-modal-content {
+    transform: scale(1);
+}
+

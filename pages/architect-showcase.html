@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Architektur Showcase - Sven Maibaum</title>
+    <meta name="description"
+        content="Eine visuelle und interaktive Darstellung der Software-Architektur-Kompetenzen von Sven Maibaum, einschließlich modularer, ereignisgesteuerter monolithischer Architekturen.">
+    <meta name="author" content="Sven Maibaum">
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        xintegrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Custom styles for architect showcase page */
+        .diagram-component {
+            @apply border-2 border-gray-600 p-3 rounded-lg text-center cursor-pointer transition-all duration-300 hover:border-teal-500 hover:shadow-lg hover:scale-105;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .diagram-component.hexagon-core {
+            @apply bg-purple-500/20 border-purple-500;
+        }
+
+        .diagram-component.adapter {
+            @apply bg-blue-500/20 border-blue-500;
+        }
+
+        .diagram-component.port {
+            @apply bg-green-500/20 border-green-500 text-xs p-2;
+            min-height: 40px;
+        }
+
+        .diagram-component.event-bus {
+            @apply bg-red-500/20 border-red-500;
+        }
+
+        .diagram-component.database {
+            @apply bg-gray-500/20 border-gray-400;
+        }
+
+        .connector {
+            @apply border-gray-500;
+            position: relative;
+        }
+
+        .connector.horizontal {
+            @apply w-full h-0.5 bg-gray-500 my-4;
+        }
+
+        .connector.vertical {
+            @apply h-full w-0.5 bg-gray-500 mx-auto;
+        }
+
+        .arrow {
+            @apply text-gray-500;
+            font-size: 1.5rem;
+            /* Larger arrows */
+        }
+
+        /* Modal for component details */
+        .info-modal {
+            @apply fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-[60] transition-opacity duration-300;
+        }
+
+        .info-modal-content {
+            @apply glassmorphism p-6 md:p-8 rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto;
+        }
+
+        .info-modal h3 {
+            @apply text-2xl font-bold mb-4 gradient-text;
+        }
+
+        .info-modal p {
+            @apply text-gray-300 mb-3 leading-relaxed;
+        }
+
+        .info-modal ul {
+            @apply list-disc list-inside text-gray-300 mb-3 pl-4 space-y-1;
+        }
+
+        .info-modal .tech-tag {
+            margin-top: 0.25rem;
+        }
+
+        /* Animation for modal */
+        .info-modal.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .info-modal-content {
+            transform: scale(0.95);
+            transition: transform 0.3s ease-out;
+        }
+
+        .info-modal:not(.hidden) .info-modal-content {
+            transform: scale(1);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <header class="sticky top-0 z-40 glassmorphism shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html#home" class="text-xl font-bold gradient-text">Sven Maibaum</a>
+            <a href="../index.html#home" class="text-gray-300 hover:text-teal-400 transition duration-300">
+                <i class="fas fa-arrow-left mr-2"></i>Zurück zum Portfolio
+            </a>
+        </div>
+    </header>
+
+    <main class="project-detail-container section-padding">
+        <section id="showcase-intro" class="fade-in-up">
+            <div class="project-detail-header text-center">
+                <h1 class="gradient-text">Software Architektur Showcase</h1>
+                <p class="project-subtitle mt-2">Ein Einblick in angewandte Architekturkonzepte und -prinzipien.</p>
+            </div>
+            <p class="text-center text-gray-400 max-w-3xl mx-auto mt-4 mb-12">
+                Als Software-Architekt entwerfe und implementiere ich robuste, skalierbare und wartbare Systeme.
+                Diese Seite demonstriert einige der Konzepte und Muster, mit denen ich arbeite, um komplexe
+                Herausforderungen zu lösen. Entdecken Sie interaktiv, wie modulare Architekturen und moderne Ansätze
+                funktionieren.
+            </p>
+        </section>
+
+        <section id="modular-event-driven-monolith" class="fade-in-up">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-10"><span class="gradient-text">Modulare,
+                    Ereignisgesteuerte Monolithische Architektur</span></h2>
+            <p class="text-center text-gray-400 max-w-3xl mx-auto mb-8">
+                Diese Architektur kombiniert die <strong class="text-teal-400">Hexagonale Architektur (Ports &
+                    Adapter)</strong> für klare Modulstrukturen
+                mit einer <strong class="text-purple-400">Ereignisgesteuerten Architektur (EDA)</strong> für entkoppelte
+                Kommunikation innerhalb eines Monolithen.
+                Klicken Sie auf die Komponenten, um mehr zu erfahren.
+            </p>
+
+            <div class="glassmorphism p-6 md:p-8 rounded-xl shadow-xl mb-12">
+                <div class="text-sm text-gray-400 mb-4 text-center"><em>Diagramm: Vereinfachte Darstellung</em></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                    <div class="border-2 border-dashed border-gray-700 p-4 rounded-lg">
+                        <h4 class="font-semibold text-center mb-3 text-lg text-purple-400">Modul A (z.B. User Mgt.)</h4>
+                        <div class="diagram-component hexagon-core" data-title="Hexagonaler Kern (Modul A)"
+                            data-details="hexagon-core-details">
+                            Hexagonaler Kern
+                        </div>
+                        <div class="flex justify-around mt-3">
+                            <div class="diagram-component port" data-title="Input Port (Modul A)"
+                                data-details="input-port-details">Input Port</div>
+                            <div class="diagram-component port" data-title="Output Port (Modul A)"
+                                data-details="output-port-details">Output Port</div>
+                        </div>
+                        <div class="diagram-component adapter mt-3" data-title="Adapter (Modul A)"
+                            data-details="adapter-details">
+                            Adapter (UI, DB, Event)
+                        </div>
+                        <div class="diagram-component database mt-3" data-title="Logische Datenbank (Modul A)"
+                            data-details="database-details-a">
+                            Logische DB A
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center justify-center h-full space-y-4">
+                        <div class="text-center">
+                            <i class="fas fa-arrow-right arrow hidden md:inline-block"></i>
+                            <i class="fas fa-arrow-down arrow md:hidden"></i>
+                        </div>
+                        <div class="diagram-component event-bus w-full md:w-3/4" data-title="Interner Event-Bus"
+                            data-details="event-bus-details">
+                            Interner Event-Bus
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-arrow-right arrow hidden md:inline-block"></i>
+                            <i class="fas fa-arrow-down arrow md:hidden"></i>
+                        </div>
+                    </div>
+
+                    <div class="border-2 border-dashed border-gray-700 p-4 rounded-lg">
+                        <h4 class="font-semibold text-center mb-3 text-lg text-teal-400">Modul B (z.B. Produkt Mgt.)
+                        </h4>
+                        <div class="diagram-component hexagon-core" data-title="Hexagonaler Kern (Modul B)"
+                            data-details="hexagon-core-details">
+                            Hexagonaler Kern
+                        </div>
+                        <div class="flex justify-around mt-3">
+                            <div class="diagram-component port" data-title="Input Port (Modul B)"
+                                data-details="input-port-details">Input Port</div>
+                            <div class="diagram-component port" data-title="Output Port (Modul B)"
+                                data-details="output-port-details">Output Port</div>
+                        </div>
+                        <div class="diagram-component adapter mt-3" data-title="Adapter (Modul B)"
+                            data-details="adapter-details">
+                            Adapter (Event Listener, DB)
+                        </div>
+                        <div class="diagram-component database mt-3" data-title="Logische Datenbank (Modul B)"
+                            data-details="database-details-b">
+                            Logische DB B
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mt-12">
+                <div class="glassmorphism p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-3 text-teal-400">Vorteile</h3>
+                    <ul class="list-disc list-inside text-gray-400 space-y-1">
+                        <li>Hohe Modularität & Kapselung</li>
+                        <li>Starke Entkopplung der Module</li>
+                        <li>Verbesserte Testbarkeit</li>
+                        <li>Flexibilität & Erweiterbarkeit</li>
+                        <li>Klare Verantwortlichkeiten</li>
+                        <li>Gute Vorbereitung für Microservices-Migration</li>
+                    </ul>
+                </div>
+                <div class="glassmorphism p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-3 text-orange-400">Potenzielle Herausforderungen</h3>
+                    <ul class="list-disc list-inside text-gray-400 space-y-1">
+                        <li>Initiale Komplexität bei der Einführung</li>
+                        <li>Overhead des Event-Bus (auch In-Prozess)</li>
+                        <li>Debugging von asynchronen Flüssen</li>
+                        <li>Umgang mit Eventual Consistency (intern)</li>
+                        <li>Transaktionsmanagement über Modulgrenzen</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="core-competencies" class="mt-16 fade-in-up">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-10"><span class="gradient-text">Weitere
+                    Kernkompetenzen</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glassmorphism p-6 rounded-lg shadow-lg skill-card">
+                    <h3 class="text-xl font-semibold text-purple-400 mb-2">Microservice-Architekturen</h3>
+                    <p class="text-gray-400 text-sm">Design und Implementierung verteilter Systeme mit Fokus auf
+                        Skalierbarkeit, Resilienz und unabhängiger Deployment-Fähigkeit.</p>
+                </div>
+                <div class="glassmorphism p-6 rounded-lg shadow-lg skill-card">
+                    <h3 class="text-xl font-semibold text-blue-400 mb-2">Cloud-Native Lösungen (AWS/GCP)</h3>
+                    <p class="text-gray-400 text-sm">Entwicklung von Anwendungen, die optimal die Vorteile von
+                        Cloud-Plattformen nutzen (Serverless, Containerisierung, Managed Services).</p>
+                </div>
+                <div class="glassmorphism p-6 rounded-lg shadow-lg skill-card">
+                    <h3 class="text-xl font-semibold text-green-400 mb-2">API Design & Management</h3>
+                    <p class="text-gray-400 text-sm">Konzeption von robusten und entwicklerfreundlichen APIs (REST,
+                        GraphQL) inklusive Versionierung, Sicherheit und Dokumentation.</p>
+                </div>
+            </div>
+            <p class="text-center text-gray-500 mt-8">Weitere Details zu spezifischen Technologien und Mustern folgen in
+                Kürze...</p>
+        </section>
+
+
+        <a href="../index.html#contact"
+            class="block w-max mx-auto mt-12 bg-gradient-to-r from-teal-500 to-purple-600 hover:from-teal-600 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105 shadow-lg">
+            Architektur-Diskussion starten
+        </a>
+
+    </main>
+
+    <div id="componentInfoModal" class="info-modal hidden" aria-labelledby="modal-title" role="dialog"
+        aria-modal="true">
+        <div class="info-modal-content">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="modalTitle" class="text-2xl font-bold gradient-text">Komponentendetails</h3>
+                <button id="closeModalButton" class="text-gray-400 hover:text-white" aria-label="Schließen">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <div id="modalBody">
+                <p>Detailinformationen zur Komponente werden hier geladen...</p>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="bg-gray-900/70 border-t border-gray-700/50 py-8 mt-16">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; <span id="currentYearShowcase"></span> Sven Maibaum. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set current year in footer
+            const currentYearElement = document.getElementById('currentYearShowcase');
+            if (currentYearElement) {
+                currentYearElement.textContent = new Date().getFullYear();
+            }
+
+            // Modal elements
+            const modal = document.getElementById('componentInfoModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+            const closeModalButton = document.getElementById('closeModalButton');
+
+            // Diagram components
+            const diagramComponents = document.querySelectorAll('.diagram-component');
+
+            // Data for modal content (simplified from the document)
+            const componentDetails = {
+                'hexagon-core-details': {
+                    title: 'Hexagonaler Kern (Geschäftslogik)',
+                    description: 'Der Kern des Moduls enthält die reine Geschäftslogik, unabhängig von externer Infrastruktur. Er definiert, was die Anwendung kann, nicht wie es technisch umgesetzt wird.',
+                    points: [
+                        'Bildet die strukturelle Grundlage für einzelne Geschäftsmodule.',
+                        'Trennt klar die Geschäftslogik von Infrastruktur und externen Anbindungen.',
+                        'Interaktionen erfolgen ausschließlich über definierte Schnittstellen (Ports).'
+                    ],
+                    tags: ['Domain Logic', 'Business Rules', 'Encapsulation']
+                },
+                'input-port-details': {
+                    title: 'Input Port (Driving Port)',
+                    description: 'Definiert, wie der Kern von außen angestoßen wird. Dient als Schnittstelle für Anwendungsdienste, die von Adaptern aufgerufen werden.',
+                    points: [
+                        'Ermöglicht Aufrufe von UI-Adaptern, Test-Adaptern oder Event-Listener-Adaptern.',
+                        'Kapselt Anwendungsfälle (Use Cases).'
+                    ],
+                    tags: ['API', 'Use Cases', 'Application Services']
+                },
+                'output-port-details': {
+                    title: 'Output Port (Driven Port)',
+                    description: 'Definiert, wie der Kern mit externen Systemen oder Infrastrukturkomponenten interagiert, ohne direkte Abhängigkeiten zu diesen aufzubauen.',
+                    points: [
+                        'Wird von Adaptern implementiert (z.B. Datenbankzugriff, Event-Publizierung).',
+                        'Beispiele: Repository-Port, Event-Publisher-Port.'
+                    ],
+                    tags: ['Abstractions', 'Infrastructure Interface']
+                },
+                'adapter-details': {
+                    title: 'Adapter',
+                    description: 'Adapter verbinden den hexagonalen Kern mit der Außenwelt. Sie implementieren Output-Ports oder rufen Input-Ports auf.',
+                    points: [
+                        'Driving Adapter (Input): Konvertieren externe Anfragen (HTTP, Events) in Aufrufe an Input-Ports (z.B. UI-Controller, Event-Listener).',
+                        'Driven Adapter (Output): Implementieren Output-Ports für die Interaktion mit Infrastruktur (z.B. Datenbank-Repositories, Message Broker Clients).'
+                    ],
+                    tags: ['Infrastructure', 'Integration', 'Decoupling']
+                },
+                'event-bus-details': {
+                    title: 'Interner Event-Bus / Broker',
+                    description: 'Ermöglicht die asynchrone und entkoppelte Kommunikation zwischen den verschiedenen hexagonalen Modulen innerhalb des Monolithen.',
+                    points: [
+                        'Empfängt Ereignisse von Event-Produzenten (Module).',
+                        'Leitet Ereignisse an interessierte Event-Konsumenten (andere Module) weiter.',
+                        'Kann In-Prozess implementiert sein für Monolithen.'
+                    ],
+                    tags: ['EDA', 'Asynchronous', 'Decoupling', 'Pub/Sub']
+                },
+                'database-details-a': {
+                    title: 'Logische Datenbank (Modul A)',
+                    description: 'Jedes Geschäftsmodul (Hexagon) ist für seine eigenen Daten zuständig und besitzt logisch seine eigene Datenbank (z.B. eigenes Schema, eigene Tabellen).',
+                    points: [
+                        'Datenhoheit liegt beim Modul.',
+                        'Andere Module dürfen nicht direkt auf die Datenbanktabellen eines fremden Moduls zugreifen.',
+                        'Zugriff auf fremde Daten erfolgt über die API (Ports) des jeweiligen Moduls oder durch Reaktion auf publizierte Ereignisse.'
+                    ],
+                    tags: ['Data Ownership', 'Encapsulation', 'Schema per Module']
+                },
+                'database-details-b': {
+                    title: 'Logische Datenbank (Modul B)',
+                    description: 'Jedes Geschäftsmodul (Hexagon) ist für seine eigenen Daten zuständig und besitzt logisch seine eigene Datenbank (z.B. eigenes Schema, eigene Tabellen).',
+                    points: [
+                        'Datenhoheit liegt beim Modul.',
+                        'Andere Module dürfen nicht direkt auf die Datenbanktabellen eines fremden Moduls zugreifen.',
+                        'Zugriff auf fremde Daten erfolgt über die API (Ports) des jeweiligen Moduls oder durch Reaktion auf publizierte Ereignisse.'
+                    ],
+                    tags: ['Data Ownership', 'Encapsulation', 'Schema per Module']
+                }
+            };
+
+            function showModal(componentKey) {
+                const details = componentDetails[componentKey];
+                if (!details) {
+                    console.warn('Details not found for key:', componentKey);
+                    modalTitle.textContent = 'Information';
+                    modalBody.innerHTML = '<p>Keine Details für diese Komponente verfügbar.</p>';
+                } else {
+                    modalTitle.textContent = details.title;
+                    let bodyHtml = `<p>${details.description}</p>`;
+                    if (details.points && details.points.length > 0) {
+                        bodyHtml += '<ul>';
+                        details.points.forEach(point => {
+                            bodyHtml += `<li>${point}</li>`;
+                        });
+                        bodyHtml += '</ul>';
+                    }
+                    if (details.tags && details.tags.length > 0) {
+                        bodyHtml += '<div class="mt-4">';
+                        details.tags.forEach(tag => {
+                            // Re-using tech-tag styles. Need to pick colors or make them generic.
+                            let tagColorClass = 'tech-tag-gray';
+                            if (tag.toLowerCase().includes('eda') || tag.toLowerCase().includes('async')) tagColorClass = 'tech-tag-red';
+                            else if (tag.toLowerCase().includes('api') || tag.toLowerCase().includes('use cases')) tagColorClass = 'tech-tag-green';
+                            else if (tag.toLowerCase().includes('domain') || tag.toLowerCase().includes('business')) tagColorClass = 'tech-tag-purple';
+                            else if (tag.toLowerCase().includes('infra') || tag.toLowerCase().includes('integration')) tagColorClass = 'tech-tag-blue';
+
+                            bodyHtml += `<span class="tech-tag ${tagColorClass}">${tag}</span> `;
+                        });
+                        bodyHtml += '</div>';
+                    }
+                    modalBody.innerHTML = bodyHtml;
+                }
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent background scroll
+            }
+
+            function hideModal() {
+                modal.classList.add('hidden');
+                document.body.style.overflow = ''; // Restore background scroll
+            }
+
+            diagramComponents.forEach(component => {
+                component.addEventListener('click', () => {
+                    const detailKey = component.dataset.details;
+                    if (detailKey) {
+                        showModal(detailKey);
+                    } else {
+                        // Fallback if no specific key, use title
+                        showModal(component.dataset.title.toLowerCase().replace(/\s+/g, '-'));
+                    }
+                });
+            });
+
+            closeModalButton.addEventListener('click', hideModal);
+            // Close modal on escape key
+            window.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+                    hideModal();
+                }
+            });
+            // Close modal on outside click
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    hideModal();
+                }
+            });
+
+
+            // Intersection Observer for Scroll Animations (copied from main script.js for standalone functionality)
+            const animatedSections = document.querySelectorAll('.fade-in-up');
+            if (typeof IntersectionObserver !== 'undefined') {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.1
+                };
+
+                const observer = new IntersectionObserver((entries, observerInstance) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            // entry.target.style.transitionDelay = entry.target.dataset.delay || '0s'; // Optional: if you add data-delay to elements
+                            observerInstance.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                animatedSections.forEach(section => {
+                    observer.observe(section);
+                });
+            } else {
+                // Fallback for browsers that don't support IntersectionObserver
+                animatedSections.forEach(section => {
+                    section.classList.add('visible');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

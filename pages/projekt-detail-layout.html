@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projektdetail: [PROJEKTNAME] - Sven Maibaum</title>
+    <meta name="description" content="Detailbeschreibung des Projekts [PROJEKTNAME] von Sven Maibaum.">
+    <meta name="author" content="Sven Maibaum">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        xintegrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="antialiased">
+
+    <header class="sticky top-0 z-40 glassmorphism shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html#home" class="text-xl font-bold gradient-text">Sven Maibaum</a>
+            <a href="index.html#projects" class="text-gray-300 hover:text-teal-400 transition duration-300">
+                <i class="fas fa-arrow-left mr-2"></i>Zurück zu Projekten
+            </a>
+        </div>
+    </header>
+
+    <main class="project-detail-container section-padding fade-in-up visible">
+        <div class="project-detail-header">
+            <h1 class="gradient-text">[PROJEKTNAME]</h1>
+            <p class="project-subtitle">[Kurze Zusammenfassung oder Untertitel des Projekts]</p>
+        </div>
+
+        <img src="https://placehold.co/900x500/1a202c/e2e8f0?text=[PROJEKTBILD]"
+            alt="[PROJEKTNAME] - Screenshot/Visualisierung" class="project-image-full" loading="lazy">
+
+        <div class="project-detail-content">
+            <h2 class="gradient-text">Projektübersicht</h2>
+            <p>
+                [Ausführliche Beschreibung des Projekts: Was war das Ziel? Welche Probleme wurden gelöst? Was war Ihre
+                Rolle?]
+            </p>
+
+            <h3>Herausforderungen</h3>
+            <p>
+                [Welche besonderen Herausforderungen gab es bei diesem Projekt?]
+            </p>
+            <ul>
+                <li>[Herausforderung 1]</li>
+                <li>[Herausforderung 2]</li>
+            </ul>
+
+            <h3>Lösungsansatz & Umsetzung</h3>
+            <p>
+                [Wie sind Sie vorgegangen? Welche Methoden oder Ansätze wurden verwendet?]
+            </p>
+
+            <h3>Eingesetzte Technologien</h3>
+            <div class="my-4">
+                <span class="tech-tag tech-tag-yellow">[Technologie 1]</span>
+                <span class="tech-tag tech-tag-green">[Technologie 2]</span>
+                <span class="tech-tag tech-tag-blue">[Technologie 3]</span>
+                <span class="tech-tag tech-tag-gray">[Weitere Technologie]</span>
+            </div>
+
+            <h3>Ergebnisse & Lernerfahrungen</h3>
+            <p>
+                [Was waren die Ergebnisse des Projekts? Was haben Sie gelernt?]
+            </p>
+
+            <!--
+            <div class="mt-8">
+                <a href="[LINK_ZUM_PROJEKT]" target="_blank" rel="noopener noreferrer" class="bg-teal-500 hover:bg-teal-600 text-white font-medium py-2 px-6 rounded-lg transition duration-300 transform hover:scale-105 inline-block shadow-md">
+                    Projekt ansehen <i class="fas fa-external-link-alt ml-2"></i>
+                </a>
+            </div>
+            -->
+        </div>
+
+        <a href="index.html#projects" class="back-to-portfolio bg-gray-700 hover:bg-gray-600 text-gray-300">
+            <i class="fas fa-arrow-left mr-2"></i>Alle Projekte anzeigen
+        </a>
+    </main>
+
+    <footer class="bg-gray-900/70 border-t border-gray-700/50 py-8 mt-12">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; <span id="currentYearDetail"></span> Sven Maibaum. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+    <script>
+        // Minimales JS für Detailseiten (z.B. aktuelles Jahr im Footer)
+        const currentYearDetailElement = document.getElementById('currentYearDetail');
+        if (currentYearDetailElement) {
+            currentYearDetailElement.textContent = new Date().getFullYear();
+        }
+        // Das Haupt-Skript (script.js) wird hier nicht unbedingt benötigt,
+        // es sei denn, es gibt spezifische interaktive Elemente auf dieser Seite.
+        // Scroll-Animationen werden durch CSS gesteuert, wenn die .fade-in-up Klasse vorhanden ist.
+    </script>
+</body>
+
+</html>
