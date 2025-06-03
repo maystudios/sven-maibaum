@@ -1,14 +1,43 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projektdetail: KI-Marketing Plattform - Sven Maibaum</title>
+    <title>Projekt KI-Marketing Plattform (Konzept) - Sven Maibaum</title>
     <meta name="description"
-        content="Detailbeschreibung des Konzepts einer KI-Marketing Plattform von Sven Maibaum (MayStudios).">
+        content="Konzept einer innovativen KI-Marketing Plattform von Sven Maibaum (MayStudios) zur Automatisierung und Optimierung von Marketingkampagnen durch künstliche Intelligenz.">
+    <meta name="keywords"
+        content="KI-Marketing Plattform, Konzept, Sven Maibaum, MayStudios, Künstliche Intelligenz Marketing, Marketing Automatisierung, Predictive Analytics, Personalisierung, Python, Machine Learning">
     <meta name="author" content="Sven Maibaum">
+    <link rel="canonical" href="https://www.svenmaibaum.dev/pages/projekt-ki-marketing.html" />
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9SXPLL2SY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-P9SXPLL2SY');
+    </script>
+
+    <!-- Skript zum initialen Setzen des Themes -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } else if (prefersDark) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,16 +47,81 @@
         xintegrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Strukturierte Daten (JSON-LD) für Artikel und Breadcrumbs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.svenmaibaum.dev/pages/projekt-ki-marketing.html"
+          },
+          "headline": "KI-Marketing Plattform (Konzept) - Vision von MayStudios",
+          "description": "Vorstellung des Konzepts einer KI-gestützten Marketing Plattform durch Sven Maibaum (MayStudios) zur Revolutionierung von Marketingkampagnen mittels Automatisierung, Personalisierung und Predictive Analytics.",
+          "image": "https://www.svenmaibaum.dev/assets/projekt-ki-marketing-og.jpg",
+          "author": {
+            "@id": "https://www.svenmaibaum.dev/#person"
+          },
+          "publisher": {
+             "@type": "Organization",
+             "name": "MayStudios",
+             "logo": {
+               "@type": "ImageObject",
+               "url": "https://www.svenmaibaum.dev/assets/maystudios-logo.png"
+             }
+          },
+          "datePublished": "2024-02-15",
+          "dateModified": "2025-06-03",
+          "keywords": "KI-Marketing Plattform, Konzept, Sven Maibaum, MayStudios, Künstliche Intelligenz Marketing, Marketing Automatisierung, Predictive Analytics, Personalisierung, Python, Machine Learning, Marketing ROI"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Portfolio Sven Maibaum",
+            "item": "https://www.svenmaibaum.dev/index.html"
+          },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projekte",
+            "item": "https://www.svenmaibaum.dev/index.html#projects"
+          },{
+            "@type": "ListItem",
+            "position": 3,
+            "name": "KI-Marketing Plattform (Konzept)"
+          }]
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body class="antialiased">
 
     <header class="sticky top-0 z-40 glassmorphism shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../index.html#home" class="text-xl font-bold gradient-text">Sven Maibaum</a> <a
-                href="../index.html#projects" class="text-gray-300 hover:text-teal-400 transition duration-300"> <i
-                    class="fas fa-arrow-left mr-2"></i>Zurück zu Projekten
-            </a>
+            <a href="../index.html#home" class="text-xl font-bold gradient-text">Sven Maibaum</a>
+            <div class="flex items-center">
+                <a href="../index.html#projects" class="hover:text-teal-400 transition duration-300">
+                    <i class="fas fa-arrow-left mr-2"></i>Zurück zu Projekten
+                </a>
+                <button id="theme-toggle" type="button" class="theme-switcher" title="Toggle theme">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -39,7 +133,8 @@
         </div>
 
         <img src="https://placehold.co/900x500/1a202c/38b2ac?text=KI+Marketing+Plattform+Interface"
-            alt="KI-Marketing Plattform - Interface Mockup" class="project-image-full" loading="lazy">
+            alt="KI-Marketing Plattform - Interface Mockup einer intelligenten Marketinglösung"
+            class="project-image-full" loading="lazy">
         <div class="project-detail-content">
             <h2 class="gradient-text">Projektvision</h2>
             <p>
@@ -99,19 +194,19 @@
 
             <div class="mt-8">
                 <a href="../index.html#contact"
-                    class="bg-teal-500 hover:bg-teal-600 text-white font-medium py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105 inline-block shadow-md button-like-class">
+                    class="bg-gradient-to-r text-white font-medium py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105 inline-block shadow-md button-like-class">
                     Konzept besprechen <i class="fas fa-comments ml-2"></i>
                 </a>
             </div>
         </div>
 
-        <a href="../index.html#projects" class="back-to-portfolio bg-gray-700 hover:bg-gray-600 text-gray-300"> <i
-                class="fas fa-arrow-left mr-2"></i>Alle Projekte anzeigen
+        <a href="../index.html#projects" class="back-to-portfolio">
+            <i class="fas fa-arrow-left mr-2"></i>Alle Projekte anzeigen
         </a>
     </main>
 
-    <footer class="bg-gray-900/70 border-t border-gray-700/50 py-8 mt-12">
-        <div class="container mx-auto px-6 text-center text-gray-500">
+    <footer class="py-8 mt-12">
+        <div class="container mx-auto px-6 text-center">
             <p>&copy; <span id="currentYearDetailKIM"></span> Sven Maibaum. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
@@ -121,6 +216,7 @@
             currentYearDetailElementKIM.textContent = new Date().getFullYear();
         }
     </script>
+    <script src="../js/theme.js" defer></script>
 </body>
 
 </html>

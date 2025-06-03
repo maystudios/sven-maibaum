@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.sven-maibaum.com/index.html</loc>
+    <lastmod>2025-06-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.sven-maibaum.com/pages/architect-showcase.html</loc>
+    <lastmod>2025-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.sven-maibaum.com/pages/projekt-exambyte.html</loc>
+    <lastmod>2025-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.sven-maibaum.com/pages/projekt-gemma-toxic.html</loc>
+    <lastmod>2025-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.sven-maibaum.com/pages/projekt-ki-marketing.html</loc>
+    <lastmod>2025-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.sven-maibaum.com/pages/projekt-prisonbreak.html</loc>
+    <lastmod>2025-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Die projekt-detail-layout.html wird hier ausgelassen, da sie eine Vorlage ist. -->
+  <!-- Falls du weitere Seiten hinzufügst, sollten diese hier ebenfalls eingetragen werden. -->
+</urlset>

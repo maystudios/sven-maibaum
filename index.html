@@ -4,13 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sven Maibaum - Software Architekt & Spieleentwickler Portfolio</title>
+    <title>Sven Maibaum - Portfolio | Software-Architekt & Spieleentwickler</title>
     <meta name="description"
-        content="Portfolio von Sven Maibaum, Gründer von MayStudios, Leitender Software-Architekt und Spieleentwickler. Experte für Full-Stack Entwicklung, Software-Architektur, Spieleentwicklung und KI-Modelle.">
+        content="Entdecken Sie das Portfolio von Sven Maibaum, Gründer von MayStudios. Experte für Software-Architektur, Full-Stack & Spieleentwicklung (Unreal Engine, Unity) und KI.">
     <meta name="keywords"
-        content="Sven Maibaum, Portfolio, MayStudios, Software Architekt, Spieleentwickler, Full-Stack, Backend, Frontend, KI, Unreal Engine, Unity, Java, Python, C++, Spring Boot, React, Vue, Node.js, Burscheid, Exambyte, Gemma, Language Model, Architektur Showcase">
+        content="Sven Maibaum, Portfolio, MayStudios, Software Architekt, Spieleentwickler, Full-Stack Entwicklung, Backend, Frontend, KI, Unreal Engine, Unity, Java, Python, C++, Spring Boot, React, Vue, Node.js, Burscheid, Exambyte, Gemma, Language Model, Architektur Showcase, Softwareentwicklung Portfolio">
     <meta name="author" content="Sven Maibaum">
+    <link rel="canonical" href="https://www.svenmaibaum.dev/index.html" /> <!-- Basis-URL anpassen -->
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9SXPLL2SY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-P9SXPLL2SY');
+    </script>
+
+    <!-- Skript zum initialen Setzen des Themes -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } else if (prefersDark) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,6 +47,64 @@
         xintegrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Strukturierte Daten (JSON-LD) für Person und Webseite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://www.svenmaibaum.dev/#person",
+          "name": "Sven Maibaum",
+          "url": "https://www.svenmaibaum.dev/index.html",
+          "image": "https://www.svenmaibaum.dev/assets/sven-maibaum-profil.jpg",
+          "jobTitle": "Leitender Software-Architekt & Spieleentwickler",
+          "worksFor": [
+            {
+              "@type": "Organization",
+              "name": "MayStudios"
+            },
+            {
+              "@type": "Organization",
+              "name": "LikeTik by Axinity"
+            },
+            {
+              "@type": "Organization",
+              "name": "Emotions Gaming"
+            }
+          ],
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Heinrich-Heine-Universität Düsseldorf"
+          },
+          "knowsAbout": [
+            "Softwarearchitektur", "Webentwicklung", "Full-Stack Entwicklung", "Backend Entwicklung", "Spieleentwicklung", "Unreal Engine", "Unity", "Java", "Python", "C++", "Spring Boot", "React", "Vue.js", "Node.js", "Künstliche Intelligenz", "Machine Learning", "Datenbanken", "DevOps"
+          ],
+          "description": "Sven Maibaum ist Gründer von MayStudios, ein erfahrener Software-Architekt und Spieleentwickler mit Fokus auf Full-Stack-Entwicklung, KI-Modelle und innovative Softwarelösungen.",
+          "sameAs": [
+            "https://www.linkedin.com/in/sven-maibaum-034122326",
+            "https://github.com/Svenni551"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Burscheid",
+            "addressCountry": "DE"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "url": "https://www.svenmaibaum.dev/index.html",
+          "name": "Sven Maibaum - Portfolio",
+          "publisher": {
+            "@id": "https://www.svenmaibaum.dev/#person"
+          },
+          "description": "Portfolio von Sven Maibaum, Gründer von MayStudios. Präsentation von Projekten in Software-Architektur, Full-Stack Entwicklung, Spieleentwicklung und KI.",
+          "inLanguage": "de-DE"
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body class="antialiased">
@@ -28,20 +112,34 @@
     <header class="fixed top-0 left-0 right-0 z-50 glassmorphism shadow-lg">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" class="text-2xl font-bold gradient-text nav-link">Sven Maibaum</a>
-            <nav class="hidden md:flex space-x-6" aria-label="Hauptnavigation">
-                <a href="#home" class="hover:text-teal-400 transition duration-300 nav-link">Home</a>
-                <a href="#about" class="hover:text-teal-400 transition duration-300 nav-link">Über Mich</a>
-                <a href="#philosophy" class="hover:text-teal-400 transition duration-300 nav-link">Philosophie</a>
-                <a href="pages/architect-showcase.html"
-                    class="hover:text-purple-400 transition duration-300">Architektur Showcase</a>
-                <a href="#experience" class="hover:text-teal-400 transition duration-300 nav-link">Erfahrung</a>
-                <a href="#projects" class="hover:text-teal-400 transition duration-300 nav-link">Projekte</a>
-                <a href="#skills" class="hover:text-teal-400 transition duration-300 nav-link">Skills</a>
-                <a href="#contact" class="hover:text-teal-400 transition duration-300 nav-link">Kontakt</a>
-            </nav>
-            <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-gray-300 focus:outline-none"
-                    aria-label="Mobiles Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+            <div class="flex items-center">
+                <nav class="hidden md:flex space-x-6" aria-label="Hauptnavigation">
+                    <a href="#home" class="hover:text-teal-400 transition duration-300 nav-link">Home</a>
+                    <a href="#about" class="hover:text-teal-400 transition duration-300 nav-link">Über Mich</a>
+                    <a href="#philosophy" class="hover:text-teal-400 transition duration-300 nav-link">Philosophie</a>
+                    <a href="pages/architect-showcase.html"
+                        class="hover:text-purple-400 transition duration-300">Architektur Showcase</a>
+                    <a href="#experience" class="hover:text-teal-400 transition duration-300 nav-link">Erfahrung</a>
+                    <a href="#projects" class="hover:text-teal-400 transition duration-300 nav-link">Projekte</a>
+                    <a href="#skills" class="hover:text-teal-400 transition duration-300 nav-link">Skills</a>
+                    <a href="#contact" class="hover:text-teal-400 transition duration-300 nav-link">Kontakt</a>
+                </nav>
+                <button id="theme-toggle" type="button" class="theme-switcher" title="Toggle theme">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="focus:outline-none ml-3" aria-label="Mobiles Menü öffnen"
+                    aria-expanded="false" aria-controls="mobile-menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -51,10 +149,24 @@
             </div>
         </div>
         <div id="mobile-menu"
-            class="md:hidden fixed top-0 left-0 w-64 h-full bg-gray-800/95 backdrop-blur-md shadow-xl p-6 space-y-4 transform -translate-x-full"
+            class="md:hidden fixed top-0 left-0 w-64 h-full shadow-xl p-6 space-y-4 transform -translate-x-full"
             role="dialog" aria-modal="true">
-            <a href="#home" class="text-2xl font-bold gradient-text block mb-8 mobile-menu-link nav-link">Sven
-                Maibaum</a>
+            <div class="flex justify-between items-center mb-8">
+                <a href="#home" class="text-2xl font-bold gradient-text block mobile-menu-link nav-link">Sven
+                    Maibaum</a>
+                <button id="theme-toggle-mobile" type="button" class="theme-switcher" title="Toggle theme">
+                    <svg id="theme-toggle-dark-icon-mobile" class="hidden w-5 h-5" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon-mobile" class="hidden w-5 h-5" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
             <a href="#home"
                 class="block py-2 px-2 rounded hover:bg-gray-700 transition duration-300 mobile-menu-link nav-link">Home</a>
             <a href="#about"
@@ -73,8 +185,7 @@
                 class="block py-2 px-2 rounded hover:bg-gray-700 transition duration-300 mobile-menu-link nav-link">Skills</a>
             <a href="#contact"
                 class="block py-2 px-2 rounded hover:bg-gray-700 transition duration-300 mobile-menu-link nav-link">Kontakt</a>
-            <button id="close-mobile-menu-button" class="absolute top-6 right-6 text-gray-300"
-                aria-label="Mobiles Menü schließen">
+            <button id="close-mobile-menu-button" class="absolute top-6 right-6" aria-label="Mobiles Menü schließen">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
@@ -91,19 +202,19 @@
             <h1 class="text-4xl md:text-6xl font-extrabold mb-4">
                 <span class="gradient-text">Sven Maibaum</span>
             </h1>
-            <p class="text-xl md:text-2xl text-gray-300 mb-3 max-w-3xl mx-auto">
+            <p class="text-xl md:text-2xl mb-3 max-w-3xl mx-auto">
                 Gründer MayStudios | Leitender Software-Architekt | Spieleentwickler
             </p>
-            <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
                 Experte für Software-Architektur, Full-Stack Entwicklung, Spieleentwicklung & KI-Modelle.
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
                 <a href="#projects"
-                    class="bg-gradient-to-r from-teal-500 to-purple-600 hover:from-teal-600 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105 inline-block shadow-lg glow-effect nav-link">
+                    class="bg-gradient-to-r text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105 inline-block shadow-lg glow-effect nav-link">
                     Meine Projekte entdecken
                 </a>
                 <a href="pages/architect-showcase.html"
-                    class="bg-gradient-to-r from-purple-600 to-indigo-700 hover:from-purple-700 hover:to-indigo-800 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105 inline-block shadow-lg glow-effect">
+                    class="bg-gradient-to-r text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105 inline-block shadow-lg glow-effect">
                     Architektur Showcase <i class="fas fa-cogs ml-2"></i>
                 </a>
             </div>
@@ -123,7 +234,7 @@
                 </div>
                 <div class="md:w-2/3 text-center md:text-left">
                     <h3 class="text-2xl font-semibold mb-4">Hallo, ich bin Sven Maibaum.</h3>
-                    <p class="text-gray-400 leading-relaxed mb-4">
+                    <p class="leading-relaxed mb-4">
                         Als Gründer von <strong class="text-teal-400">MayStudios</strong>, Leitender Software-Architekt
                         bei <strong class="text-purple-400">LikeTik by Axinity</strong> und Leitender Spieleentwickler
                         bei <strong class="text-orange-400">Emotions Gaming</strong>, verbinde ich unternehmerische
@@ -132,20 +243,20 @@
                         Umsetzung innovativer Softwarelösungen, fesselnder Spielerlebnisse und der Erforschung von
                         KI-Modellen.
                     </p>
-                    <p class="text-gray-400 leading-relaxed mb-4">
+                    <p class="leading-relaxed mb-4">
                         Ich entwickle robuste Architekturen, gestalte intuitive Benutzererfahrungen und nutze Daten zur
                         Optimierung von Prozessen und Produkten. Mein Ziel ist es, durch Technologie einen echten
                         Mehrwert zu schaffen – sei es durch KI-gestützte Anwendungen, performante Web-Plattformen oder
                         immersive Games.
                     </p>
-                    <p class="text-gray-400 leading-relaxed mb-6">
+                    <p class="leading-relaxed mb-6">
                         Derzeit vertiefe ich mein Wissen durch ein Studium an der <strong
                             class="text-gray-300">Heinrich-Heine-Universität Düsseldorf</strong>, mit Fokus auf
                         Web-Architektur und Datenbanken, und strebe danach, stets an der Spitze der technologischen
                         Entwicklung zu stehen.
                     </p>
                     <a href="#contact"
-                        class="bg-gradient-to-r from-teal-500 to-purple-600 hover:from-teal-600 hover:to-purple-700 text-white font-medium py-2 px-6 rounded-lg transition duration-300 transform hover:scale-105 inline-block shadow-md nav-link">
+                        class="bg-gradient-to-r text-white font-medium py-2 px-6 rounded-lg transition duration-300 transform hover:scale-105 inline-block shadow-md nav-link">
                         Nehmen Sie Kontakt auf
                     </a>
                 </div>
@@ -153,7 +264,7 @@
         </div>
     </section>
 
-    <section id="philosophy" class="section-padding bg-gray-800/30 fade-in-up">
+    <section id="philosophy" class="section-padding fade-in-up">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12"><span class="gradient-text">Meine
                     Arbeitsphilosophie</span></h2>
@@ -165,11 +276,11 @@
                             d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L1.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.25 12L17 14.188l-1.25-2.188a2.25 2.25 0 01-1.7-1.7L12 8.75l2.188-1.25a2.25 2.25 0 011.7-1.7L18.25 4l1.25 2.188a2.25 2.25 0 011.7 1.7L23.75 10l-2.188 1.25a2.25 2.25 0 01-1.7 1.7L18.25 14l-1.25-2.188z" />
                     </svg>
                     <h3 class="text-2xl font-semibold mb-4">Innovation, Qualität & Partnerschaft</h3>
-                    <p class="text-gray-400 leading-relaxed mb-3">
+                    <p class="leading-relaxed mb-3">
                         Ich glaube an die Kraft der Technologie, um komplexe Probleme zu lösen und nachhaltigen Wert zu
                         schaffen. Mein Ansatz basiert auf drei Kernprinzipien:
                     </p>
-                    <ul class="text-gray-400 leading-relaxed space-y-2 text-left list-disc list-inside pl-4">
+                    <ul class="leading-relaxed space-y-2 text-left list-disc list-inside pl-4">
                         <li><strong>Innovation:</strong> Ständiges Lernen und die Anwendung neuester Technologien, um
                             zukunftsweisende Lösungen zu entwickeln.</li>
                         <li><strong>Qualität:</strong> Fokus auf sauberen Code, robuste Architekturen und eine
@@ -177,7 +288,7 @@
                         <li><strong>Partnerschaft:</strong> Enge Zusammenarbeit und transparente Kommunikation, um
                             gemeinsame Ziele effektiv zu erreichen.</li>
                     </ul>
-                    <p class="text-gray-400 leading-relaxed mt-4">
+                    <p class="leading-relaxed mt-4">
                         Mein Ziel ist es nicht nur, funktionierende Software zu liefern, sondern Lösungen, die
                         begeistern und echten Geschäftserfolg ermöglichen.
                     </p>
@@ -196,9 +307,9 @@
                         aria-hidden="true">LT</div>
                     <div>
                         <h3 class="text-xl font-semibold text-teal-400">Leitender Software-Architekt</h3>
-                        <p class="text-gray-400">LikeTik by Axinity (Teilzeit)</p>
-                        <p class="text-sm text-gray-500">März 2025 – Heute</p>
-                        <p class="mt-2 text-gray-400 text-sm">Verantwortlich für Software-Projektleitung und die
+                        <p>LikeTik by Axinity (Teilzeit)</p>
+                        <p class="text-sm">März 2025 – Heute</p>
+                        <p class="mt-2 text-sm">Verantwortlich für Software-Projektleitung und die
                             Konzeption sowie Implementierung skalierbarer Web-Architekturen in innovativen
                             Software-Engineering Projekten.</p>
                     </div>
@@ -208,9 +319,9 @@
                         aria-hidden="true">EG</div>
                     <div>
                         <h3 class="text-xl font-semibold text-purple-400">Leitender Spieleentwickler</h3>
-                        <p class="text-gray-400">Emotions Gaming (Teilzeit)</p>
-                        <p class="text-sm text-gray-500">Okt. 2024 – Heute</p>
-                        <p class="mt-2 text-gray-400 text-sm">Führende Rolle in der Entwicklung kreativer und technisch
+                        <p>Emotions Gaming (Teilzeit)</p>
+                        <p class="text-sm">Okt. 2024 – Heute</p>
+                        <p class="mt-2 text-sm">Führende Rolle in der Entwicklung kreativer und technisch
                             anspruchsvoller Spiele, u.a. für das Open-World-Multiplayer-Projekt "The Prisonbreak".
                             Einsatz von Perforce und Unreal Engine.</p>
                     </div>
@@ -220,9 +331,9 @@
                         aria-hidden="true">MS</div>
                     <div>
                         <h3 class="text-xl font-semibold" style="color: #dd6b20;">Unternehmensinhaber & Entwickler</h3>
-                        <p class="text-gray-400">MayStudios (Freiberuflich)</p>
-                        <p class="text-sm text-gray-500">Juni 2023 – Heute (Gründer)</p>
-                        <p class="mt-2 text-gray-400 text-sm">Data Scientist & Full-Stack Developer mit über 6 Jahren
+                        <p>MayStudios (Freiberuflich)</p>
+                        <p class="text-sm">Juni 2023 – Heute (Gründer)</p>
+                        <p class="mt-2 text-sm">Data Scientist & Full-Stack Developer mit über 6 Jahren
                             Erfahrung. Spezialisiert auf Backend-Systeme mit Spring Boot/Framework und datengetriebene
                             Lösungen.</p>
                     </div>
@@ -231,10 +342,10 @@
                     <div class="flex-shrink-0 w-12 h-12 bg-gray-500/20 text-gray-400 rounded-full flex items-center justify-center text-xl font-bold"
                         aria-hidden="true">P</div>
                     <div>
-                        <h3 class="text-xl font-semibold text-gray-300">Spieleentwickler</h3>
-                        <p class="text-gray-400">Phantomedia (Vollzeit)</p>
-                        <p class="text-sm text-gray-500">März 2024 – Juli 2024 (5 Monate)</p>
-                        <p class="mt-2 text-gray-400 text-sm">Mitwirkung an der Entwicklung von Spielen unter Verwendung
+                        <h3 class="text-xl font-semibold">Spieleentwickler</h3>
+                        <p>Phantomedia (Vollzeit)</p>
+                        <p class="text-sm">März 2024 – Juli 2024 (5 Monate)</p>
+                        <p class="mt-2 text-sm">Mitwirkung an der Entwicklung von Spielen unter Verwendung
                             von Perforce und Unreal Engine, Fokus auf Gameplay-Mechaniken und Systemintegration.</p>
                     </div>
                 </div>
@@ -242,7 +353,7 @@
         </div>
     </section>
 
-    <section id="projects" class="section-padding bg-gray-800/30 fade-in-up">
+    <section id="projects" class="section-padding fade-in-up">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12"><span class="gradient-text">Ausgewählte
                     Projekte</span></h2>
@@ -254,7 +365,7 @@
                     <div class="p-6 flex flex-col flex-grow">
                         <div class="flex-grow">
                             <h3 class="text-xl font-semibold mb-2 text-purple-400">The Prisonbreak</h3>
-                            <p class="text-gray-400 text-sm mb-2">Leitender Entwickler für ein
+                            <p class="text-sm mb-2">Leitender Entwickler für ein
                                 Open-World-Multiplayer-Spiel mit Fokus auf Gameplay und Architektur.</p>
                             <div class="mb-4">
                                 <span class="tech-tag tech-tag-purple">Unreal Engine</span>
@@ -276,7 +387,7 @@
                     <div class="p-6 flex flex-col flex-grow">
                         <div class="flex-grow">
                             <h3 class="text-xl font-semibold mb-2 text-teal-400">Gemma-2b-it-Toxic-v2.0</h3>
-                            <p class="text-gray-400 text-sm mb-2">Fine-Tuning eines Sprachmodells für Forschungszwecke
+                            <p class="text-sm mb-2">Fine-Tuning eines Sprachmodells für Forschungszwecke
                                 auf unzensierten und toxischen Daten.</p>
                             <div class="mb-4">
                                 <span class="tech-tag tech-tag-teal">AI/ML</span>
@@ -299,7 +410,7 @@
                     <div class="p-6 flex flex-col flex-grow">
                         <div class="flex-grow">
                             <h3 class="text-xl font-semibold mb-2 text-yellow-400">Exambyte</h3>
-                            <p class="text-gray-400 text-sm mb-2">Web-basiertes Testsystem als ILIAS-Alternative für
+                            <p class="text-sm mb-2">Web-basiertes Testsystem als ILIAS-Alternative für
                                 Programmierlabore.</p>
                             <div class="mb-4">
                                 <span class="tech-tag tech-tag-yellow">Java</span>
@@ -322,7 +433,7 @@
                     <div class="p-6 flex flex-col flex-grow">
                         <div class="flex-grow">
                             <h3 class="text-xl font-semibold mb-2 text-indigo-400">KI-Marketing Plattform (Konzept)</h3>
-                            <p class="text-gray-400 text-sm mb-2">Konzeption einer Plattform zur Automatisierung und
+                            <p class="text-sm mb-2">Konzeption einer Plattform zur Automatisierung und
                                 Optimierung von Marketingkampagnen mittels KI.</p>
                             <div class="mb-4">
                                 <span class="tech-tag tech-tag-indigo">Konzept</span>
@@ -357,7 +468,7 @@
                         </svg>
                         <h3 class="text-xl font-semibold text-teal-400">Webentwicklung & Architektur</h3>
                     </div>
-                    <ul class="text-gray-400 space-y-1 text-sm list-disc list-inside">
+                    <ul class="space-y-1 text-sm list-disc list-inside">
                         <li>HTML5, CSS3 (Tailwind CSS, Bootstrap), JavaScript (ES6+), Thymeleaf</li>
                         <li>Frontend: React, Vue.js, Next.js, Angular</li>
                         <li>Backend: Node.js, Express.js, Spring Boot, Spring Framework, Spring MVC, NestJS, Python
@@ -377,7 +488,7 @@
                         </svg>
                         <h3 class="text-xl font-semibold text-purple-400">Spieleentwicklung</h3>
                     </div>
-                    <ul class="text-gray-400 space-y-1 text-sm list-disc list-inside">
+                    <ul class="space-y-1 text-sm list-disc list-inside">
                         <li>Game Engines: Unreal Engine, Unity</li>
                         <li>Programmiersprachen: C++, Java, Python, C# (Unity)</li>
                         <li>Version Control: Perforce, Git</li>
@@ -397,7 +508,7 @@
                         </svg>
                         <h3 class="text-xl font-semibold" style="color: #dd6b20;">Software Engineering & KI</h3>
                     </div>
-                    <ul class="text-gray-400 space-y-1 text-sm list-disc list-inside">
+                    <ul class="space-y-1 text-sm list-disc list-inside">
                         <li>Programmiersprachen: Java, Python, C, C++</li>
                         <li>Software-Projektleitung & Agile Methoden</li>
                         <li>KI & Machine Learning: Modell-Fine-Tuning (Gemma), Transformers, DPO</li>
@@ -418,7 +529,7 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12"><span class="gradient-text">Nehmen Sie Kontakt
                     auf</span></h2>
             <div class="max-w-2xl mx-auto glassmorphism p-8 md:p-10 rounded-xl shadow-2xl">
-                <p class="text-center text-gray-400 mb-6">
+                <p class="text-center mb-6">
                     Ich freue mich auf Ihre Anfrage! Füllen Sie einfach das Formular aus oder kontaktieren Sie mich
                     direkt.
                 </p>
@@ -449,18 +560,17 @@
                     </form>
                 </div>
                 <div class="mt-10 text-center">
-                    <p class="text-gray-400 mb-2">Oder erreichen Sie mich direkt:</p>
+                    <p class="mb-2">Oder erreichen Sie mich direkt:</p>
                     <a href="mailto:company@maystudios.net"
                         class="text-teal-400 hover:text-teal-300 transition duration-300">company@maystudios.net</a>
                     <div class="mt-6 flex justify-center space-x-6">
                         <a href="https://www.linkedin.com/in/sven-maibaum-034122326" target="_blank"
-                            rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400 transition duration-300"
+                            rel="noopener noreferrer" class="hover:text-teal-400 transition duration-300"
                             aria-label="Sven Maibaum auf LinkedIn">
                             <i class="fab fa-linkedin fa-2x"></i>
                         </a>
                         <a href="https://github.com/Svenni551" target="_blank" rel="noopener noreferrer"
-                            class="text-gray-400 hover:text-teal-400 transition duration-300"
-                            aria-label="Sven Maibaum auf GitHub">
+                            class="hover:text-teal-400 transition duration-300" aria-label="Sven Maibaum auf GitHub">
                             <i class="fab fa-github fa-2x"></i>
                         </a>
                     </div>
@@ -469,14 +579,15 @@
         </div>
     </section>
 
-    <footer class="bg-gray-900/70 border-t border-gray-700/50 py-8">
-        <div class="container mx-auto px-6 text-center text-gray-500">
+    <footer class="py-8">
+        <div class="container mx-auto px-6 text-center">
             <p>&copy; <span id="currentYear"></span> Sven Maibaum. Alle Rechte vorbehalten.</p>
             <p class="text-sm mt-1">Mit <span class="text-teal-500" aria-label="Herz">&hearts;</span> gestaltet und
                 entwickelt in Burscheid, Deutschland.</p>
         </div>
     </footer>
     <script src="js/script.js" defer></script>
+    <script src="js/theme.js" defer></script>
 </body>
 
 </html>
