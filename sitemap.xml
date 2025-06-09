@@ -36,6 +36,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.sven-maibaum.com/404.html</loc>
+    <lastmod>2025-06-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+  </url>
   <!-- Die projekt-detail-layout.html wird hier ausgelassen, da sie eine Vorlage ist. -->
   <!-- Falls du weitere Seiten hinzufügst, sollten diese hier ebenfalls eingetragen werden. -->
 </urlset>
