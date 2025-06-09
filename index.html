@@ -534,7 +534,7 @@
                     direkt.
                 </p>
                 <div class="formspree-form-container">
-                    <form action="https://formspree.io/f/xvgrpazj" class="fs-form" target="_top" method="POST">
+                    <form id="contactForm" action="https://formspree.io/f/xvgrpazj" class="fs-form" target="_top" method="POST">
                         <div class="fs-field">
                             <label class="fs-label" for="name">Ihr Name</label>
                             <input class="fs-input" id="name" name="name" type="text" placeholder="Max Mustermann"
@@ -554,6 +554,7 @@
                                 required></textarea>
                             <p class="fs-description">Was möchten Sie besprechen?</p>
                         </div>
+                        <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
                         <div class="fs-button-group">
                             <button class="fs-button" type="submit">Nachricht Senden</button>
                         </div>
@@ -587,6 +588,8 @@
         </div>
     </footer>
     <script src="js/script.js" defer></script>
+    <script src="js/contact.js" defer></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="js/theme.js" defer></script>
 </body>
 
