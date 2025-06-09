@@ -357,8 +357,15 @@
         <div class="container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12"><span class="gradient-text">Ausgewählte
                     Projekte</span></h2>
+            <div id="project-filters" class="flex flex-wrap justify-center mb-6">
+                <button class="filter-btn active" data-filter="all">Alle</button>
+                <button class="filter-btn" data-filter="unreal-engine">Unreal Engine</button>
+                <button class="filter-btn" data-filter="ai-ml">AI/ML</button>
+                <button class="filter-btn" data-filter="java">Java</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+            </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="glassmorphism rounded-xl overflow-hidden shadow-xl project-card">
+                <div class="glassmorphism rounded-xl overflow-hidden shadow-xl project-card" data-tags="unreal-engine perforce multiplayer">
                     <img src="https://placehold.co/600x400/805ad5/FFFFFF?text=The+Prisonbreak+Gameplay"
                         alt="The Prisonbreak - Open World Multiplayer Spiel" class="w-full h-56 object-cover"
                         loading="lazy">
@@ -381,7 +388,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="glassmorphism rounded-xl overflow-hidden shadow-xl project-card">
+                <div class="glassmorphism rounded-xl overflow-hidden shadow-xl project-card" data-tags="ai-ml python transformers hugging-face">
                     <img src="https://placehold.co/600x400/2c7a7b/FFFFFF?text=Gemma+Toxic+LLM"
                         alt="Gemma-2b-it-Toxic-v2.0 Sprachmodell" class="w-full h-56 object-cover" loading="lazy">
                     <div class="p-6 flex flex-col flex-grow">
@@ -404,7 +411,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="glassmorphism rounded-xl overflow-hidden shadow-xl project-card">
+                <div class="glassmorphism rounded-xl overflow-hidden shadow-xl project-card" data-tags="java spring-boot postgresql github-oauth">
                     <img src="https://placehold.co/600x400/e5a935/1a202c?text=Exambyte+Testsystem"
                         alt="Exambyte - Web-basiertes Testsystem" class="w-full h-56 object-cover" loading="lazy">
                     <div class="p-6 flex flex-col flex-grow">
@@ -427,7 +434,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="glassmorphism rounded-xl overflow-hidden shadow-xl project-card">
+                <div class="glassmorphism rounded-xl overflow-hidden shadow-xl project-card" data-tags="konzept ki-ml python react-vue">
                     <img src="https://placehold.co/600x400/1a202c/38b2ac?text=KI+Marketing+Plattform"
                         alt="KI-Marketing Plattform Konzept" class="w-full h-56 object-cover" loading="lazy">
                     <div class="p-6 flex flex-col flex-grow">

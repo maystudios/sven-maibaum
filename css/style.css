@@ -298,6 +298,27 @@ a.bg-gradient-to-r:hover, button.bg-gradient-to-r:hover {
 .tech-tag-orange { background-color: var(--tech-tag-orange-bg); color: var(--tech-tag-orange-text); }
 .tech-tag-indigo { background-color: var(--tech-tag-indigo-bg); color: var(--tech-tag-indigo-text); }
 
+/* Project filter buttons */
+.filter-btn {
+    background-color: var(--tech-tag-gray-bg);
+    color: var(--tech-tag-gray-text);
+    border-radius: 9999px;
+    padding: 0.375rem 0.75rem;
+    margin: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.filter-btn:hover {
+    background-color: var(--tech-tag-gray-text);
+    color: #fff;
+}
+.filter-btn.active {
+    background-image: linear-gradient(to right, var(--button-gradient-from), var(--button-gradient-to));
+    color: var(--button-text-color);
+}
+
 /* Project Detail Page Specifics */
 .project-detail-container {
     max-width: 900px;

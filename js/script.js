@@ -65,9 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const animatedSections = document.querySelectorAll('.fade-in-up');
     if (typeof IntersectionObserver !== 'undefined') {
         const observerOptions = {
-            root: null, 
-            rootMargin: '0px', 
-            threshold: 0.1 
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
         };
 
         const observer = new IntersectionObserver((entries, observerInstance) => {
@@ -87,6 +87,25 @@ document.addEventListener('DOMContentLoaded', () => {
             section.classList.add('visible');
         });
     }
+
+    // Project filtering
+    const filterButtons = document.querySelectorAll('#project-filters .filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.dataset.filter;
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            projectCards.forEach(card => {
+                const tags = card.dataset.tags ? card.dataset.tags.split(' ') : [];
+                if (filter === 'all' || tags.includes(filter)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    });
 
     // Der alte Code für das Kontaktformular (id="contactForm") wurde entfernt,
     // da Formspree die Formularverarbeitung übernimmt.
