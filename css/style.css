@@ -280,6 +280,10 @@ a.bg-gradient-to-r:hover, button.bg-gradient-to-r:hover {
 
 /* Tech Tags */
 .tech-tag {
+      background: color-mix(in oklab, var(--info-modal-content-bg) 85%, transparent);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(2px);
+
     display: inline-block;
     font-size: 0.75rem;
     font-weight: 600;
@@ -810,4 +814,54 @@ html[data-theme="light"] .fs-select {
 /* optional: etwas weichere Rotation/Öffnen */
 [data-disclosure-btn] [data-chevron] {
   transition: transform .25s ease;
+}
+
+/* Gleicher Look & Feel wie im Architektur-Modal + sanfter Blur */
+.info-modal { backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); }
+
+/* Einheitliche Close-Button-Selektor für beide Modale */
+.info-modal .modal-close { color: var(--info-modal-muted-text-color); }
+.info-modal .modal-close:hover { color: var(--info-modal-text-color); }
+
+/* sanfte Scale/Fade ist in deinen Regeln schon drin:
+   .info-modal.hidden { opacity:0; pointer-events:none; }
+   .info-modal-content { transform: scale(0.95); }
+   .info-modal:not(.hidden) .info-modal-content { transform: scale(1); }
+*/
+
+/* Philosophie-Basiskarten: Subline-Zeile */
+.phil-card .card-row{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:.75rem;
+  margin-top:.125rem;
+}
+
+.phil-card .card-desc{
+  color:var(--text-muted-color);
+  font-size:.9rem;
+  line-height:1.4;
+  /* Optional: auf 1 Zeile einkürzen; auskommentieren, wenn du 2 Zeilen willst */
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.phil-card .card-more{
+  color:var(--link-color);
+  font-weight:600;
+  font-size:.9rem;
+  white-space:nowrap;
+  flex-shrink:0;
+  opacity:.95;
+  transition:color .2s ease, opacity .2s ease, transform .2s ease;
+}
+.phil-card:hover .card-more{ color:var(--link-hover-color); opacity:1; }
+.phil-card:active .card-more{ transform:translateY(1px); }
+
+/* kleine Screens: brechbar, aber gleiche Zeile versuchen */
+@media (max-width: 420px){
+  .phil-card .card-row{ gap:.5rem; }
+  .phil-card .card-desc{ max-width: 70%; }
 }

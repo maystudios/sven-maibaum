@@ -5,155 +5,81 @@
             <span class="gradient-text">Meine Arbeitsphilosophie</span>
         </h2>
 
-        <!-- kurzer, sachlicher Einstieg -->
+        <!-- Story-Einstieg -->
         <div class="max-w-3xl mx-auto text-center mb-10">
             <div class="glassmorphism p-6 rounded-xl shadow-xl">
                 <p class="leading-relaxed">
-                    Mir ist wichtig, Systeme <strong>modular, wartbar und offen</strong> zu bauen.
-                    Ideen probiere ich gern früh aus – so entsteht schnelle Rückmeldung
-                    und eine Lösung, die sich ruhig weiterentwickeln lässt.
+                    Für mich ist wichtig, dass Systeme <strong>modular, wartbar und dynamisch</strong> aufgebaut sind.
+                    Sie sollen offen sein für Erweiterungen – egal ob durch andere Entwickler oder durch Nutzer.
+                    Ideen probiere ich schnell aus, um früh zu sehen, was funktioniert. So entsteht ein praktischer
+                    Lerneffekt und Lösungen, die nicht im Weg stehen.
                 </p>
             </div>
         </div>
 
-        <!-- Karten mit "Mehr anzeigen" (Disclosure) -->
-        <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto" data-philosophy-grid>
-            <!-- 1. Modular & erweiterbar -->
-            <article class="glassmorphism p-6 rounded-xl shadow-xl" data-disclosure>
-                <header class="flex items-start justify-between gap-4">
-                    <div>
-                        <h3 class="text-xl font-semibold">Modular &amp; erweiterbar</h3>
-                        <p class="text-sm leading-relaxed mt-1 opacity-90">
-                            Schnittstellen und Strukturen so wählen, dass neue Teile ohne Brüche dazukommen können.
-                        </p>
-                    </div>
-                    <button type="button"
-                        class="inline-flex items-center gap-1 px-3 py-2 rounded-lg border transition hover:border-[var(--link-color)]"
-                        data-disclosure-btn aria-expanded="false" aria-controls="ph1-panel">
-                        <span>Mehr anzeigen</span>
-                        <svg class="w-4 h-4 transition-transform" data-chevron viewBox="0 0 20 20" fill="currentColor"
-                            aria-hidden="true">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" />
-                        </svg>
-                    </button>
-                </header>
-
-                <div id="ph1-panel"
-                    class="overflow-hidden will-change-[max-height] transition-[max-height] duration-300 ease-out"
-                    data-disclosure-panel hidden role="region" aria-label="Details: Modular & erweiterbar">
-                    <div class="pt-4 border-t border-[var(--glass-border)]">
-                        <p class="text-sm leading-relaxed opacity-90">
-                            Plugins und Erweiterungen sind mitgedacht: klare Schnittstellen, lose Kopplung, sinnvolle
-                            Defaults.
-                            Ziel ist, dass andere Entwickler Funktionen ergänzen können, ohne das Grundsystem umzubauen.
-                        </p>
-                    </div>
-                </div>
+        <!-- Kacheln (Klick öffnet Info-Karte) -->
+        <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <article
+                class="glassmorphism p-6 rounded-xl shadow-xl phil-card cursor-pointer hover:translate-y-[-2px] transition"
+                data-key="modular">
+                <h3 class="text-xl font-semibold mb-2">Modular &amp; erweiterbar</h3>
+                <p class="text-sm leading-relaxed mb-0">
+                    Schnittstellen & Strukturen, die Änderungen leicht machen.
+                    <span class="inline-block text-teal-400 ml-1">Mehr&nbsp;Infos</span>
+                </p>
             </article>
 
-            <!-- 2. Clean Code & Clean Design -->
-            <article class="glassmorphism p-6 rounded-xl shadow-xl" data-disclosure>
-                <header class="flex items-start justify-between gap-4">
-                    <div>
-                        <h3 class="text-xl font-semibold">Clean Code &amp; Clean Design</h3>
-                        <p class="text-sm leading-relaxed mt-1 opacity-90">
-                            Lesbarer Code, klare Verantwortlichkeiten und ruhige Strukturen.
-                        </p>
-                    </div>
-                    <button type="button"
-                        class="inline-flex items-center gap-1 px-3 py-2 rounded-lg border transition hover:border-[var(--link-color)]"
-                        data-disclosure-btn aria-expanded="false" aria-controls="ph2-panel">
-                        <span>Mehr anzeigen</span>
-                        <svg class="w-4 h-4 transition-transform" data-chevron viewBox="0 0 20 20" fill="currentColor"
-                            aria-hidden="true">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" />
-                        </svg>
-                    </button>
-                </header>
-
-                <div id="ph2-panel"
-                    class="overflow-hidden will-change-[max-height] transition-[max-height] duration-300 ease-out"
-                    data-disclosure-panel hidden role="region" aria-label="Details: Clean Code & Clean Design">
-                    <div class="pt-4 border-t border-[var(--glass-border)]">
-                        <p class="text-sm leading-relaxed opacity-90">
-                            Wartbarkeit entsteht durch gute Namen, klare Schnitte, Tests und knappe, hilfreiche
-                            Dokumentation.
-                            Das hält Projekte ruhig – heute und später.
-                        </p>
-                    </div>
-                </div>
+            <article
+                class="glassmorphism p-6 rounded-xl shadow-xl phil-card cursor-pointer hover:translate-y-[-2px] transition"
+                data-key="clean">
+                <h3 class="text-xl font-semibold mb-2">Clean Code &amp; Design</h3>
+                <p class="text-sm leading-relaxed mb-0">
+                    Verständlich, testbar, anpassbar – über den ganzen Lifecycle.
+                    <span class="inline-block text-orange-400 ml-1">Mehr&nbsp;Infos</span>
+                </p>
             </article>
 
-            <!-- 3. Schnell prototypen & lernen -->
-            <article class="glassmorphism p-6 rounded-xl shadow-xl" data-disclosure>
-                <header class="flex items-start justify-between gap-4">
-                    <div>
-                        <h3 class="text-xl font-semibold">Schnell prototypen &amp; lernen</h3>
-                        <p class="text-sm leading-relaxed mt-1 opacity-90">
-                            Ideen früh praktisch machen, Feedback einholen, anpassen.
-                        </p>
-                    </div>
-                    <button type="button"
-                        class="inline-flex items-center gap-1 px-3 py-2 rounded-lg border transition hover:border-[var(--link-color)]"
-                        data-disclosure-btn aria-expanded="false" aria-controls="ph3-panel">
-                        <span>Mehr anzeigen</span>
-                        <svg class="w-4 h-4 transition-transform" data-chevron viewBox="0 0 20 20" fill="currentColor"
-                            aria-hidden="true">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" />
-                        </svg>
-                    </button>
-                </header>
-
-                <div id="ph3-panel"
-                    class="overflow-hidden will-change-[max-height] transition-[max-height] duration-300 ease-out"
-                    data-disclosure-panel hidden role="region" aria-label="Details: Schnell prototypen & lernen">
-                    <div class="pt-4 border-t border-[var(--glass-border)]">
-                        <p class="text-sm leading-relaxed opacity-90">
-                            Kurze Wege zu einem greifbaren Stand helfen, Entscheidungen ruhig zu treffen. Wenn etwas
-                            nicht passt,
-                            ist es schnell sichtbar – und man lernt direkt dazu.
-                        </p>
-                    </div>
-                </div>
+            <article
+                class="glassmorphism p-6 rounded-xl shadow-xl phil-card cursor-pointer hover:translate-y-[-2px] transition"
+                data-key="proto">
+                <h3 class="text-xl font-semibold mb-2">Schnell prototypen &amp; lernen</h3>
+                <p class="text-sm leading-relaxed mb-0">
+                    Ideen praktisch prüfen, früh Erkenntnisse gewinnen.
+                    <span class="inline-block text-purple-400 ml-1">Mehr&nbsp;Infos</span>
+                </p>
             </article>
 
-            <!-- 4. Core-Systeme & Tools für Entwickler -->
-            <article class="glassmorphism p-6 rounded-xl shadow-xl" data-disclosure>
-                <header class="flex items-start justify-between gap-4">
-                    <div>
-                        <h3 class="text-xl font-semibold">Core-Systeme &amp; Tools für Entwickler</h3>
-                        <p class="text-sm leading-relaxed mt-1 opacity-90">
-                            Kleine Helfer, die oft gebraucht werden und Zeit sparen.
-                        </p>
-                    </div>
-                    <button type="button"
-                        class="inline-flex items-center gap-1 px-3 py-2 rounded-lg border transition hover:border-[var(--link-color)]"
-                        data-disclosure-btn aria-expanded="false" aria-controls="ph4-panel">
-                        <span>Mehr anzeigen</span>
-                        <svg class="w-4 h-4 transition-transform" data-chevron viewBox="0 0 20 20" fill="currentColor"
-                            aria-hidden="true">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" />
-                        </svg>
-                    </button>
-                </header>
-
-                <div id="ph4-panel"
-                    class="overflow-hidden will-change-[max-height] transition-[max-height] duration-300 ease-out"
-                    data-disclosure-panel hidden role="region"
-                    aria-label="Details: Core-Systeme & Tools für Entwickler">
-                    <div class="pt-4 border-t border-[var(--glass-border)]">
-                        <p class="text-sm leading-relaxed opacity-90">
-                            Utility-Methoden, wiederverwendbare Komponenten oder kleine Workflows, die sich gut teilen
-                            lassen
-                            und im Alltag häufig unterstützen – unaufgeregt, aber wirksam.
-                        </p>
-                    </div>
-                </div>
+            <article
+                class="glassmorphism p-6 rounded-xl shadow-xl phil-card cursor-pointer hover:translate-y-[-2px] transition"
+                data-key="core">
+                <h3 class="text-xl font-semibold mb-2">Core-Systeme &amp; Dev-Tools</h3>
+                <p class="text-sm leading-relaxed mb-0">
+                    Kleine Helfer mit großer Wirkung im Alltag.
+                    <span class="inline-block text-blue-400 ml-1">Mehr&nbsp;Infos</span>
+                </p>
             </article>
         </div>
     </div>
 </section>
+
+<!-- Overlay -->
+<div id="philosophy-overlay" class="info-modal hidden" role="dialog" aria-modal="true"
+    aria-labelledby="philosophy-title">
+
+    <!-- Panel -->
+    <div class="info-modal-content modal-panel">
+        <div class="flex items-start justify-between gap-4">
+            <h3 id="philosophy-title" class="text-2xl font-bold gradient-text">Titel</h3>
+
+            <!-- Close -->
+            <button id="philosophy-close" class="modal-close rounded-lg p-2 hover:bg-white/5" aria-label="Schließen">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="philosophy-body" class="mt-3 space-y-3 text-sm leading-relaxed"></div>
+        <div id="philosophy-tags" class="mt-4 flex flex-wrap gap-2"></div>
+    </div>
+</div>

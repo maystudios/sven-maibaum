@@ -1,151 +1,183 @@
 // /js/philosophy.js
-// Lädt /components/philosophy.html (wie der Footer-Loader) ODER initialisiert direkt,
-// falls die Section bereits serverseitig eingebunden ist.
-
 (function () {
-  const CANDIDATES = [
+  // 1) Component Loader (wie footer.js)
+  const candidates = [
     '/components/philosophy.html',
     'components/philosophy.html',
     './components/philosophy.html'
   ];
 
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const mount = document.getElementById('philosophy-root');
+  if (!mount) return;
 
   const tryFetch = async (urls) => {
     for (const url of urls) {
       try {
         const res = await fetch(url, { credentials: 'same-origin' });
         if (res.ok) return await res.text();
-      } catch (_) { /* nächster Kandidat */ }
+      } catch (_) { /* next */ }
     }
-    throw new Error('Philosophy konnte nicht geladen werden.');
+    throw new Error('Philosophy component konnte nicht geladen werden.');
   };
 
-  // Disclosure/Accordion-Initialisierung
-  const initPhilosophy = () => {
-    const root = document.getElementById('philosophy');
-    if (!root) return;
-
-    const disclosures = root.querySelectorAll('[data-disclosure]');
-    disclosures.forEach((card, idx) => {
-      const btn = card.querySelector('[data-disclosure-btn]');
-      const panel = card.querySelector('[data-disclosure-panel]');
-      const chevron = card.querySelector('[data-chevron]');
-      if (!btn || !panel) return;
-
-      // IDs/ARIA
-      if (!panel.id) {
-        panel.id = `ph-panel-${idx + 1}`;
-      }
-      btn.setAttribute('aria-controls', panel.id);
-      btn.setAttribute('aria-expanded', 'false');
-
-      // Startzustand geschlossen
-      panel.hidden = false; // wir steuern über max-height (nicht hidden), sonst Flackern
-      panel.style.overflow = 'hidden';
-      panel.style.maxHeight = '0px';
-      if (!prefersReduced) {
-        panel.style.transition = panel.style.transition || 'max-height 240ms ease';
-      }
-
-      const setExpanded = (expanded) => {
-        btn.setAttribute('aria-expanded', String(expanded));
-        if (!prefersReduced) {
-          if (expanded) {
-            // zuerst eine feste Höhe für die Transition setzen, danach auf 'none' schalten
-            const target = panel.scrollHeight;
-            panel.style.maxHeight = target + 'px';
-            if (chevron) chevron.style.transform = 'rotate(180deg)';
-          } else {
-            // von auto → feste Höhe → 0 animieren
-            if (panel.style.maxHeight === 'none') {
-              panel.style.maxHeight = panel.scrollHeight + 'px';
-              // Reflow erzwingen
-              // eslint-disable-next-line no-unused-expressions
-              panel.offsetHeight;
-            }
-            panel.style.maxHeight = '0px';
-            if (chevron) chevron.style.transform = 'rotate(0deg)';
-          }
-        } else {
-          panel.style.maxHeight = expanded ? 'none' : '0px';
-          if (chevron) chevron.style.transform = expanded ? 'rotate(180deg)' : 'rotate(0deg)';
-        }
-      };
-
-      // Nach der Öffnungs-Transition auf "none" setzen, damit der Inhalt mitwächst
-      panel.addEventListener('transitionend', (e) => {
-        if (e.propertyName !== 'max-height') return;
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        if (expanded) {
-          panel.style.maxHeight = 'none';
-        }
-      });
-
-      // Toggle
-      btn.addEventListener('click', () => {
-        const isOpen = btn.getAttribute('aria-expanded') === 'true';
-        setExpanded(!isOpen);
-      });
-
-      // ESC zum Schließen, wenn Fokus im Panel
-      panel.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
-          setExpanded(false);
-          btn.focus();
-        }
-      });
-    });
+  // 2) Content-Daten für Info-Karte (ALLES hier gebündelt)
+  const info = {
+    modular: {
+      title: 'Modular & erweiterbar',
+      body: [
+        'Systeme sind nie wirklich „fertig“. Ich designe APIs und Grenzen so, dass sie Erweiterungen aushalten – ohne Refactor-Lawinen.',
+        'Hexagonal / Ports-&-Adapters, klare Abhängigkeitsrichtung, Events für Entkopplung wo sinnvoll.'
+      ],
+      bullets: [
+        'Stabile Domänengrenzen, klare Verantwortlichkeiten',
+        'Versionierbare Schnittstellen (API-Verträge)',
+        'Kompatibel mit „modularer Monolith“ und Microservice-Cut'
+      ],
+      tags: ['Modular Monolith', 'Ports & Adapters', 'Extensibility']
+    },
+    clean: {
+      title: 'Clean Code & Design',
+      body: [
+        'Lesbar, testbar, änderbar – das zählt nachhaltig mehr als „clevere“ Einzeiler.',
+        'Naming, klare Module, geringe Kopplung, hohe Kohäsion, sinnvolle Comments & Docs.'
+      ],
+      bullets: [
+        'SOLID / KISS / YAGNI pragmatisch anwenden',
+        'Automatisierte Tests & Linting',
+        'Architektur-Fitnessfunktionen (Build-Guardrails)'
+      ],
+      tags: ['Clean Code', 'Testing', 'Maintainability']
+    },
+    proto: {
+      title: 'Schnell prototypen & lernen',
+      body: [
+        'Ich validiere früh: kleine Prototypen geben schnelle Erkenntnisse – auch wenn wir sie verwerfen.',
+        'Fail-fast, aber nachhaltig: Prototyp ≠ Müllcode – Erkenntnisse fließen kuratiert ins Produkt.'
+      ],
+      bullets: [
+        'Spike/Prototype → Decision Record',
+        'Messbare Hypothesen statt Bauchgefühl',
+        'Zeitbudget & Exit-Kriterien definieren'
+      ],
+      tags: ['Prototyping', 'Lean Learning', 'ADR']
+    },
+    core: {
+      title: 'Core-Systeme & Dev-Tools',
+      body: [
+        'Ich baue gern Grundlagen, die anderen den Alltag erleichtern: Utility-Libs, Reusable Widgets/Plugins, CI-Snippets.',
+        'Viele kleine 1%-Verbesserungen ergeben spürbare Velocity-Gewinne.'
+      ],
+      bullets: [
+        'Wiederverwendbare Komponenten/Blueprint-Libraries',
+        'Gute Defaults, klare Doku, Beispielprojekte',
+        '„Golden Path“ + Guardrails'
+      ],
+      tags: ['DX', 'Tooling', 'Reuse']
+    }
   };
 
-  const mountOrInit = async () => {
-    // Fall A: Section ist bereits im DOM vorhanden (serverseitig eingebaut)
-    const existing = document.getElementById('philosophy');
-    if (existing) {
-      initPhilosophy();
-      return;
-    }
+  // 3) Hilfsfunktionen für das Overlay
+  const el = {
+    overlay: null,
+    close: null,
+    title: null,
+    body: null,
+    tags: null
+  };
 
-    // Fall B: Wir haben einen Mount-Point, laden Partial und ersetzen ihn
-    const mount = document.getElementById('philosophy-root');
-    if (!mount) {
-      // Weder Section noch Mount vorhanden → nichts zu tun
-      return;
-    }
+  const openOverlay = (key) => {
+    const data = info[key];
+    if (!data || !el.overlay) return;
 
+    // Titel
+    el.title.textContent = data.title;
+
+    // Body (Absätze + Bullets)
+    const paras = (data.body || []).map(p => `<p>${p}</p>`).join('');
+    const bullets = (data.bullets && data.bullets.length)
+      ? `<ul class="list-disc list-inside space-y-1">${data.bullets.map(b => `<li>${b}</li>`).join('')}</ul>`
+      : '';
+
+    el.body.innerHTML = `${paras}${bullets}`;
+
+    // Tags
+    el.tags.innerHTML = (data.tags || [])
+      .map(t => `<span class="tech-tag">${t}</span>`)
+      .join(' ');
+
+    // Anzeigen + Scroll lock
+    el.overlay.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    // Fokus für A11y
+    el.close.focus();
+  };
+
+  const closeOverlay = () => {
+    if (!el.overlay) return;
+    el.overlay.classList.add('hidden');
+    document.body.style.overflow = '';
+  };
+
+  // 4) Initialisieren
+  (async () => {
     try {
-      const html = await tryFetch(CANDIDATES);
-      // Wir erwarten, dass das Partial bereits <section id="philosophy"> enthält.
-      mount.outerHTML = html;
+      const html = await tryFetch(candidates);
+      mount.innerHTML = html;
 
-      // optionales Fade-In direkt triggern (wenn du .fade-in-up nutzt)
-      requestAnimationFrame(() => {
-        const sec = document.getElementById('philosophy');
-        if (sec && sec.classList.contains('fade-in-up')) {
-          sec.classList.add('visible');
+      // Query Overlay-Elemente nach dem Einfügen
+      el.overlay = mount.querySelector('#philosophy-overlay');
+      el.close   = mount.querySelector('#philosophy-close');
+      el.title   = mount.querySelector('#philosophy-title');
+      el.body    = mount.querySelector('#philosophy-body');
+      el.tags    = mount.querySelector('#philosophy-tags');
+
+      // Klick-Handler auf Kacheln
+      mount.querySelectorAll('.phil-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const key = card.getAttribute('data-key');
+          openOverlay(key);
+        });
+      });
+
+      // Overlay Close-Handler
+      if (el.close) el.close.addEventListener('click', closeOverlay);
+      if (el.overlay) {
+        el.overlay.addEventListener('click', (e) => {
+          if (e.target === el.overlay) closeOverlay();
+        });
+      }
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && el.overlay && !el.overlay.classList.contains('hidden')) {
+          closeOverlay();
         }
       });
 
-      // Disclosure initialisieren
-      initPhilosophy();
+      // Optional: Scroll-In Animation aktivieren (wie im Showcase)
+      const animated = mount.querySelectorAll('.fade-in-up');
+      if (typeof IntersectionObserver !== 'undefined' && animated.length) {
+        const obs = new IntersectionObserver((entries, o) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              o.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        animated.forEach(elm => obs.observe(elm));
+      } else {
+        animated.forEach(elm => elm.classList.add('visible'));
+      }
     } catch (err) {
-      console.warn('[philosophy] Laden fehlgeschlagen:', err);
-      // Fallback-UI
-      const year = new Date().getFullYear();
-      mount.outerHTML = `
-        <section id="philosophy" class="section-padding fade-in-up">
-          <div class="container mx-auto px-6">
-            <div class="glassmorphism p-6 rounded-xl shadow-xl text-center">
-              <p class="text-sm opacity-80">
-                Die Philosophie-Sektion konnte aktuell nicht geladen werden. (${year})
-              </p>
-            </div>
+      console.warn(err);
+      // Fallback Minimal-Content
+      mount.innerHTML = `
+        <section class="section-padding">
+          <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Meine Arbeitsphilosophie</h2>
+            <p>Komponente konnte nicht geladen werden.</p>
           </div>
-        </section>`;
-      initPhilosophy();
+        </section>
+      `;
     }
-  };
-
-  // Initial ausführen, wenn DOM bereit (defer reicht meist, hier doppelt sicher)
-  document.addEventListener('DOMContentLoaded', mountOrInit);
+  })();
 })();

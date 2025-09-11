@@ -47,6 +47,7 @@
 
     <!-- Deine globalen Styles -->
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/footer.css">
 
     <!-- JSON-LD: VideoGame -->
     <script type="application/ld+json">
@@ -1055,7 +1056,6 @@ html[data-theme="light"] .fs-select {
                         <li><strong>Entwickler/Publisher:</strong> Emotions-Gaming</li>
                         <li><strong>Status:</strong> <em>Planned Release: To be announced</em></li>
                     </ul>
-                    <p class="text-sm opacity-70 mt-3">Quellen: Steam-Store-Seite, Emotions-Gaming.</p>
                 </div>
                 <div class="glassmorphism p-6 rounded-xl shadow-xl">
                     <h2 class="text-2xl font-bold mb-3"><span class="gradient-text">Call to Action</span></h2>
@@ -1080,7 +1080,6 @@ html[data-theme="light"] .fs-select {
     <section class="section-padding">
         <div class="container mx-auto px-6">
             <h2 class="text-2xl font-bold mb-4"><span class="gradient-text">Steam</span></h2>
-            <p class="opacity-80 mb-4">Direkt aus dem Steam-Store eingebettet.</p>
             <iframe src="https://store.steampowered.com/widget/3613860/" frameborder="0" width="646"
                 height="190"></iframe>
         </div>
@@ -1119,18 +1118,10 @@ html[data-theme="light"] .fs-select {
                                 href="https://www.linkedin.com/in/sven-maibaum/" target="_blank" rel="noopener">Sven
                                 Maibaum</a></li>
                     </ul>
-                    <p class="text-sm opacity-70 mt-4">Bildrechte: Bitte nur freigegebene/selbst erstellte Assets
-                        nutzen. Die hier verlinkten Steam-Thumbnails sind Platzhalter zum Testen.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <footer class="py-12">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; <span id="year"></span> Sven Maibaum. Alle Rechte vorbehalten.</p>
-        </div>
-    </footer>
 
     <!-- Lightbox Overlay -->
     <div id="lightbox" class="lightbox hidden" aria-hidden="true" role="dialog" aria-label="Bildanzeige (Lightbox)">
@@ -1143,9 +1134,10 @@ html[data-theme="light"] .fs-select {
         <button class="lightbox__nav lightbox__next" id="lbNext" aria-label="Nächstes Bild">&#10095;</button>
     </div>
 
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+
+    <div id="site-footer-root"></div>
+
+    <script src="/js/footer.js" defer></script>
 
     <script src="../js/gallery-data.js"></script>
     <script src="../js/gallery.js" defer></script>
