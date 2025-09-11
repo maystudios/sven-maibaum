@@ -1,0 +1,20 @@
+/* css/footer.css */
+.footer { background-color: var(--bg-color-alt); color: var(--text-muted-color); }
+.footer .footer-text { color: var(--text-color); }
+.footer .footer-text-muted { color: var(--text-muted-color); }
+.footer .footer-heading { color: var(--text-color); text-transform: uppercase; letter-spacing: .06em; }
+.footer .footer-link { color: var(--link-color); text-decoration: none; }
+.footer .footer-link:hover { color: var(--link-hover-color); text-decoration: underline; }
+.footer .footer-icon { color: var(--text-muted-color); }
+.footer .footer-icon:hover { color: var(--link-hover-color); }
+
+/* Layout */
+.footer-grid { grid-template-columns: 1fr; }
+@media (min-width: 640px){ .footer-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (min-width: 1024px){ .footer-grid { grid-template-columns: 2fr 1fr 1fr 1.2fr; } }
+
+/* Bottom Bar */
+.footer .footer-bottom { background-color: var(--bg-color); border-top: 1px solid var(--glass-border); }
+
+/* A11y */
+.footer a:focus-visible { outline: 2px solid var(--link-color); outline-offset: 2px; border-radius: 4px; }

@@ -1,54 +1,84 @@
-// js/theme.js
+// /js/theme.js
 document.addEventListener('DOMContentLoaded', () => {
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+  const root = document.documentElement;
 
-    // Funktion zum Anwenden des Themes und Aktualisieren der Icon-Sichtbarkeit
-    const applyTheme = (theme) => {
-        if (theme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            if (themeToggleDarkIcon) themeToggleDarkIcon.classList.remove('hidden');
-            if (themeToggleLightIcon) themeToggleLightIcon.classList.add('hidden');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.documentElement.setAttribute('data-theme', 'light');
-            if (themeToggleDarkIcon) themeToggleDarkIcon.classList.add('hidden');
-            if (themeToggleLightIcon) themeToggleLightIcon.classList.remove('hidden');
-            localStorage.setItem('theme', 'light');
-        }
-    };
+  // Desktop
+  const btn = document.getElementById('theme-toggle');
+  const iconDark = document.getElementById('theme-toggle-dark-icon');   // Mond
+  const iconLight = document.getElementById('theme-toggle-light-icon'); // Sonne
 
-    // Überprüft gespeichertes Theme im localStorage oder Systempräferenz
-    // Die initiale Theme-Setzung erfolgt bereits durch das Skript im <head>
-    // Dieses Skript hier stellt sicher, dass die Icons korrekt sind und der Button funktioniert.
-    let currentTheme = document.documentElement.getAttribute('data-theme');
+  // Mobile
+  const btnMobile = document.getElementById('theme-toggle-mobile');
+  const iconDarkM = document.getElementById('theme-toggle-dark-icon-mobile');
+  const iconLightM = document.getElementById('theme-toggle-light-icon-mobile');
 
-    if (currentTheme === 'dark') {
-        if (themeToggleDarkIcon) themeToggleDarkIcon.classList.remove('hidden');
-        if (themeToggleLightIcon) themeToggleLightIcon.classList.add('hidden');
-    } else {
-        if (themeToggleDarkIcon) themeToggleDarkIcon.classList.add('hidden');
-        if (themeToggleLightIcon) themeToggleLightIcon.classList.remove('hidden');
+  // Safari/Chrome Glassmorphism repaint kick (fixed header)
+  const repaintFixedGlass = () => {
+    const header = document.querySelector('header.glassmorphism');
+    if (!header) return;
+    header.style.transform = 'translateZ(0)';
+    requestAnimationFrame(() => { header.style.transform = ''; });
+  };
+
+  const syncIcons = (mode) => {
+    const isDark = mode === 'dark';
+
+    // Desktop icons
+    if (iconDark && iconLight) {
+      iconDark.classList.toggle('hidden', !isDark);
+      iconLight.classList.toggle('hidden', isDark);
     }
-    
-    // Event-Listener für den Umschalt-Button
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', () => {
-            const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            applyTheme(newTheme);
-        });
-    }
+    if (btn) btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
 
-    // Lauscht auf Änderungen in der Systempräferenz
-    // Dies wird nur angewendet, wenn der Benutzer nicht explizit ein Theme gewählt hat.
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        if (!localStorage.getItem('theme')) { // Nur ändern, wenn keine explizite Wahl getroffen wurde
-            if (e.matches) {
-                applyTheme('dark');
-            } else {
-                applyTheme('light');
-            }
-        }
-    });
+    // Mobile icons
+    if (iconDarkM && iconLightM) {
+      iconDarkM.classList.toggle('hidden', !isDark);
+      iconLightM.classList.toggle('hidden', isDark);
+    }
+    if (btnMobile) btnMobile.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+  };
+
+  const applyTheme = (theme, { persist = true } = {}) => {
+    const mode = theme === 'dark' ? 'dark' : 'light';
+    root.setAttribute('data-theme', mode);
+    syncIcons(mode);
+
+    if (persist) localStorage.setItem('theme', mode);
+    else localStorage.removeItem('theme');
+
+    repaintFixedGlass();
+  };
+
+  // ---- Initialzustand ----
+  // Head-Inline-Script hat bereits data-theme gesetzt (savedTheme / prefers-color-scheme).
+  const savedTheme = localStorage.getItem('theme');
+  const currentAttr = root.getAttribute('data-theme'); // 'dark' | 'light' | null
+
+  if (savedTheme && savedTheme !== currentAttr) {
+    applyTheme(savedTheme, { persist: true });
+  } else {
+    applyTheme(currentAttr === 'dark' ? 'dark' : 'light', { persist: !!savedTheme });
+  }
+
+  // ---- Event-Handler (Desktop & Mobile) ----
+  const toggle = () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    applyTheme(next, { persist: true });
+  };
+
+  if (btn) btn.addEventListener('click', toggle);
+  if (btnMobile) btnMobile.addEventListener('click', toggle);
+
+  // ---- Auf Systempräferenzen reagieren (nur wenn kein savedTheme gesetzt) ----
+  const media = window.matchMedia('(prefers-color-scheme: dark)');
+  const onMediaChange = (e) => {
+    if (!localStorage.getItem('theme')) {
+      applyTheme(e.matches ? 'dark' : 'light', { persist: false });
+    }
+  };
+  if (typeof media.addEventListener === 'function') {
+    media.addEventListener('change', onMediaChange);
+  } else if (typeof media.addListener === 'function') {
+    media.addListener(onMediaChange);
+  }
 });

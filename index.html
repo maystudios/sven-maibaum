@@ -44,9 +44,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        xintegrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/footer.css">
 
     <!-- Strukturierte Daten (JSON-LD) für Person und Webseite -->
     <script type="application/ld+json">
@@ -122,7 +123,6 @@
                     <a href="#experience" class="hover:text-teal-400 transition duration-300 nav-link">Erfahrung</a>
                     <a href="#projects" class="hover:text-teal-400 transition duration-300 nav-link">Projekte</a>
                     <a href="#skills" class="hover:text-teal-400 transition duration-300 nav-link">Skills</a>
-                    <a href="blog/index.html" class="hover:text-teal-400 transition duration-300 nav-link">Blog</a>
                     <a href="#contact" class="hover:text-teal-400 transition duration-300 nav-link">Kontakt</a>
                 </nav>
                 <button id="theme-toggle" type="button" class="theme-switcher" title="Toggle theme">
@@ -184,8 +184,6 @@
                 class="block py-2 px-2 rounded hover:bg-gray-700 transition duration-300 mobile-menu-link nav-link">Projekte</a>
             <a href="#skills"
                 class="block py-2 px-2 rounded hover:bg-gray-700 transition duration-300 mobile-menu-link nav-link">Skills</a>
-            <a href="blog/index.html"
-                class="block py-2 px-2 rounded hover:bg-gray-700 transition duration-300 mobile-menu-link nav-link">Blog</a>
             <a href="#contact"
                 class="block py-2 px-2 rounded hover:bg-gray-700 transition duration-300 mobile-menu-link nav-link">Kontakt</a>
             <button id="close-mobile-menu-button" class="absolute top-6 right-6" aria-label="Mobiles Menü schließen">
@@ -226,38 +224,65 @@
 
     <section id="about" class="section-padding fade-in-up">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12"><span class="gradient-text">Über Mich</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                <span class="gradient-text">Über Mich</span>
             </h2>
             <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
                 <div class="md:w-1/3">
-                    <img src="https://placehold.co/400x400/38b2ac/FFFFFF?text=Sven+Maibaum"
-                        alt="Sven Maibaum - Profilbild"
+                    <img src="assets/images/sven_maibaum_profile.webp" alt="Sven Maibaum - Profilbild"
                         class="rounded-full shadow-2xl mx-auto w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-teal-500 glow-effect"
                         loading="lazy">
                 </div>
                 <div class="md:w-2/3 text-center md:text-left">
                     <h3 class="text-2xl font-semibold mb-4">Hallo, ich bin Sven Maibaum.</h3>
+
                     <p class="leading-relaxed mb-4">
-                        Als Gründer von <strong class="text-teal-400">MayStudios</strong>, Leitender Software-Architekt
-                        bei <strong class="text-purple-400">LikeTik by Axinity</strong> und Leitender Spieleentwickler
-                        bei <strong class="text-orange-400">Emotions Gaming</strong>, verbinde ich unternehmerische
-                        Vision mit tiefgreifender technischer Expertise. Mit über 6 Jahren Erfahrung in der Backend- und
-                        Full-Stack-Entwicklung sowie als Data Scientist, liegt meine Leidenschaft in der Konzeption und
-                        Umsetzung innovativer Softwarelösungen, fesselnder Spielerlebnisse und der Erforschung von
-                        KI-Modellen.
+                        Als Gründer von
+                        <a href="http://maystudios.net/" target="_blank" rel="noopener noreferrer"
+                            class="text-teal-400 hover:underline">MayStudios</a>,
+                        <a href="https://www.liketik.com/" target="_blank" rel="noopener noreferrer"
+                            class="text-purple-400 hover:underline">Leitender Software-Architekt bei LikeTik by
+                            Axinity</a>
+                        und <a href="https://www.emotions-gaming.de/" target="_blank" rel="noopener noreferrer"
+                            class="text-orange-400 hover:underline">Leitender Spieleentwickler bei Emotions Gaming</a>
+                        verbinde ich Unternehmertum mit tiefgreifender technischer Expertise.
                     </p>
+
                     <p class="leading-relaxed mb-4">
-                        Ich entwickle robuste Architekturen, gestalte intuitive Benutzererfahrungen und nutze Daten zur
-                        Optimierung von Prozessen und Produkten. Mein Ziel ist es, durch Technologie einen echten
-                        Mehrwert zu schaffen – sei es durch KI-gestützte Anwendungen, performante Web-Plattformen oder
-                        immersive Games.
+                        Mit <a href="http://maystudios.net/" target="_blank" rel="noopener noreferrer"
+                            class="text-teal-400 hover:underline">MayStudios</a>
+                        setze ich meinen Schwerpunkt klar auf Spieleentwicklung.
+                        Hier entstehen Spiele wie <em>Mr. Dork 3</em> oder kleinere
+                        <a href="https://maystudios.itch.io/" target="_blank" rel="noopener noreferrer"
+                            class="text-teal-400 hover:underline">itch.io-Projekte</a>.
+                        Außerdem entwickle und veröffentliche ich
+                        <a href="https://www.fab.com/sellers/May-Studios" target="_blank" rel="noopener noreferrer"
+                            class="text-teal-400 hover:underline">Plugins & Spieleentwicklungslösungen</a>
+                        für andere Entwickler.
                     </p>
+
+                    <p class="leading-relaxed mb-4">
+                        Gleichzeitig bringe ich meine Erfahrung in der Software-Architektur ein:
+                        ob beim Aufbau von skalierbaren Web-Plattformen, beim Design moderner
+                        Systemarchitekturen oder in der Konzeption datengetriebener Anwendungen.
+                        Diese Vielseitigkeit hilft mir, technische Herausforderungen
+                        strukturiert und zukunftsorientiert zu lösen.
+                    </p>
+
                     <p class="leading-relaxed mb-6">
-                        Derzeit vertiefe ich mein Wissen durch ein Studium an der <strong
-                            class="text-gray-300">Heinrich-Heine-Universität Düsseldorf</strong>, mit Fokus auf
-                        Web-Architektur und Datenbanken, und strebe danach, stets an der Spitze der technologischen
-                        Entwicklung zu stehen.
+                        Derzeit studiere ich <strong class="text-gray-300">Computer Science an der
+                            Heinrich-Heine-Universität Düsseldorf</strong>.
+                        Das Studium ist breit angelegt, stark theorieorientiert und hilft mir, mein Fundament in
+                        Bereichen
+                        wie Algorithmen, Core Systems und theoretischer Informatik zu festigen.
+                        Parallel dazu sammele ich in der Spieleentwicklung und in der Software-Entwicklung bereits
+                        wertvolle
+                        Praxiserfahrung.
+                        So kann ich Theorie und Praxis sinnvoll miteinander verknüpfen – die Universität nutze ich, um
+                        Themen in der Tiefe zu verstehen, die ich in realen Projekten gezielt anwenden und vertiefen
+                        kann.
                     </p>
+
                     <a href="#contact"
                         class="bg-gradient-to-r text-white font-medium py-2 px-6 rounded-lg transition duration-300 transform hover:scale-105 inline-block shadow-md nav-link">
                         Nehmen Sie Kontakt auf
@@ -269,33 +294,89 @@
 
     <section id="philosophy" class="section-padding fade-in-up">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12"><span class="gradient-text">Meine
-                    Arbeitsphilosophie</span></h2>
-            <div class="max-w-3xl mx-auto text-center">
-                <div class="glassmorphism p-8 rounded-xl shadow-xl">
-                    <svg class="w-16 h-16 text-teal-400 mx-auto mb-6" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L1.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.25 12L17 14.188l-1.25-2.188a2.25 2.25 0 01-1.7-1.7L12 8.75l2.188-1.25a2.25 2.25 0 011.7-1.7L18.25 4l1.25 2.188a2.25 2.25 0 011.7 1.7L23.75 10l-2.188 1.25a2.25 2.25 0 01-1.7 1.7L18.25 14l-1.25-2.188z" />
-                    </svg>
-                    <h3 class="text-2xl font-semibold mb-4">Innovation, Qualität & Partnerschaft</h3>
-                    <p class="leading-relaxed mb-3">
-                        Ich glaube an die Kraft der Technologie, um komplexe Probleme zu lösen und nachhaltigen Wert zu
-                        schaffen. Mein Ansatz basiert auf drei Kernprinzipien:
-                    </p>
-                    <ul class="leading-relaxed space-y-2 text-left list-disc list-inside pl-4">
-                        <li><strong>Innovation:</strong> Ständiges Lernen und die Anwendung neuester Technologien, um
-                            zukunftsweisende Lösungen zu entwickeln.</li>
-                        <li><strong>Qualität:</strong> Fokus auf sauberen Code, robuste Architekturen und eine
-                            exzellente User Experience in jedem Projekt.</li>
-                        <li><strong>Partnerschaft:</strong> Enge Zusammenarbeit und transparente Kommunikation, um
-                            gemeinsame Ziele effektiv zu erreichen.</li>
-                    </ul>
-                    <p class="leading-relaxed mt-4">
-                        Mein Ziel ist es nicht nur, funktionierende Software zu liefern, sondern Lösungen, die
-                        begeistern und echten Geschäftserfolg ermöglichen.
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                <span class="gradient-text">Meine Arbeitsphilosophie</span>
+            </h2>
+
+            <!-- Story-Einstieg -->
+            <div class="max-w-3xl mx-auto text-center mb-10">
+                <div class="glassmorphism p-6 rounded-xl shadow-xl">
+                    <p class="leading-relaxed">
+                        Für mich ist wichtig, dass Systeme <strong>modular, wartbar und dynamisch</strong> aufgebaut
+                        sind.
+                        Sie sollen offen sein für Erweiterungen – egal ob durch andere Entwickler oder durch Nutzer.
+                        Ideen probiere ich schnell aus, um früh zu sehen, was funktioniert. So entsteht ein praktischer
+                        Lerneffekt und Lösungen, die nicht im Weg stehen.
                     </p>
                 </div>
+            </div>
+
+            <!-- Prinzipien mit Expandable Details -->
+            <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                <!-- Modular & Erweiterbar -->
+                <article class="glassmorphism p-6 rounded-xl shadow-xl">
+                    <h3 class="text-xl font-semibold mb-2">Modular &amp; erweiterbar</h3>
+                    <p class="text-sm leading-relaxed mb-3">
+                        Systeme sind nie wirklich fertig. Schnittstellen und Strukturen sollten es leicht machen,
+                        Funktionen bei Bedarf zu ergänzen oder zu verändern.
+                    </p>
+                    <details class="text-sm leading-relaxed">
+                        <summary class="cursor-pointer text-teal-400 hover:text-teal-300">Mehr erfahren</summary>
+                        <p class="mt-2 opacity-90">
+                            Ein Beispiel sind meine Plugins, die ich so entwerfe, dass Entwickler eigene
+                            Erweiterungen hinzufügen können, ohne das Grundsystem verändern zu müssen.
+                        </p>
+                    </details>
+                </article>
+
+                <!-- Clean Code & Design -->
+                <article class="glassmorphism p-6 rounded-xl shadow-xl">
+                    <h3 class="text-xl font-semibold mb-2">Clean Code &amp; Design</h3>
+                    <p class="text-sm leading-relaxed mb-3">
+                        Klarer, lesbarer Code und ein durchdachtes Design sind für mich genauso wichtig wie die
+                        Funktion.
+                        So bleibt ein Projekt langfristig verständlich und anpassbar.
+                    </p>
+                    <details class="text-sm leading-relaxed">
+                        <summary class="cursor-pointer text-orange-400 hover:text-orange-300">Mehr erfahren</summary>
+                        <p class="mt-2 opacity-90">
+                            Bei kleineren Games wie <em>Mr. Dork 3</em> hat sich gezeigt, wie wertvoll ein
+                            sauberer Aufbau ist: Änderungen lassen sich so schnell und ohne Brüche einbauen.
+                        </p>
+                    </details>
+                </article>
+
+                <!-- Schnell prototypen -->
+                <article class="glassmorphism p-6 rounded-xl shadow-xl">
+                    <h3 class="text-xl font-semibold mb-2">Schnell prototypen &amp; lernen</h3>
+                    <p class="text-sm leading-relaxed mb-3">
+                        Statt lange zu planen, setze ich Ideen schnell praktisch um. Auch wenn nicht alles funktioniert,
+                        entsteht daraus ein direkter Lerneffekt.
+                    </p>
+                    <details class="text-sm leading-relaxed">
+                        <summary class="cursor-pointer text-purple-400 hover:text-purple-300">Mehr erfahren</summary>
+                        <p class="mt-2 opacity-90">
+                            Oft probiere ich kleine Features direkt in einem Prototyp aus. Auch wenn ich sie verwerfe,
+                            habe ich in kurzer Zeit Klarheit gewonnen und etwas gelernt.
+                        </p>
+                    </details>
+                </article>
+
+                <!-- Core-Systeme -->
+                <article class="glassmorphism p-6 rounded-xl shadow-xl">
+                    <h3 class="text-xl font-semibold mb-2">Core-Systeme &amp; Entwickler-Tools</h3>
+                    <p class="text-sm leading-relaxed mb-3">
+                        Ich arbeite gerne an Grundlagen, die anderen Programmierern die Arbeit erleichtern –
+                        kleine Helfer mit großer Wirkung.
+                    </p>
+                    <details class="text-sm leading-relaxed">
+                        <summary class="cursor-pointer text-blue-400 hover:text-blue-300">Mehr erfahren</summary>
+                        <p class="mt-2 opacity-90">
+                            Beispiele sind Utility-Methoden oder wiederverwendbare Komponenten, die
+                            im Alltag viel Zeit sparen, auch wenn sie auf den ersten Blick klein wirken.
+                        </p>
+                    </details>
+                </article>
             </div>
         </div>
     </section>
@@ -368,30 +449,33 @@
                 <button class="filter-btn" data-filter="python">Python</button>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="glassmorphism rounded-xl overflow-hidden shadow-xl project-card" data-tags="unreal-engine perforce multiplayer">
-                    <img src="https://placehold.co/600x400/805ad5/FFFFFF?text=The+Prisonbreak+Gameplay"
-                        alt="The Prisonbreak - Open World Multiplayer Spiel" class="w-full h-56 object-cover"
-                        loading="lazy">
+                <!-- HeistLine Projektkarte -->
+                <div class="glassmorphism rounded-xl overflow-hidden shadow-xl project-card"
+                    data-tags="unreal-engine multiplayer heist">
+                    <img src="assets/projects//heistline/VaultHeist.png" alt="HeistLine - Prison Escape & Heist MMO"
+                        class="w-full h-56 object-cover" loading="lazy">
                     <div class="p-6 flex flex-col flex-grow">
                         <div class="flex-grow">
-                            <h3 class="text-xl font-semibold mb-2 text-purple-400">The Prisonbreak</h3>
-                            <p class="text-sm mb-2">Leitender Entwickler für ein
-                                Open-World-Multiplayer-Spiel mit Fokus auf Gameplay und Architektur.</p>
+                            <h3 class="text-xl font-semibold mb-2 text-purple-400">HeistLine</h3>
+                            <p class="text-sm mb-2">Prison-Escape & Heist MMO – wähle Cop oder Criminal, plane
+                                Überfälle, baue Basen und
+                                dominiere online.</p>
                             <div class="mb-4">
                                 <span class="tech-tag tech-tag-purple">Unreal Engine</span>
-                                <span class="tech-tag tech-tag-gray">Perforce</span>
-                                <span class="tech-tag tech-tag-blue">Multiplayer</span>
+                                <span class="tech-tag tech-tag-gray">Multiplayer</span>
+                                <span class="tech-tag tech-tag-blue">MMO</span>
                             </div>
                         </div>
                         <div class="mt-auto pt-4">
-                            <a href="pages/projekt-prisonbreak.html" target="_self"
-                                class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300 transform hover:scale-105 text-sm">
-                                Mehr anzeigen &rarr;
+                            <a href="pages/projekt-heistline.html"
+                                class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-lg transition transform hover:scale-105 text-sm">
+                                Mehr anzeigen →
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="glassmorphism rounded-xl overflow-hidden shadow-xl project-card" data-tags="ai-ml python transformers hugging-face">
+                <div class="glassmorphism rounded-xl overflow-hidden shadow-xl project-card"
+                    data-tags="ai-ml python transformers hugging-face">
                     <img src="https://placehold.co/600x400/2c7a7b/FFFFFF?text=Gemma+Toxic+LLM"
                         alt="Gemma-2b-it-Toxic-v2.0 Sprachmodell" class="w-full h-56 object-cover" loading="lazy">
                     <div class="p-6 flex flex-col flex-grow">
@@ -414,7 +498,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="glassmorphism rounded-xl overflow-hidden shadow-xl project-card" data-tags="java spring-boot postgresql github-oauth">
+                <div class="glassmorphism rounded-xl overflow-hidden shadow-xl project-card"
+                    data-tags="java spring-boot postgresql github-oauth">
                     <img src="https://placehold.co/600x400/e5a935/1a202c?text=Exambyte+Testsystem"
                         alt="Exambyte - Web-basiertes Testsystem" class="w-full h-56 object-cover" loading="lazy">
                     <div class="p-6 flex flex-col flex-grow">
@@ -437,7 +522,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="glassmorphism rounded-xl overflow-hidden shadow-xl project-card" data-tags="konzept ki-ml python react-vue">
+                <div class="glassmorphism rounded-xl overflow-hidden shadow-xl project-card"
+                    data-tags="konzept ki-ml python react-vue">
                     <img src="https://placehold.co/600x400/1a202c/38b2ac?text=KI+Marketing+Plattform"
                         alt="KI-Marketing Plattform Konzept" class="w-full h-56 object-cover" loading="lazy">
                     <div class="p-6 flex flex-col flex-grow">
@@ -589,13 +675,8 @@
         </div>
     </section>
 
-    <footer class="py-8">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; <span id="currentYear"></span> Sven Maibaum. Alle Rechte vorbehalten.</p>
-            <p class="text-sm mt-1">Mit <span class="text-teal-500" aria-label="Herz">&hearts;</span> gestaltet und
-                entwickelt in Burscheid, Deutschland.</p>
-        </div>
-    </footer>
+    <div id="site-footer-root"></div>
+    <script src="/js/footer.js" defer></script>
     <script src="js/script.js" defer></script>
     <script src="js/theme.js" defer></script>
 </body>

@@ -1,4 +1,58 @@
-/* css/style.css */
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HeistLine (vormals The Prisonbreak) – Projektseite | Emotions-Gaming & MayStudios</title>
+    <meta name="description"
+        content="HeistLine ist ein Prison-Escape- & Heist-Spiel mit MMO-Elementen: Wähle Cop oder Criminal, plane Überfälle, baue Basen und spiele online mit Freunden. Wishlist auf Steam." />
+    <link rel="icon" href="../assets/favicon.ico" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.svenmaibaum.dev/pages/projekt-heistline.html" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sven Maibaum – Portfolio" />
+    <meta property="og:title" content="HeistLine – Prison-Escape & Heist (vormals The Prisonbreak)" />
+    <meta property="og:description"
+        content="Wähle Cop oder Criminal, plane Heists, baue Basen und dominiere mit deinem Team. Online Co-op & PvP. Wishlist auf Steam." />
+    <meta property="og:image"
+        content="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3613860/header.jpg" />
+    <meta property="og:url" content="https://www.svenmaibaum.dev/pages/projekt-heistline.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="HeistLine – Prison-Escape & Heist" />
+    <meta name="twitter:description"
+        content="Cop oder Criminal. Heists planen, Basen bauen, Bounties verdienen. Wishlist auf Steam." />
+    <meta name="twitter:image"
+        content="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3613860/header.jpg" />
+
+    <!-- Theme Init -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.setAttribute('data-theme', savedTheme || (prefersDark ? 'dark' : 'light'));
+        })();
+    </script>
+
+    <!-- Tailwind + Fonts + Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Deine globalen Styles -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- JSON-LD: VideoGame -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",/* css/style.css */
 
 /* Light Theme (Default) & Dark Theme Variablen */
 :root, html[data-theme="light"] {
@@ -202,8 +256,7 @@ body {
 
 header.fixed.glassmorphism, header.sticky.glassmorphism { /* Ensure header also uses themed glass */
     background: var(--header-bg);
-    border-bottom: 1px solid var(--glass-border); /* Add border to header */
-    will-change: background-color, backdrop-filter;
+     border-bottom: 1px solid var(--glass-border); /* Add border to header */
 }
 
 #mobile-menu {
@@ -408,6 +461,18 @@ a.bg-gradient-to-r:hover, button.bg-gradient-to-r:hover {
     border-color: var(--link-hover-color);
     transform: translateY(-2px);
 }
+
+/* Footer */
+footer {
+    background-color: var(--bg-color-alt); /* Themed footer background */
+    border-top: 1px solid var(--card-border); /* Themed border */
+    color: var(--text-muted-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+footer .text-teal-500 { /* Specific class in footer for heart icon */
+    color: var(--link-color);
+}
+
 
 /* Formspree Styles - Integrated with Theme Variables */
 /* Copied from user provided CSS and adapted */
@@ -807,7 +872,285 @@ html[data-theme="light"] .fs-select {
 .media-item { opacity: 0; transform: translateY(10px); }
 .media-item.is-visible { opacity: 1; transform: translateY(0); transition: opacity .4s ease, transform .4s ease; }
 
-/* optional: etwas weichere Rotation/Öffnen */
-[data-disclosure-btn] [data-chevron] {
-  transition: transform .25s ease;
-}
+      "name": "HeistLine",
+      "alternateName": "The Prisonbreak",
+      "url": "https://www.heist-line.com/",
+      "image": ["https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3613860/header.jpg"],
+      "description": "Prison-Escape & Heist mit MMO-Elementen: Spiele als Cop oder Criminal, plane Überfälle, baue Basen und kämpfe online um Bounties.",
+      "genre": ["Action","Adventure","Massively Multiplayer","RPG","Strategy"],
+      "author": {"@type":"Organization","name":"Emotions-Gaming"},
+      "publisher": {"@type":"Organization","name":"Emotions-Gaming"},
+      "inLanguage": ["de","en"],
+      "operatingSystem": "Windows",
+      "playMode": ["SinglePlayer","MultiPlayer","CoOp","MMO"],
+      "sameAs": [
+        "https://store.steampowered.com/app/3613860/The_Prisonbreak/",
+        "https://www.emotions-gaming.de/"
+      ]
+    }
+    </script>
+</head>
+
+<body class="antialiased">
+    <header class="fixed top-0 left-0 right-0 z-50 glassmorphism shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html#home" class="text-2xl font-bold gradient-text nav-link">Sven Maibaum</a>
+            <nav class="hidden md:flex space-x-6" aria-label="Hauptnavigation">
+                <a href="../index.html#projects" class="hover:text-teal-400 transition nav-link">Projekte</a>
+                <a href="../index.html#experience" class="hover:text-teal-400 transition nav-link">Erfahrung</a>
+                <a href="../index.html#contact" class="hover:text-teal-400 transition nav-link">Kontakt</a>
+            </nav>
+            <button id="theme-toggle" type="button" class="theme-switcher" title="Theme wechseln">
+                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                </svg>
+                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 10-1.414 1.414zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zM4 11a1 1 0 100-2H3a1 1 0 000 2h1zM11 17v1a1 1 0 11-2 0v-1a1 1 0 112 0z" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="min-h-[70vh] pt-28 pb-16 bg-cover bg-center flex items-center"
+        style="background-image: linear-gradient(rgba(10,15,31,.70), rgba(10,15,31,.85)), url('https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3613860/capsule_616x353.jpg');">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4"><span class="gradient-text">HeistLine</span> <span
+                        class="text-lg md:text-2xl align-middle opacity-80"> (vormals <em>The Prisonbreak</em>)</span>
+                </h1>
+                <p class="text-lg md:text-xl mb-6">Wähle deine Seite – <strong>Cop</strong> oder
+                    <strong>Criminal</strong>. Entkomme, plane <strong>Heists</strong>, baue <strong>Basen</strong>,
+                    verdiene <strong>Bounties</strong> und dominiere mit deinem Team in einem dynamischen
+                    Open-World-MMO-Setting.
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://store.steampowered.com/app/3613860/The_Prisonbreak/" target="_blank" rel="noopener"
+                        class="bg-gradient-to-r text-white font-semibold py-3 px-6 rounded-lg shadow-lg transform hover:scale-105 glow-effect">
+                        Auf Steam wünschen <i class="fa-brands fa-steam ml-2"></i>
+                    </a>
+                    <a href="https://www.heist-line.com/" target="_blank" rel="noopener"
+                        class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transform hover:scale-105">
+                        Offizielle Seite
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Elevator Pitch -->
+    <section class="section-padding">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="glassmorphism p-6 rounded-xl shadow-xl">
+                    <h2 class="text-2xl font-bold mb-3"><span class="gradient-text">Das Spiel in 30 Sekunden</span></h2>
+                    <p class="leading-relaxed">HeistLine verbindet <strong>Prison-Escape</strong>, <strong>taktische
+                            Überfälle</strong> und <strong>MMO-Spielgefühl</strong>. Entscheide dich für <em>Law &
+                            Order</em> oder die <em>Unterwelt</em>, schmiede Pläne, koordiniere mit deinem Squad und
+                        setze Strategien in einer lebendigen Open World um.</p>
+                    <ul class="mt-4 space-y-2 list-disc list-inside">
+                        <li><strong>Online Multiplayer</strong> (Co-op & PvP)</li>
+                        <li><strong>Heists & Raids</strong> mit Planungsphase</li>
+                        <li><strong>Base Building</strong> & Loadout-Progression</li>
+                        <li><strong>Bounty/Rep-System</strong> für Risiko/Belohnung</li>
+                    </ul>
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-xl">
+                    <img src="../assets/projects/heistline/VaultHeist.png" alt="Vault Heist – Beispiel-Screenshot"
+                        class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="section-padding">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12"><span class="gradient-text">Key Features</span>
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glassmorphism p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2">Wähle deine Seite</h3>
+                    <p>Als <strong>Cop</strong> jagst du Ausbrecher, sicherst Evidence und verhinderst Überfälle. Als
+                        <strong>Criminal</strong> fliehst du, planst Heists und baust ein Netzwerk auf.
+                    </p>
+                </div>
+                <div class="glassmorphism p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2">Heists mit Tiefe</h3>
+                    <p>Recon, Tools, Entry-Points, Rollenverteilung – <strong>Planung zählt</strong>. Improvisation
+                        rettet Missionen, wenn Pläne scheitern.</p>
+                </div>
+                <div class="glassmorphism p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2">Persistente Progression</h3>
+                    <p><strong>Basen/Unterschlüpfe</strong>, Loadouts, Fahrzeuge und Reputation formen deine
+                        Langzeit-Ziele.</p>
+                </div>
+                <div class="glassmorphism p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2">Bounty & Reputation</h3>
+                    <p>Hohe Kopfgelder locken Jäger – Ruhm birgt Risiko. Balance zwischen <strong>Profit</strong> und
+                        <strong>Exposure</strong>.
+                    </p>
+                </div>
+                <div class="glassmorphism p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2">Co-op & PvP</h3>
+                    <p>Koordiniere dich mit deinem Team, doch rechne mit <strong>Gegenwehr durch Spieler</strong> &
+                        AI-Security.</p>
+                </div>
+                <div class="glassmorphism p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2">Sprachen</h3>
+                    <p><strong>Deutsch</strong> & <strong>Englisch</strong> (Interface/Audio/Untertitel). <span
+                            class="opacity-70 text-sm">Quelle: Steam Store.</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gameplay Loop -->
+    <section class="section-padding">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h2 class="text-2xl font-bold mb-3"><span class="gradient-text">Gameplay-Loop (Criminal)</span></h2>
+                    <ol class="space-y-2 list-decimal list-inside">
+                        <li>Flucht/Einbruch vorbereiten: Info-Gathering, Tools, Rollen.</li>
+                        <li>Infiltration & Execution: Stealth, Social, Force – flexibel reagieren.</li>
+                        <li>Escape & Fencing: Fluchtwege, Hehlernetz, Geldfluss.</li>
+                        <li>Base-Ausbau & Loadouts optimieren; neue Ziele wählen.</li>
+                    </ol>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold mb-3"><span class="gradient-text">Gameplay-Loop (Cop)</span></h2>
+                    <ol class="space-y-2 list-decimal list-inside">
+                        <li>Patrol & Intel: Hotspots, Beobachtung, Durchsuchungen.</li>
+                        <li>Intervention: Sperren, Zugriff, Festnahme, Evidence sichern.</li>
+                        <li>Transport/Processing: Rückführung, Bounty-Claim.</li>
+                        <li>Aufrüstung, Team-Taktiken, nächste Operation planen.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie (neu, klickbar) -->
+    <section class="section-padding">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10"><span class="gradient-text">Galerie</span></h2>
+            <p class="text-center opacity-80 mb-6">Alle Bilder sind klickbar (Lightbox). Mit Pfeiltasten navigieren, ESC
+                schließt.</p>
+            <div id="gallery" class="media-grid"></div>
+        </div>
+    </section>
+
+    <!-- Fakten -->
+    <section class="section-padding">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glassmorphism p-6 rounded-xl shadow-xl">
+                    <h2 class="text-2xl font-bold mb-3"><span class="gradient-text">Fakten & Status</span></h2>
+                    <ul class="space-y-2">
+                        <li><strong>Plattform:</strong> PC (Windows), Steam (TBA)</li>
+                        <li><strong>Modi:</strong> Online Co-op, Online PvP, MMO</li>
+                        <li><strong>Sprachen:</strong> Deutsch & Englisch (UI/Audio/Subs)</li>
+                        <li><strong>Entwickler/Publisher:</strong> Emotions-Gaming</li>
+                        <li><strong>Status:</strong> <em>Planned Release: To be announced</em></li>
+                    </ul>
+                    <p class="text-sm opacity-70 mt-3">Quellen: Steam-Store-Seite, Emotions-Gaming.</p>
+                </div>
+                <div class="glassmorphism p-6 rounded-xl shadow-xl">
+                    <h2 class="text-2xl font-bold mb-3"><span class="gradient-text">Call to Action</span></h2>
+                    <p class="mb-4">Unterstütze das Projekt und erhalte News zum Release:</p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://store.steampowered.com/app/3613860/The_Prisonbreak/" target="_blank"
+                            rel="noopener"
+                            class="bg-gradient-to-r text-white font-semibold py-3 px-6 rounded-lg shadow-lg transform hover:scale-105 glow-effect">
+                            Auf Steam wünschen
+                        </a>
+                        <a href="https://discord.gg/" target="_blank" rel="noopener"
+                            class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg shadow">
+                            Discord beitreten
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steam Widget -->
+    <section class="section-padding">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl font-bold mb-4"><span class="gradient-text">Steam</span></h2>
+            <p class="opacity-80 mb-4">Direkt aus dem Steam-Store eingebettet.</p>
+            <iframe src="https://store.steampowered.com/widget/3613860/" frameborder="0" width="646"
+                height="190"></iframe>
+        </div>
+    </section>
+
+    <!-- FAQ / Presse -->
+    <section class="section-padding">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glassmorphism p-6 rounded-xl shadow-xl">
+                    <h2 class="text-2xl font-bold mb-3"><span class="gradient-text">FAQ</span></h2>
+                    <details class="mb-3">
+                        <summary class="font-semibold cursor-pointer">Wann erscheint HeistLine?</summary>
+                        <p class="mt-2 opacity-90">Release: <em>To be announced</em> (laut Steam).</p>
+                    </details>
+                    <details class="mb-3">
+                        <summary class="font-semibold cursor-pointer">Unterstützte Sprachen?</summary>
+                        <p class="mt-2 opacity-90">Deutsch & Englisch (Interface, Audio, Untertitel).</p>
+                    </details>
+                    <details>
+                        <summary class="font-semibold cursor-pointer">Gibt es Singleplayer?</summary>
+                        <p class="mt-2 opacity-90">Der Fokus liegt auf Online Co-op & PvP in einer persistenten Welt.
+                        </p>
+                    </details>
+                </div>
+                <div class="glassmorphism p-6 rounded-xl shadow-xl">
+                    <h2 class="text-2xl font-bold mb-3"><span class="gradient-text">Presse & Kontakt</span></h2>
+                    <p class="mb-3">Presseanfragen, Interviews, Keyart-Anfragen:</p>
+                    <ul class="space-y-2">
+                        <li><strong>Studio:</strong> <a class="text-teal-400 hover:text-teal-300"
+                                href="https://www.emotions-gaming.de/" target="_blank"
+                                rel="noopener">Emotions-Gaming</a></li>
+                        <li><strong>Business:</strong> <a class="text-teal-400 hover:text-teal-300"
+                                href="mailto:company@maystudios.net">company@maystudios.net</a></li>
+                        <li><strong>LinkedIn:</strong> <a class="text-teal-400 hover:text-teal-300"
+                                href="https://www.linkedin.com/in/sven-maibaum/" target="_blank" rel="noopener">Sven
+                                Maibaum</a></li>
+                    </ul>
+                    <p class="text-sm opacity-70 mt-4">Bildrechte: Bitte nur freigegebene/selbst erstellte Assets
+                        nutzen. Die hier verlinkten Steam-Thumbnails sind Platzhalter zum Testen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; <span id="year"></span> Sven Maibaum. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Overlay -->
+    <div id="lightbox" class="lightbox hidden" aria-hidden="true" role="dialog" aria-label="Bildanzeige (Lightbox)">
+        <button class="lightbox__close" id="lbClose" aria-label="Schließen (Esc)">&times;</button>
+        <button class="lightbox__nav lightbox__prev" id="lbPrev" aria-label="Vorheriges Bild">&#10094;</button>
+        <figure class="lightbox__figure">
+            <img id="lbImg" alt="" />
+            <figcaption id="lbCap"></figcaption>
+        </figure>
+        <button class="lightbox__nav lightbox__next" id="lbNext" aria-label="Nächstes Bild">&#10095;</button>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+    <script src="../js/gallery-data.js"></script>
+    <script src="../js/gallery.js" defer></script>
+
+    <script src="../js/theme.js" defer></script>
+</body>
+
+</html>
