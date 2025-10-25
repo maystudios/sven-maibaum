@@ -35,8 +35,8 @@
     --theme-switcher-icon-color: var(--text-color);
     --theme-switcher-hover-bg: rgba(0, 0, 0, 0.05);
 
-    --hero-overlay-start: rgba(240, 244, 248, 0.92);
-    --hero-overlay-end: rgba(255, 255, 255, 0.95);
+    --hero-overlay-start: rgba(255, 255, 255, 0.85);
+    --hero-overlay-end: rgba(255, 255, 255, 0);
     --hero-background-image: url('../assets/images/hero_background.webp');
 
     /* Tech Tags Light Theme */
