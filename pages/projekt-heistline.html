@@ -9,10 +9,8 @@
         content="HeistLine ist ein Prison-Escape- & Heist-Spiel mit MMO-Elementen: Wähle Cop oder Criminal, plane Überfälle, baue Basen und spiele online mit Freunden. Wishlist auf Steam." />
     <link rel="icon" href="../assets/favicon.ico" />
 
-    <!-- Canonical -->
     <link rel="canonical" href="https://www.svenmaibaum.dev/pages/projekt-heistline.html" />
 
-    <!-- Open Graph / Twitter -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Sven Maibaum – Portfolio" />
     <meta property="og:title" content="HeistLine – Prison-Escape & Heist (vormals The Prisonbreak)" />
@@ -28,7 +26,6 @@
     <meta name="twitter:image"
         content="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3613860/header.jpg" />
 
-    <!-- Theme Init -->
     <script>
         (function () {
             const savedTheme = localStorage.getItem('theme');
@@ -37,842 +34,20 @@
         })();
     </script>
 
-    <!-- Fonts + Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Tailwind + globale Styles -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/footer.css">
 
-    <!-- JSON-LD: VideoGame -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "VideoGame",/* css/style.css */
-
-/* Light Theme (Default) & Dark Theme Variablen */
-:root, html[data-theme="light"] {
-    --bg-color: #f0f4f8; /* Helles Grau/Weiß */
-    --bg-color-alt: #ffffff; /* Weiß für Karten etc. */
-    --text-color: #1a202c; /* Dunkles Grau/Schwarz */
-    --text-muted-color: #4a5568; /* Mittleres Grau */
-    --text-gradient-from: #2b6cb0; /* Dunkelblau */
-    --text-gradient-to: #5a67d8;   /* Indigo */
-    
-    --glass-bg: rgba(255, 255, 255, 0.75); /* Helleres Glas */
-    --glass-border: rgba(0, 0, 0, 0.08);
-    --header-bg: var(--glass-bg);
-    
-    --card-bg: var(--bg-color-alt);
-    --card-border: #e2e8f0; /* Heller Rand */
-    --card-shadow-main: rgba(0, 0, 0, 0.05);
-    --card-shadow-hover: rgba(0, 0, 0, 0.1);
-    --card-hover-glow-color: rgba(43, 108, 176, 0.2); /* Blauer Schein für Light Theme */
-
-    --link-color: #2b6cb0; /* Dunkleres Blau */
-    --link-hover-color: #2c5282; /* Noch dunkleres Blau */
-    
-    --button-gradient-from: var(--text-gradient-from);
-    --button-gradient-to: var(--text-gradient-to);
-    --button-gradient-hover-from: #2c5282;
-    --button-gradient-hover-to: #4c51bf;
-    --button-text-color: #ffffff;
-
-    --scrollbar-track: #e2e8f0;
-    --scrollbar-thumb: #a0aec0;
-    --scrollbar-thumb-hover: #718096;
-
-    --theme-switcher-icon-color: var(--text-color);
-    --theme-switcher-hover-bg: rgba(0, 0, 0, 0.05);
-
-    /* Tech Tags Light Theme */
-    --tech-tag-teal-bg: rgba(44, 122, 123, 0.1); --tech-tag-teal-text: #236667;
-    --tech-tag-purple-bg: rgba(107, 70, 193, 0.1); --tech-tag-purple-text: #553c9a;
-    --tech-tag-gray-bg: rgba(74, 85, 104, 0.1); --tech-tag-gray-text: #4a5568;
-    --tech-tag-blue-bg: rgba(43, 108, 176, 0.1); --tech-tag-blue-text: #2a67a8;
-    --tech-tag-green-bg: rgba(56, 161, 105, 0.1); --tech-tag-green-text: #2f855a;
-    --tech-tag-yellow-bg: rgba(221, 107, 32, 0.1); --tech-tag-yellow-text: #c05621;
-    --tech-tag-red-bg: rgba(197, 48, 48, 0.1); --tech-tag-red-text: #b32424;
-    --tech-tag-orange-bg: rgba(192, 86, 33, 0.1); --tech-tag-orange-text: #a2471b;
-    --tech-tag-indigo-bg: rgba(90, 103, 216, 0.1); --tech-tag-indigo-text: #4c51bf;
-
-    /* Formspree Light Theme */
-    --formspree-bg: #ffffff;
-    --formspree-bg-alt: #f7fafc; /* Slightly off-white for some elements if needed */
-    --formspree-border-active: var(--link-color);
-    --formspree-border-default: #cbd5e0; /* Tailwind gray-300 */
-    --formspree-highlight: #90cdf4; /* Tailwind blue-300 for focus rings */
-    --formspree-primary: var(--link-color);
-    --formspree-primary-active: var(--link-hover-color);
-    --formspree-text-default: var(--text-color);
-    --formspree-text-muted: var(--text-muted-color);
-    --formspree-button-gradient-from: var(--button-gradient-from);
-    --formspree-button-gradient-to: var(--button-gradient-to);
-    --formspree-button-gradient-hover-from: var(--button-gradient-hover-from);
-    --formspree-button-gradient-hover-to: var(--button-gradient-hover-to);
-
-    /* Architect Showcase Light Theme Specifics */
-    --diagram-component-border: #cbd5e0; /* Light border */
-    --diagram-component-hover-border: var(--link-color);
-    --diagram-component-text-color: var(--text-color);
-    --diagram-component-hexagon-core-bg: rgba(128, 90, 213, 0.1);
-    --diagram-component-hexagon-core-border: #9f7aea; /* purple-400 */
-    --diagram-component-adapter-bg: rgba(59, 130, 246, 0.1);
-    --diagram-component-adapter-border: #63b3ed; /* blue-400 */
-    --diagram-component-port-bg: rgba(16, 185, 129, 0.1);
-    --diagram-component-port-border: #48bb78; /* green-400 */
-    --diagram-component-event-bus-bg: rgba(239, 68, 68, 0.1);
-    --diagram-component-event-bus-border: #f56565; /* red-400 */
-    --diagram-component-database-bg: rgba(107, 114, 128, 0.1);
-    --diagram-component-database-border: #a0aec0; /* gray-400 */
-    --connector-color: #a0aec0; /* gray-400 */
-    --arrow-color: var(--connector-color);
-    --info-modal-backdrop-bg: rgba(226, 232, 240, 0.85); /* Tailwind gray-200 with opacity */
-    --info-modal-content-bg: #ffffff;
-    --info-modal-content-border: #e2e8f0; /* Tailwind gray-200 */
-    --info-modal-text-color: var(--text-color);
-    --info-modal-muted-text-color: var(--text-muted-color);
-}
-
-html[data-theme="dark"] {
-    --bg-color: #0a0f1f;
-    --bg-color-alt: #1a202c; /* Dunklerer Hintergrund für Karten etc. */
-    --text-color: #e2e8f0;
-    --text-muted-color: #a0aec0; /* Tailwind gray-400 */
-    --text-gradient-from: #38b2ac; /* Teal-500 */
-    --text-gradient-to: #805ad5;   /* Purple-600 */
-
-    --glass-bg: rgba(17, 24, 39, 0.65); /* Original glassmorphism */
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --header-bg: var(--glass-bg);
-
-    --card-bg: var(--glass-bg); /* Karten nutzen auch Glassmorphism */
-    --card-border: #374151; /* Tailwind gray-700 */
-    --card-shadow-main: rgba(0,0,0,0.15);
-    --card-shadow-hover: rgba(0,0,0,0.2);
-    --card-hover-glow-color: rgba(56, 178, 172, 0.3); /* Originaler Teal-Schein */
-    
-    --link-color: #38b2ac; /* Teal-400 */
-    --link-hover-color: #4fd1c5; /* Teal-300 */
-
-    --button-gradient-from: var(--text-gradient-from);
-    --button-gradient-to: var(--text-gradient-to);
-    --button-gradient-hover-from: #2c7a7b; /* Teal-600 */
-    --button-gradient-hover-to: #6b46c1;   /* Purple-700 */
-    --button-text-color: #ffffff;
-
-    --scrollbar-track: #1a202c;
-    --scrollbar-thumb: #4a5568;
-    --scrollbar-thumb-hover: #718096;
-
-    --theme-switcher-icon-color: var(--text-color);
-    --theme-switcher-hover-bg: rgba(255, 255, 255, 0.1);
-
-    /* Tech Tags Dark Theme (Original) */
-    --tech-tag-teal-bg: rgba(56, 178, 172, 0.2); --tech-tag-teal-text: #38b2ac;
-    --tech-tag-purple-bg: rgba(128, 90, 213, 0.2); --tech-tag-purple-text: #805ad5;
-    --tech-tag-gray-bg: rgba(74, 85, 104, 0.2); --tech-tag-gray-text: #a0aec0;
-    --tech-tag-blue-bg: rgba(66, 153, 225, 0.2); --tech-tag-blue-text: #4299e1;
-    --tech-tag-green-bg: rgba(72, 187, 120, 0.2); --tech-tag-green-text: #48bb78;
-    --tech-tag-yellow-bg: rgba(237, 137, 54, 0.2); --tech-tag-yellow-text: #ed8936;
-    --tech-tag-red-bg: rgba(245, 101, 101, 0.2); --tech-tag-red-text: #f56565;
-    --tech-tag-orange-bg: rgba(221,107,32,0.2); --tech-tag-orange-text: #dd6b20;
-    --tech-tag-indigo-bg: rgba(99, 102, 241, 0.2); --tech-tag-indigo-text: #6366f1;
-
-    /* Formspree Dark Theme (Original) */
-    --formspree-bg: #1f2937;        /* Tailwind gray-800 */
-    --formspree-bg-alt: #374151;   /* Tailwind gray-700 */
-    --formspree-border-active: #14b8a6;    /* Teal-500 */
-    --formspree-border-default: #4b5563;  /* Tailwind gray-600 */
-    --formspree-highlight: #5eead4;       /* Teal-300 */
-    --formspree-primary: #14b8a6;         /* Teal-500 */
-    --formspree-primary-active: #0d9488;  /* Teal-600 */
-    --formspree-text-default: #e5e7eb;    /* Tailwind gray-200 */
-    --formspree-text-muted: #9ca3af;      /* Tailwind gray-400 */
-    --formspree-button-gradient-from: var(--formspree-primary);
-    --formspree-button-gradient-to: #8b5cf6; /* Original Purple-500 for Formspree */
-    --formspree-button-gradient-hover-from: var(--formspree-primary-active);
-    --formspree-button-gradient-hover-to: #7c3aed; /* Original Purple-600 for Formspree */
-    
-    /* Architect Showcase Dark Theme Specifics (Original) */
-    --diagram-component-border: #4b5563; /* gray-600 */
-    --diagram-component-hover-border: #14b8a6; /* teal-500 */
-    --diagram-component-text-color: var(--text-color);
-    --diagram-component-hexagon-core-bg: rgba(128, 90, 213, 0.2);
-    --diagram-component-hexagon-core-border: #805ad5; /* purple-500 */
-    --diagram-component-adapter-bg: rgba(59, 130, 246, 0.2);
-    --diagram-component-adapter-border: #3b82f6; /* blue-500 */
-    --diagram-component-port-bg: rgba(16, 185, 129, 0.2);
-    --diagram-component-port-border: #10b981; /* green-500 */
-    --diagram-component-event-bus-bg: rgba(239, 68, 68, 0.2);
-    --diagram-component-event-bus-border: #ef4444; /* red-500 */
-    --diagram-component-database-bg: rgba(107, 114, 128, 0.2);
-    --diagram-component-database-border: #9ca3af; /* gray-400 */
-    --connector-color: #6b7280; /* gray-500 */
-    --arrow-color: var(--connector-color);
-    --info-modal-backdrop-bg: rgba(17, 24, 39, 0.85); /* Original dark backdrop */
-    --info-modal-content-bg: #1f2937; /* Tailwind gray-800 */
-    --info-modal-content-border: #374151; /* Tailwind gray-700 */
-    --info-modal-text-color: #d1d5db; /* Tailwind gray-300 */
-    --info-modal-muted-text-color: #9ca3af; /* Tailwind gray-400 */
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
-}
-::-webkit-scrollbar-track {
-    background: var(--scrollbar-track);
-}
-::-webkit-scrollbar-thumb {
-    background: var(--scrollbar-thumb);
-    border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: var(--scrollbar-thumb-hover);
-}
-
-/* Globale Stile */
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.glassmorphism {
-    background: var(--glass-bg);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border); /* Optional: add a subtle border */
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-header.fixed.glassmorphism, header.sticky.glassmorphism { /* Ensure header also uses themed glass */
-    background: var(--header-bg);
-     border-bottom: 1px solid var(--glass-border); /* Add border to header */
-}
-
-#mobile-menu {
-    transition: transform 0.3s ease-in-out;
-    background-color: var(--bg-color-alt); /* Themed background for mobile menu */
-    box-shadow: 0 10px 15px -3px var(--card-shadow-main);
-}
-#mobile-menu a:hover {
-    background-color: rgba(127, 127, 127, 0.1); /* Generic hover for links */
-}
-
-.section-padding {
-     padding-top: 4rem;
-     padding-bottom: 4rem;
-}
-
-@media (min-width: 768px) { /* md breakpoint */
-    .section-padding {
-        padding-top: 6rem;
-        padding-bottom: 6rem;
-    }
-}
-
-/* Gradient Text */
-.gradient-text {
-    background-image: linear-gradient(to right, var(--text-gradient-from), var(--text-gradient-to));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-}
-
-/* Buttons with gradient */
-a.bg-gradient-to-r, button.bg-gradient-to-r { /* Generalizing for buttons that might use this pattern */
-    background-image: linear-gradient(to right, var(--button-gradient-from), var(--button-gradient-to));
-    color: var(--button-text-color) !important; /* Ensure text color contrasts with gradient */
-    transition: background-image 0.3s ease, transform 0.3s ease;
-}
-a.bg-gradient-to-r:hover, button.bg-gradient-to-r:hover {
-    background-image: linear-gradient(to right, var(--button-gradient-hover-from), var(--button-gradient-hover-to));
-}
-/* Specific button example from index.html */
-.glow-effect { /* This class was on buttons, ensure it works with variables */
-   /* box-shadow: 0 0 15px var(--button-gradient-from), 0 0 25px var(--button-gradient-to); */
-   /* Glow effect might need adjustment or be simplified if too complex with theming */
-}
-
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-.fade-in-up { opacity: 0; }
-.fade-in-up.visible {
-    animation-name: fadeInUp;
-    animation-duration: 0.8s;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
-}
-
-/* Cards */
-.project-card, .skill-card, .experience-card, 
-.glassmorphism.p-6, .glassmorphism.p-8, .glassmorphism.p-10 { /* Targeting common card containers */
-    background-color: var(--card-bg);
-    border: 1px solid var(--card-border);
-    box-shadow: 0 5px 15px var(--card-shadow-main);
-    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, background-color 0.3s ease, border-color 0.3s ease;
-}
-.project-card:hover, .skill-card:hover, .experience-card:hover,
-.glassmorphism.p-6:hover, .glassmorphism.p-8:hover, .glassmorphism.p-10:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 10px 20px var(--card-shadow-hover), 0 0 25px var(--card-hover-glow-color);
-}
-
-/* Tech Tags */
-.tech-tag {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 600;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-.tech-tag-teal { background-color: var(--tech-tag-teal-bg); color: var(--tech-tag-teal-text); }
-.tech-tag-purple { background-color: var(--tech-tag-purple-bg); color: var(--tech-tag-purple-text); }
-.tech-tag-gray { background-color: var(--tech-tag-gray-bg); color: var(--tech-tag-gray-text); }
-.tech-tag-blue { background-color: var(--tech-tag-blue-bg); color: var(--tech-tag-blue-text); }
-.tech-tag-green { background-color: var(--tech-tag-green-bg); color: var(--tech-tag-green-text); }
-.tech-tag-yellow { background-color: var(--tech-tag-yellow-bg); color: var(--tech-tag-yellow-text); }
-.tech-tag-red { background-color: var(--tech-tag-red-bg); color: var(--tech-tag-red-text); }
-.tech-tag-orange { background-color: var(--tech-tag-orange-bg); color: var(--tech-tag-orange-text); }
-.tech-tag-indigo { background-color: var(--tech-tag-indigo-bg); color: var(--tech-tag-indigo-text); }
-
-/* Project filter buttons */
-.filter-btn {
-    background-color: var(--tech-tag-gray-bg);
-    color: var(--tech-tag-gray-text);
-    border-radius: 9999px;
-    padding: 0.375rem 0.75rem;
-    margin: 0.25rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-.filter-btn:hover {
-    background-color: var(--tech-tag-gray-text);
-    color: #fff;
-}
-.filter-btn.active {
-    background-image: linear-gradient(to right, var(--button-gradient-from), var(--button-gradient-to));
-    color: var(--button-text-color);
-}
-
-/* Project Detail Page Specifics */
-.project-detail-container {
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-.project-detail-header {
-    border-bottom: 1px solid var(--card-border); /* Use themed border */
-    padding-bottom: 1.5rem;
-    margin-bottom: 2rem;
-}
-.project-detail-header h1.gradient-text { /* Already themed */ }
-.project-detail-header .project-subtitle {
-    color: var(--text-muted-color); /* Themed muted text */
-    margin-top: 0.5rem;
-}
-.project-detail-content h2 {
-    font-size: 1.875rem; 
-    font-weight: 700; 
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--glass-border); /* Use a themed, subtle border */
-    color: var(--text-color); 
-}
-.project-detail-content h2.gradient-text { border-bottom: none; }
-.project-detail-content h3 {
-    font-size: 1.25rem; 
-    font-weight: 600; 
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-    color: var(--text-color); 
-}
-.project-detail-content p {
-    line-height: 1.7;
-    margin-bottom: 1rem;
-    color: var(--text-muted-color); 
-}
-.project-detail-content ul {
-    list-style-type: disc;
-    margin-left: 1.5rem;
-    margin-bottom: 1rem;
-    padding-left: 0.5rem; 
-    color: var(--text-muted-color); 
-}
-.project-detail-content li { margin-bottom: 0.5rem; }
-.project-detail-content strong {
-    color: var(--text-color); 
-    font-weight: 600;
-}
-.project-detail-content a:not(.button-like-class):not(.back-to-portfolio) { 
-    color: var(--link-color); 
-    text-decoration: underline;
-    transition: color 0.3s ease;
-}
-.project-detail-content a:not(.button-like-class):not(.back-to-portfolio):hover {
-    color: var(--link-hover-color); 
-}
-.project-image-full {
-    width: 100%;
-    max-height: 500px;
-    object-fit: cover;
-    border-radius: 0.75rem; 
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    border: 1px solid var(--card-border); /* Add border to image */
-    /* box-shadow: 0 10px 15px -3px var(--card-shadow-main), 0 4px 6px -2px var(--card-shadow-main);  */
-}
-.back-to-portfolio {
-    display: inline-block;
-    margin-top: 3rem;
-    margin-bottom: 1rem; 
-    padding: 0.75rem 1.5rem; 
-    border-radius: 0.5rem; 
-    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
-    font-weight: 500; 
-    background-color: var(--card-bg); /* Themed background */
-    color: var(--text-muted-color); /* Themed text */
-    border: 1px solid var(--card-border);
-}
-.back-to-portfolio:hover {
-    background-color: var(--bg-color); /* Slightly different hover */
-    color: var(--link-hover-color);
-    border-color: var(--link-hover-color);
-    transform: translateY(-2px);
-}
-
-/* Footer */
-footer {
-    background-color: var(--bg-color-alt); /* Themed footer background */
-    border-top: 1px solid var(--card-border); /* Themed border */
-    color: var(--text-muted-color);
-    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-}
-footer .text-teal-500 { /* Specific class in footer for heart icon */
-    color: var(--link-color);
-}
-
-
-/* Formspree Styles - Integrated with Theme Variables */
-/* Copied from user provided CSS and adapted */
-@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
-/* :root section for Formspree variables is removed, they are now part of the main theme variables */
-
-*,::before,::after { box-sizing: border-box; }
-* { border: 0; margin: 0; padding: 0; }
-
-.formspree-form-container {
-  font-family: 'Inter', sans-serif; /* Use global font */
-  font-optical-sizing: auto;
-  font-style: normal;
-}
-.formspree-form-container button,
-.formspree-form-container input,
-.formspree-form-container optgroup,
-.formspree-form-container select,
-.formspree-form-container textarea {
-  font-family: inherit;
-  font-feature-settings: inherit;
-  font-variation-settings: inherit;
-  font-size: 100%;
-  font-weight: inherit;
-  line-height: inherit;
-  color: inherit;
-  margin: 0;
-  padding: 0;
-}
-.formspree-form-container [type="checkbox"],
-.formspree-form-container [type="radio"],
-.formspree-form-container [type="range"] {
-  appearance: none; flex-shrink: 0; padding: 0; user-select: none;
-}
-.formspree-form-container [type="checkbox"]:focus,
-.formspree-form-container [type="radio"]:focus,
-.formspree-form-container [type="range"]:focus {
-  outline: none;
-}
-
-.fs-form { display: grid; row-gap: 1.5rem; }
-.fs-form:where(.fs-layout__2-column) { column-gap: 1.5rem; grid-template-columns: 1fr 1fr; }
-.formspree-form-container fieldset { display: grid; margin: 1.5rem 0; row-gap: 1.5rem; }
-.fs-form:where(.fs-layout__2-column) fieldset { column-gap: 1.5rem; grid-template-columns: 1fr 1fr; grid-column: 1 / -1; }
-.fs-fieldset-title { color: var(--formspree-text-default); font-family: 'Inter', sans-serif; font-size: 1.25rem; line-height: 1.75rem; margin-bottom: 1.5rem; grid-column: 1 / -1; }
-.fs-field { display: flex; flex-direction: column; row-gap: 0.5rem; }
-.fs-label { color: var(--formspree-text-default); display: block; font-family: 'Inter', sans-serif; font-size: 0.875rem; line-height: 1.25rem; }
-.fs-description { color: var(--formspree-text-muted); display: block; font-size: 0.875rem; line-height: 1.25rem; }
-.fs-button-group { display: flex; flex-direction: column; column-gap: 1.5rem; }
-.fs-form:where(.fs-layout__2-column) .fs-button-group { grid-column: 1 / -1; }
-
-.fs-button { 
-    background-image: linear-gradient(to right, var(--formspree-button-gradient-from), var(--formspree-button-gradient-to));
-    background-color: transparent; /* Let gradient show */
-    border-radius: 0.5rem;
-    color: var(--button-text-color); 
-    cursor: pointer; 
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.5rem;
-    padding: 0.75rem 1.5rem;
-    transition-duration: 200ms; 
-    transition-property: background-image, transform; 
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    width: 100%;
-    text-align: center;
-}
-.fs-button:hover { 
-    background-image: linear-gradient(to right, var(--formspree-button-gradient-hover-from), var(--formspree-button-gradient-hover-to));
-    transform: scale(1.02);
-}
-.fs-button:focus-visible { 
-    background-image: linear-gradient(to right, var(--formspree-button-gradient-hover-from), var(--formspree-button-gradient-hover-to));
-    outline: 2px solid var(--formspree-highlight);
-    outline-offset: 2px;
-}
-
-.fs-input, .fs-select, .fs-textarea { 
-    appearance: none; 
-    border-radius: 0.5rem;
-    border-width: 0; 
-    box-shadow: var(--formspree-border-default) 0 0 0 1px inset; 
-    background-color: var(--formspree-bg);
-    color: var(--formspree-text-default); 
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    outline: none; 
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-    width: 100%;
-    transition: box-shadow 0.2s ease, background-color 0.3s ease, color 0.3s ease;
-}
-.fs-input { height: 2.5rem; }
-.fs-textarea { padding-top: 0.5rem; padding-bottom: 0.5rem; resize: vertical; min-height: 6rem; }
-
-.fs-input:focus-visible, .fs-select:focus-visible, .fs-textarea:focus-visible { 
-    box-shadow: var(--formspree-border-active) 0 0 0 2px inset;
-}
-.fs-input::placeholder, .fs-textarea::placeholder { color: var(--formspree-text-muted); }
-
-.fs-checkbox-group,.fs-radio-group { display: flex; flex-direction: column; row-gap: 1rem; }
-.fs-checkbox-field,.fs-radio-field { column-gap: 0.5rem; display: flex; }
-:is(.fs-checkbox-field, .fs-radio-field) .fs-label + .fs-description { margin-top: 0.25rem; }
-.fs-checkbox-wrapper,.fs-radio-wrapper { align-items: center; display: flex; height: 1.25rem; }
-.fs-checkbox,.fs-radio { background-color: var(--formspree-bg-alt); border: 1px solid var(--formspree-border-default); height: 1.25rem; width: 1.25rem; transition: background-color 0.3s ease, border-color 0.3s ease; }
-.fs-checkbox { border-radius: 0.25rem; }
-.fs-radio { border-radius: 100%; }
-.fs-checkbox:checked,.fs-radio:checked { background-color: var(--formspree-primary); background-position: center; background-repeat: no-repeat; background-size: 80% 80%; border-color: transparent; }
-.fs-checkbox:checked { background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e"); }
-.fs-radio:checked { background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e"); }
-.fs-checkbox:focus-visible,.fs-radio:focus-visible { border-color: var(--formspree-border-active); outline: 2px solid var(--formspree-highlight); outline-offset: 1px; }
-.fs-checkbox:checked:focus-visible,.fs-radio:checked:focus-visible { border-color: transparent; }
-
-.fs-select { 
-    background-color: var(--formspree-bg); 
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e"); /* gray-400 for arrow, consider theming if needed */
-    background-position: right 0.5rem center;
-    background-repeat: no-repeat; 
-    background-size: 1.25em 1.25em;
-    padding-right: 2.5rem;
-}
-html[data-theme="light"] .fs-select {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%234a5568' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e"); /* Darker arrow for light theme */
-}
-
-/* Slider and Switch styles are kept as is, assuming less frequent use or less critical for theming initially */
-.fs-slider { background: transparent; cursor: pointer; height: 1.25rem; width: 100%; }
-.fs-slider::-moz-range-track { background-color: var(--formspree-bg-alt); border-radius: 0.5rem; height: 0.5rem; }
-.fs-slider::-webkit-slider-runnable-track { background-color: var(--formspree-bg-alt); border-radius: 0.5rem; height: 0.5rem; }
-.fs-slider::-moz-range-thumb { background-color: var(--formspree-primary); border: none; border-radius: 50%; height: 1.25rem; width: 1.25rem; }
-.fs-slider::-webkit-slider-thumb { appearance: none; background-color: var(--formspree-primary); border-radius: 50%; height: 1.25rem; margin-top: -0.375rem; width: 1.25rem; }
-.fs-slider:focus-visible::-moz-range-thumb { outline: 2px solid var(--formspree-primary); outline-offset: 2px; }
-.fs-slider:focus-visible::-webkit-slider-thumb { outline: 2px solid var(--formspree-primary); outline-offset: 2px; }
-.fs-switch { background-color: var(--formspree-bg-alt); background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2.75' fill='white'/%3e%3c/svg%3e"); background-position: left center; background-repeat: no-repeat; border-radius: 1.25rem; cursor: pointer; height: 1.25rem; transition-duration: 200ms; transition-property: background-color, background-position; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); width: 2.5rem; }
-.fs-switch:checked { background-color: var(--formspree-primary); background-position: right center; }
-.fs-switch:focus-visible { outline: 2px solid var(--formspree-highlight); outline-offset: 1px; }
-
-.col-span-full { grid-column: 1 / -1; }
-.slider-label-container { display: flex; justify-content: space-between; width: 100%; margin-top: 0.25rem; }
-.slider-label-text { font-size: 0.75rem; color: var(--formspree-text-muted); text-align: center; white-space: nowrap; }
-
-
-/* Architect Showcase Page - Diagram Components & Modal Theming */
-.diagram-component {
-    border-width: 2px;
-    border-style: solid;
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    min-height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--diagram-component-text-color);
-    border-color: var(--diagram-component-border);
-}
-.diagram-component:hover {
-    border-color: var(--diagram-component-hover-border);
-    box-shadow: 0 10px 15px -3px var(--card-shadow-main), 0 4px 6px -2px var(--card-shadow-main);
-    transform: scale(1.05);
-}
-
-.diagram-component.hexagon-core { background-color: var(--diagram-component-hexagon-core-bg); border-color: var(--diagram-component-hexagon-core-border); }
-.diagram-component.adapter { background-color: var(--diagram-component-adapter-bg); border-color: var(--diagram-component-adapter-border); }
-.diagram-component.port { background-color: var(--diagram-component-port-bg); border-color: var(--diagram-component-port-border); font-size: 0.75rem; padding: 0.5rem; min-height: 40px; }
-.diagram-component.event-bus { background-color: var(--diagram-component-event-bus-bg); border-color: var(--diagram-component-event-bus-border); }
-.diagram-component.database { background-color: var(--diagram-component-database-bg); border-color: var(--diagram-component-database-border); }
-
-.connector {
-    border-color: var(--connector-color); 
-    position: relative;
-    transition: border-color 0.3s ease;
-}
-.connector.horizontal { 
-    width: 100%; 
-    height: 2px;
-    background-color: var(--connector-color);
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    transition: background-color 0.3s ease;
-}
-.connector.vertical { 
-    height: 100%; 
-    width: 2px;
-    background-color: var(--connector-color);
-    margin-left: auto;
-    margin-right: auto;
-    transition: background-color 0.3s ease;
-}
-.arrow {
-    color: var(--arrow-color); 
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-}
-
-/* Modal for component details */
-.info-modal {
-    position: fixed;
-    top: 0; right: 0; bottom: 0; left: 0;
-    background-color: var(--info-modal-backdrop-bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    z-index: 60; 
-    transition: opacity 0.3s ease, background-color 0.3s ease;
-}
-.info-modal-content {
-    background-color: var(--info-modal-content-bg);
-    border: 1px solid var(--info-modal-content-border);
-    padding: 1.5rem; 
-    border-radius: 0.75rem;
-    box-shadow: 0 20px 25px -5px var(--card-shadow-main), 0 10px 10px -5px var(--card-shadow-main);
-    max-width: 42rem;
-    width: 100%;
-    max-height: 80vh;
-    overflow-y: auto;
-    transition: transform 0.3s ease-out, background-color 0.3s ease, border-color 0.3s ease;
-}
-@media (min-width: 768px) { 
-    .info-modal-content { padding: 2rem; }
-}
-
-.info-modal h3 { /* Uses .gradient-text which is themed */
-    font-size: 1.5rem; 
-    line-height: 2rem;
-    font-weight: 700; 
-    margin-bottom: 1rem; 
-}
-.info-modal p {
-    color: var(--info-modal-muted-text-color); 
-    margin-bottom: 0.75rem; 
-    line-height: 1.625; 
-}
-.info-modal ul {
-    list-style-type: disc;
-    list-style-position: inside;
-    color: var(--info-modal-muted-text-color); 
-    margin-bottom: 0.75rem; 
-    padding-left: 1rem; 
-}
-.info-modal ul li { margin-bottom: 0.25rem; }
-.info-modal .tech-tag { /* Already themed */ }
-.info-modal #closeModalButton {
-    color: var(--info-modal-muted-text-color);
-}
-.info-modal #closeModalButton:hover {
-    color: var(--info-modal-text-color);
-}
-
-
-.info-modal.hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-.info-modal-content { transform: scale(0.95); }
-.info-modal:not(.hidden) .info-modal-content { transform: scale(1); }
-
-/* Theme switcher button */
-.theme-switcher {
-    background: none;
-    border: 1px solid transparent; /* Make border transparent so it doesn't jump on hover */
-    color: var(--theme-switcher-icon-color);
-    cursor: pointer;
-    padding: 0.5rem; /* Tailwind p-2 */
-    margin-left: 0.5rem; /* Tailwind ml-2 */
-    border-radius: 9999px; /* Tailwind rounded-full */
-    display: inline-flex; /* Use inline-flex to align icon properly */
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-}
-.theme-switcher:hover {
-    background-color: var(--theme-switcher-hover-bg);
-    border-color: var(--glass-border); /* Use a subtle border on hover */
-}
-.theme-switcher svg {
-    width: 1.25rem; /* Tailwind w-5 */
-    height: 1.25rem; /* Tailwind h-5 */
-}
-/* Ensure only one icon is shown at a time */
-.theme-switcher .hidden {
-    display: none;
-}
-
-/* === Project Gallery & Lightbox === */
-.media-grid {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 1rem;
-}
-@media (min-width: 640px) { .media-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .media-grid { grid-template-columns: repeat(3, 1fr); } }
-
-.media-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.75rem;
-  border: 1px solid var(--card-border);
-  background-color: var(--card-bg);
-  box-shadow: 0 5px 15px var(--card-shadow-main);
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-  cursor: zoom-in;
-  outline: none;
-}
-.media-item:focus-visible {
-  border-color: var(--link-color);
-  box-shadow: 0 0 0 3px color-mix(in oklab, var(--link-color) 40%, transparent);
-}
-.media-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 22px var(--card-shadow-hover), 0 0 24px var(--card-hover-glow-color);
-}
-.media-item img.media-thumb {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  transition: transform .4s ease, opacity .4s ease;
-}
-.media-item:hover img.media-thumb { transform: scale(1.03); }
-.media-item figcaption {
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  padding: .5rem .75rem;
-  font-size: .875rem;
-  color: var(--text-color);
-  background: linear-gradient(to top, color-mix(in oklab, var(--bg-color-alt) 85%, transparent), transparent);
-  backdrop-filter: blur(2px);
-}
-
-/* Lightbox Overlay */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.7);
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  grid-template-rows: auto 1fr auto;
-  gap: 1rem;
-  align-items: center;
-  justify-items: center;
-  z-index: 1000;
-  padding: 1rem;
-}
-.lightbox.hidden { display: none; }
-.lightbox__figure {
-  grid-column: 1 / -1;
-  grid-row: 2 / 3;
-  max-width: min(92vw, 1600px);
-  width: 100%;
-  text-align: center;
-  color: #fff;
-}
-.lightbox__figure img {
-  width: 100%;
-  height: auto;
-  border-radius: .5rem;
-  border: 1px solid rgba(255,255,255,.2);
-  box-shadow: 0 10px 30px rgba(0,0,0,.5);
-}
-.lightbox__figure figcaption {
-  margin-top: .5rem;
-  opacity: .85;
-  font-size: .95rem;
-}
-.lightbox__close,
-.lightbox__nav {
-  position: absolute;
-  background: rgba(0,0,0,.45);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,.25);
-  height: 2.5rem; width: 2.5rem;
-  display: grid; place-items: center;
-  border-radius: 9999px;
-  cursor: pointer;
-  transition: background .2s ease, transform .2s ease;
-}
-.lightbox__close:hover,
-.lightbox__nav:hover { background: rgba(0,0,0,.6); transform: scale(1.05); }
-.lightbox__close { top: 1rem; right: 1rem; font-size: 1.5rem; line-height: 1; }
-.lightbox__prev { left: 1rem; top: 50%; transform: translateY(-50%); }
-.lightbox__next { right: 1rem; top: 50%; transform: translateY(-50%); }
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .media-item,
-  .media-item img.media-thumb,
-  .lightbox__close,
-  .lightbox__nav { transition: none; }
-}
-
-/* Optional: sanfter Fade-In wenn Bilder sichtbar werden */
-.media-item { opacity: 0; transform: translateY(10px); }
-.media-item.is-visible { opacity: 1; transform: translateY(0); transition: opacity .4s ease, transform .4s ease; }
-
+      "@type": "VideoGame",
       "name": "HeistLine",
       "alternateName": "The Prisonbreak",
       "url": "https://www.heist-line.com/",
@@ -893,36 +68,20 @@ html[data-theme="light"] .fs-select {
 </head>
 
 <body class="antialiased">
-    <header class="fixed top-0 left-0 right-0 z-50 glassmorphism shadow-lg">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="../index.html#home" class="text-2xl font-bold gradient-text nav-link">Sven Maibaum</a>
-            <nav class="hidden md:flex space-x-6" aria-label="Hauptnavigation">
-                <a href="../index.html#projects" class="hover:text-teal-400 transition nav-link">Projekte</a>
-                <a href="../index.html#experience" class="hover:text-teal-400 transition nav-link">Erfahrung</a>
-                <a href="../index.html#contact" class="hover:text-teal-400 transition nav-link">Kontakt</a>
-            </nav>
-            <button id="theme-toggle" type="button" class="theme-switcher" title="Theme wechseln">
-                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                </svg>
-                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 10-1.414 1.414zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zM4 11a1 1 0 100-2H3a1 1 0 000 2h1zM11 17v1a1 1 0 11-2 0v-1a1 1 0 112 0z" />
-                </svg>
-            </button>
-        </div>
-    </header>
+    <header class="fixed top-0 left-0 right-0 z-50 glassmorphism shadow-lg transition-colors duration-300"></header>
 
-    <!-- Hero -->
-    <section class="hero-section min-h-[70vh] pt-28 pb-16 bg-cover bg-center flex items-center"
-        style="--hero-background-image: url('https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3613860/capsule_616x353.jpg');">
+    <section class="min-h-[70vh] pt-28 pb-16 bg-cover bg-center flex items-center hero-section"
+        style="background-image: linear-gradient(var(--hero-overlay-start), var(--hero-overlay-end)), url('https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3613860/capsule_616x353.jpg');">
         <div class="container mx-auto px-6">
             <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-6xl font-extrabold mb-4"><span class="gradient-text">HeistLine</span> <span
-                        class="text-lg md:text-2xl align-middle opacity-80"> (vormals <em>The Prisonbreak</em>)</span>
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4">
+                    <span class="gradient-text">HeistLine</span>
+                    <span class="text-lg md:text-2xl align-middle opacity-80" style="color: var(--text-hero-color);">
+                        (vormals <em>The Prisonbreak</em>)</span>
                 </h1>
-                <p class="text-lg md:text-xl mb-6">Wähle deine Seite – <strong>Cop</strong> oder
-                    <strong>Criminal</strong>. Entkomme, plane <strong>Heists</strong>, baue <strong>Basen</strong>,
+                <p class="text-lg md:text-xl mb-6" style="color: var(--text-hero-color);">
+                    Wähle deine Seite – <strong>Cop</strong> oder <strong>Criminal</strong>. Entkomme, plane
+                    <strong>Heists</strong>, baue <strong>Basen</strong>,
                     verdiene <strong>Bounties</strong> und dominiere mit deinem Team in einem dynamischen
                     Open-World-MMO-Setting.
                 </p>
@@ -940,7 +99,6 @@ html[data-theme="light"] .fs-select {
         </div>
     </section>
 
-    <!-- Elevator Pitch -->
     <section class="section-padding">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-8 items-center">
@@ -965,7 +123,6 @@ html[data-theme="light"] .fs-select {
         </div>
     </section>
 
-    <!-- Key Features -->
     <section class="section-padding">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12"><span class="gradient-text">Key Features</span>
@@ -1007,7 +164,6 @@ html[data-theme="light"] .fs-select {
         </div>
     </section>
 
-    <!-- Gameplay Loop -->
     <section class="section-padding">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-8">
@@ -1033,7 +189,6 @@ html[data-theme="light"] .fs-select {
         </div>
     </section>
 
-    <!-- Galerie (neu, klickbar) -->
     <section class="section-padding">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-10"><span class="gradient-text">Galerie</span></h2>
@@ -1043,7 +198,6 @@ html[data-theme="light"] .fs-select {
         </div>
     </section>
 
-    <!-- Fakten -->
     <section class="section-padding">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-8">
@@ -1056,6 +210,7 @@ html[data-theme="light"] .fs-select {
                         <li><strong>Entwickler/Publisher:</strong> Emotions-Gaming</li>
                         <li><strong>Status:</strong> <em>Planned Release: To be announced</em></li>
                     </ul>
+                    <p class="text-sm opacity-70 mt-3">Quellen: Steam-Store-Seite, Emotions-Gaming.</p>
                 </div>
                 <div class="glassmorphism p-6 rounded-xl shadow-xl">
                     <h2 class="text-2xl font-bold mb-3"><span class="gradient-text">Call to Action</span></h2>
@@ -1076,16 +231,15 @@ html[data-theme="light"] .fs-select {
         </div>
     </section>
 
-    <!-- Steam Widget -->
     <section class="section-padding">
         <div class="container mx-auto px-6">
             <h2 class="text-2xl font-bold mb-4"><span class="gradient-text">Steam</span></h2>
+            <p class="opacity-80 mb-4">Direkt aus dem Steam-Store eingebettet.</p>
             <iframe src="https://store.steampowered.com/widget/3613860/" frameborder="0" width="646"
                 height="190"></iframe>
         </div>
     </section>
 
-    <!-- FAQ / Presse -->
     <section class="section-padding">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-8">
@@ -1118,12 +272,13 @@ html[data-theme="light"] .fs-select {
                                 href="https://www.linkedin.com/in/sven-maibaum/" target="_blank" rel="noopener">Sven
                                 Maibaum</a></li>
                     </ul>
+                    <p class="text-sm opacity-70 mt-4">Bildrechte: Bitte nur freigegebene/selbst erstellte Assets
+                        nutzen. Die hier verlinkten Steam-Thumbnails sind Platzhalter zum Testen.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Lightbox Overlay -->
     <div id="lightbox" class="lightbox hidden" aria-hidden="true" role="dialog" aria-label="Bildanzeige (Lightbox)">
         <button class="lightbox__close" id="lbClose" aria-label="Schließen (Esc)">&times;</button>
         <button class="lightbox__nav lightbox__prev" id="lbPrev" aria-label="Vorheriges Bild">&#10094;</button>
@@ -1143,6 +298,7 @@ html[data-theme="light"] .fs-select {
     <script src="../js/gallery.js" defer></script>
 
     <script src="../js/theme.js" defer></script>
+    <script src="../js/header.js" defer></script>
 </body>
 
 </html>

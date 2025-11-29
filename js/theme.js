@@ -1,84 +1,56 @@
-// /js/theme.js
-document.addEventListener('DOMContentLoaded', () => {
+// js/theme.js
+
+// Diese Funktion ist global, damit header.js sie nach dem Laden aufrufen kann
+window.initThemeToggle = () => {
   const root = document.documentElement;
-
-  // Desktop
+  
   const btn = document.getElementById('theme-toggle');
-  const iconDark = document.getElementById('theme-toggle-dark-icon');   // Mond
-  const iconLight = document.getElementById('theme-toggle-light-icon'); // Sonne
+  const iconDark = document.getElementById('theme-toggle-dark-icon');
+  const iconLight = document.getElementById('theme-toggle-light-icon');
 
-  // Mobile
-  const btnMobile = document.getElementById('theme-toggle-mobile');
-  const iconDarkM = document.getElementById('theme-toggle-dark-icon-mobile');
-  const iconLightM = document.getElementById('theme-toggle-light-icon-mobile');
-
-  // Safari/Chrome Glassmorphism repaint kick (fixed header)
-  const repaintFixedGlass = () => {
-    const header = document.querySelector('header.glassmorphism');
-    if (!header) return;
-    header.style.transform = 'translateZ(0)';
-    requestAnimationFrame(() => { header.style.transform = ''; });
+  const updateIcons = (theme) => {
+    const isDark = theme === 'dark';
+    if (iconDark) iconDark.classList.toggle('hidden', !isDark);
+    if (iconLight) iconLight.classList.toggle('hidden', isDark);
   };
 
-  const syncIcons = (mode) => {
-    const isDark = mode === 'dark';
+  // Aktuelles Theme lesen
+  const currentTheme = root.getAttribute('data-theme') || 'light';
+  updateIcons(currentTheme);
 
-    // Desktop icons
-    if (iconDark && iconLight) {
-      iconDark.classList.toggle('hidden', !isDark);
-      iconLight.classList.toggle('hidden', isDark);
+  const toggleTheme = () => {
+    const current = root.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    updateIcons(next);
+    
+    // Repaint Fix für Safari/Glassmorphism
+    const header = document.querySelector('header');
+    if(header) {
+        header.style.transform = 'translateZ(0)';
+        requestAnimationFrame(() => header.style.transform = '');
     }
-    if (btn) btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-
-    // Mobile icons
-    if (iconDarkM && iconLightM) {
-      iconDarkM.classList.toggle('hidden', !isDark);
-      iconLightM.classList.toggle('hidden', isDark);
-    }
-    if (btnMobile) btnMobile.setAttribute('aria-pressed', isDark ? 'true' : 'false');
   };
 
-  const applyTheme = (theme, { persist = true } = {}) => {
-    const mode = theme === 'dark' ? 'dark' : 'light';
-    root.setAttribute('data-theme', mode);
-    syncIcons(mode);
-
-    if (persist) localStorage.setItem('theme', mode);
-    else localStorage.removeItem('theme');
-
-    repaintFixedGlass();
-  };
-
-  // ---- Initialzustand ----
-  // Head-Inline-Script hat bereits data-theme gesetzt (savedTheme / prefers-color-scheme).
-  const savedTheme = localStorage.getItem('theme');
-  const currentAttr = root.getAttribute('data-theme'); // 'dark' | 'light' | null
-
-  if (savedTheme && savedTheme !== currentAttr) {
-    applyTheme(savedTheme, { persist: true });
-  } else {
-    applyTheme(currentAttr === 'dark' ? 'dark' : 'light', { persist: !!savedTheme });
+  if (btn) {
+      // Alten Listener entfernen durch Klonen (verhindert doppelte Events)
+      const newBtn = btn.cloneNode(true);
+      btn.parentNode.replaceChild(newBtn, btn);
+      newBtn.addEventListener('click', toggleTheme);
   }
+};
 
-  // ---- Event-Handler (Desktop & Mobile) ----
-  const toggle = () => {
-    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    applyTheme(next, { persist: true });
-  };
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialer Check beim Seitenladen
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initial = saved || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', initial);
+});
 
-  if (btn) btn.addEventListener('click', toggle);
-  if (btnMobile) btnMobile.addEventListener('click', toggle);
-
-  // ---- Auf Systempräferenzen reagieren (nur wenn kein savedTheme gesetzt) ----
-  const media = window.matchMedia('(prefers-color-scheme: dark)');
-  const onMediaChange = (e) => {
-    if (!localStorage.getItem('theme')) {
-      applyTheme(e.matches ? 'dark' : 'light', { persist: false });
-    }
-  };
-  if (typeof media.addEventListener === 'function') {
-    media.addEventListener('change', onMediaChange);
-  } else if (typeof media.addListener === 'function') {
-    media.addListener(onMediaChange);
-  }
+// Reagiert, falls header.js das Event feuert bevor window.initThemeToggle verfügbar war
+document.addEventListener('headerLoaded', () => {
+    window.initThemeToggle();
 });

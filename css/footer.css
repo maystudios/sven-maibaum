@@ -3,9 +3,22 @@
 .footer .footer-text { color: var(--text-color); }
 .footer .footer-text-muted { color: var(--text-muted-color); }
 .footer .footer-heading { color: var(--text-color); text-transform: uppercase; letter-spacing: .06em; }
-.footer .footer-link { color: var(--link-color); text-decoration: none; }
+
+.footer .footer-link { 
+    color: var(--link-color); 
+    text-decoration: none; 
+    /* NEU: Größere Klickfläche für Mobile */
+    display: inline-block;
+    padding: 6px 0;
+}
 .footer .footer-link:hover { color: var(--link-hover-color); text-decoration: underline; }
-.footer .footer-icon { color: var(--text-muted-color); }
+
+.footer .footer-icon { 
+    color: var(--text-muted-color);
+    /* NEU: Größere Hitbox für Icons */
+    padding: 10px;
+    margin: -10px; 
+}
 .footer .footer-icon:hover { color: var(--link-hover-color); }
 
 /* Layout */

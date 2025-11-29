@@ -15,7 +15,6 @@
   $grid.innerHTML = GALLERY_IMAGES.map((m, i) => {
     const src = BASE + m.file;
     const ratio = (m.ratio || "16/9").split("/").map(Number);
-    const pad = (ratio[1] / ratio[0]) * 100; // aspect-ratio fallback
     return `
       <figure class="media-item" tabindex="0" data-index="${i}" style="aspect-ratio:${m.ratio};">
         <div style="position:relative;">
@@ -26,7 +25,7 @@
     `;
   }).join("");
 
-  // einfache Reveal-Animation
+  // Reveal-Animation
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => e.isIntersecting && e.target.classList.add("is-visible"));
   }, { threshold: 0.1 });
@@ -66,10 +65,25 @@
   $lbNext.addEventListener("click", () => next(1));
   $lbClose.addEventListener("click", close);
   $lb.addEventListener("click", e => { if (e.target === $lb) close(); });
+  
   window.addEventListener("keydown", e => {
     if ($lb.classList.contains("hidden")) return;
     if (e.key === "Escape") close();
     if (e.key === "ArrowRight") next(1);
     if (e.key === "ArrowLeft") next(-1);
   });
+
+  // --- NEU: Swipe Support für Mobile ---
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  $lb.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  $lb.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    if (touchEndX < touchStartX - 50) next(1);
+    if (touchEndX > touchStartX + 50) next(-1);
+  }, { passive: true });
 })();

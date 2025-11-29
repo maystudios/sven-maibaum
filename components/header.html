@@ -1,0 +1,65 @@
+<div class="container mx-auto px-6 py-4 flex justify-between items-center h-full">
+    <a href="/index.html#home" class="text-xl font-bold gradient-text nav-link relative z-50 py-2">Sven Maibaum</a>
+
+    <div class="flex items-center">
+        <nav class="hidden md:flex space-x-6 mr-6" aria-label="Hauptnavigation">
+            <a href="/index.html#home" class="hover:text-teal-400 transition duration-300 nav-link">Home</a>
+            <a href="/index.html#about" class="hover:text-teal-400 transition duration-300 nav-link">Über Mich</a>
+            <a href="/pages/architect-showcase.html"
+                class="hover:text-purple-400 transition duration-300 nav-link">Showcase</a>
+            <a href="/index.html#projects" class="hover:text-teal-400 transition duration-300 nav-link">Projekte</a>
+            <a href="/index.html#contact" class="hover:text-teal-400 transition duration-300 nav-link">Kontakt</a>
+        </nav>
+
+        <button id="theme-toggle" type="button"
+            class="theme-switcher mr-4 md:mr-0 relative z-50 p-2 focus:outline-none focus:ring-2 focus:ring-teal-500 rounded-full"
+            title="Theme wechseln">
+            <svg id="theme-toggle-dark-icon" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+        </button>
+
+        <div class="md:hidden flex items-center relative z-50">
+            <button id="mobile-menu-button"
+                class="focus:outline-none p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                aria-label="Menü öffnen">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div id="mobile-menu"
+    class="md:hidden fixed inset-0 z-40 bg-opacity-95 backdrop-blur-xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-center"
+    style="background-color: var(--bg-color-alt);">
+
+    <button id="close-mobile-menu-button"
+        class="absolute top-6 right-6 p-4 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        aria-label="Menü schließen">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+    </button>
+
+    <nav class="flex flex-col items-center space-y-8 text-xl font-medium">
+        <a href="/index.html#home"
+            class="mobile-menu-link py-2 px-6 rounded-lg hover:bg-teal-500/10 transition-colors">Home</a>
+        <a href="/index.html#about"
+            class="mobile-menu-link py-2 px-6 rounded-lg hover:bg-teal-500/10 transition-colors">Über Mich</a>
+        <a href="/pages/architect-showcase.html"
+            class="mobile-menu-link py-2 px-6 rounded-lg hover:bg-purple-500/10 transition-colors">Architektur
+            Showcase</a>
+        <a href="/index.html#projects"
+            class="mobile-menu-link py-2 px-6 rounded-lg hover:bg-teal-500/10 transition-colors">Projekte</a>
+        <a href="/index.html#contact"
+            class="mobile-menu-link py-2 px-6 rounded-lg hover:bg-teal-500/10 transition-colors">Kontakt</a>
+    </nav>
+</div>

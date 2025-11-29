@@ -10,10 +10,9 @@
     <meta name="keywords"
         content="Sven Maibaum, Portfolio, MayStudios, Software Architekt, Spieleentwickler, Full-Stack Entwicklung, Backend, Frontend, KI, Unreal Engine, Unity, Java, Python, C++, Spring Boot, React, Vue, Node.js, Burscheid, Exambyte, Gemma, Language Model, Architektur Showcase, Softwareentwicklung Portfolio">
     <meta name="author" content="Sven Maibaum">
-    <link rel="canonical" href="https://www.svenmaibaum.dev/index.html" /> <!-- Basis-URL anpassen -->
+    <link rel="canonical" href="https://www.svenmaibaum.dev/index.html" />
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9SXPLL2SY"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -23,7 +22,6 @@
         gtag('config', 'G-P9SXPLL2SY');
     </script>
 
-    <!-- Skript zum initialen Setzen des Themes -->
     <script>
         (function () {
             const savedTheme = localStorage.getItem('theme');
@@ -47,9 +45,8 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="css/footer.css">
 
-    <!-- Strukturierte Daten (JSON-LD) für Person und Webseite -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -110,96 +107,12 @@
 
 <body class="antialiased">
 
-    <header class="fixed top-0 left-0 right-0 z-50 glassmorphism shadow-lg">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-bold gradient-text nav-link">Sven Maibaum</a>
-            <div class="flex items-center">
-                <nav class="hidden md:flex space-x-6" aria-label="Hauptnavigation">
-                    <a href="#home" class="hover:text-teal-400 transition duration-300 nav-link">Home</a>
-                    <a href="#about" class="hover:text-teal-400 transition duration-300 nav-link">Über Mich</a>
-                    <a href="#philosophy" class="hover:text-teal-400 transition duration-300 nav-link">Philosophie</a>
-                    <a href="pages/architect-showcase.html"
-                        class="hover:text-purple-400 transition duration-300">Architektur Showcase</a>
-                    <a href="#experience" class="hover:text-teal-400 transition duration-300 nav-link">Erfahrung</a>
-                    <a href="#projects" class="hover:text-teal-400 transition duration-300 nav-link">Projekte</a>
-                    <a href="#skills" class="hover:text-teal-400 transition duration-300 nav-link">Skills</a>
-                    <a href="#contact" class="hover:text-teal-400 transition duration-300 nav-link">Kontakt</a>
-                </nav>
-                <button id="theme-toggle" type="button" class="theme-switcher" title="Toggle theme">
-                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                    </svg>
-                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                            fill-rule="evenodd" clip-rule="evenodd"></path>
-                    </svg>
-                </button>
-            </div>
-            <div class="md:hidden flex items-center">
-                <button id="mobile-menu-button" class="focus:outline-none ml-3" aria-label="Mobiles Menü öffnen"
-                    aria-expanded="false" aria-controls="mobile-menu">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <div id="mobile-menu"
-            class="md:hidden fixed top-0 left-0 w-64 h-full shadow-xl p-6 space-y-4 transform -translate-x-full"
-            role="dialog" aria-modal="true">
-            <div class="flex justify-between items-center mb-8">
-                <a href="#home" class="text-2xl font-bold gradient-text block mobile-menu-link nav-link">Sven
-                    Maibaum</a>
-                <button id="theme-toggle-mobile" type="button" class="theme-switcher" title="Toggle theme">
-                    <svg id="theme-toggle-dark-icon-mobile" class="hidden w-5 h-5" fill="currentColor"
-                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                    </svg>
-                    <svg id="theme-toggle-light-icon-mobile" class="hidden w-5 h-5" fill="currentColor"
-                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                            fill-rule="evenodd" clip-rule="evenodd"></path>
-                    </svg>
-                </button>
-            </div>
-            <a href="#home"
-                class="block py-2 px-2 rounded hover:bg-gray-700 transition duration-300 mobile-menu-link nav-link">Home</a>
-            <a href="#about"
-                class="block py-2 px-2 rounded hover:bg-gray-700 transition duration-300 mobile-menu-link nav-link">Über
-                Mich</a>
-            <a href="#philosophy"
-                class="block py-2 px-2 rounded hover:bg-gray-700 transition duration-300 mobile-menu-link nav-link">Philosophie</a>
-            <a href="pages/architect-showcase.html"
-                class="block py-2 px-2 rounded hover:bg-gray-700 transition duration-300 mobile-menu-link">Architektur
-                Showcase</a>
-            <a href="#experience"
-                class="block py-2 px-2 rounded hover:bg-gray-700 transition duration-300 mobile-menu-link nav-link">Erfahrung</a>
-            <a href="#projects"
-                class="block py-2 px-2 rounded hover:bg-gray-700 transition duration-300 mobile-menu-link nav-link">Projekte</a>
-            <a href="#skills"
-                class="block py-2 px-2 rounded hover:bg-gray-700 transition duration-300 mobile-menu-link nav-link">Skills</a>
-            <a href="#contact"
-                class="block py-2 px-2 rounded hover:bg-gray-700 transition duration-300 mobile-menu-link nav-link">Kontakt</a>
-            <button id="close-mobile-menu-button" class="absolute top-6 right-6" aria-label="Mobiles Menü schließen">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-                    </path>
-                </svg>
-            </button>
-        </div>
-    </header>
+    <header class="fixed top-0 left-0 right-0 z-50 glassmorphism shadow-lg transition-colors duration-300"></header>
 
     <section id="home"
         class="hero-section min-h-screen flex items-center justify-center section-padding bg-cover bg-center fade-in-up">
         <div class="text-center px-4">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">
+            <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-4">
                 <span class="gradient-text">Sven Maibaum</span>
             </h1>
             <p class="text-xl md:text-2xl mb-3 max-w-3xl mx-auto">
@@ -260,26 +173,29 @@
 
                         <p class="leading-relaxed">
                             Bei <strong>LikeTik by <a href="https://www.liketik.com/" target="_blank"
-                                        rel="noopener noreferrer" class="text-purple-400 hover:underline">Axinity</a></strong>
+                                    rel="noopener noreferrer"
+                                    class="text-purple-400 hover:underline">Axinity</a></strong>
                             arbeite ich als leitender Software-Architekt an einer E-Commerce-Plattform, die wir als
-                            <strong>offizieller Partner von TikTok</strong> entwickeln. Unser Ziel ist es, Social-Commerce
-                            technisch neu und skalierbar umzusetzen – mit stabilen Systemen, die Marken und Creator direkt
+                            <strong>offizieller Partner von TikTok</strong> entwickeln. Unser Ziel ist es,
+                            Social-Commerce
+                            technisch neu und skalierbar umzusetzen – mit stabilen Systemen, die Marken und Creator
+                            direkt
                             miteinander verbinden.
                         </p>
 
                         <p class="leading-relaxed">
                             Bei <strong><a href="https://www.emotions-gaming.de/" target="_blank"
-                                        rel="noopener noreferrer" class="text-orange-400 hover:underline">Emotions
-                                        Gaming</a></strong> leite ich die Entwicklung des Spiels
+                                    rel="noopener noreferrer" class="text-orange-400 hover:underline">Emotions
+                                    Gaming</a></strong> leite ich die Entwicklung des Spiels
                             <strong><a href="pages/projekt-heistline.html" target="_blank" rel="noopener noreferrer"
-                                        class="text-orange-400 hover:underline">„HeistLine“</a></strong>, einem
+                                    class="text-orange-400 hover:underline">„HeistLine“</a></strong>, einem
                             storybasierten Action-Projekt, bei dem Gameplay und Technik eng zusammenarbeiten, um ein
                             intensives Spielerlebnis zu schaffen.
                         </p>
 
                         <p class="leading-relaxed">
                             Mit <strong><a href="http://maystudios.net/" target="_blank" rel="noopener noreferrer"
-                                        class="text-teal-400 hover:underline">MayStudios</a></strong> konzentriere ich
+                                    class="text-teal-400 hover:underline">MayStudios</a></strong> konzentriere ich
                             mich auf eigene Spiele- und Tool-Entwicklung – darunter Titel wie <em>Mr. Dork 3</em> sowie
                             kleinere <a href="https://maystudios.itch.io/" target="_blank" rel="noopener noreferrer"
                                 class="text-teal-400 hover:underline">itch.io-Projekte</a>. Außerdem veröffentliche ich
@@ -376,7 +292,6 @@
                 <button class="filter-btn" data-filter="python">Python</button>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- HeistLine Projektkarte -->
                 <div class="glassmorphism rounded-xl overflow-hidden shadow-xl project-card"
                     data-tags="unreal-engine multiplayer heist">
                     <img src="assets/projects//heistline/VaultHeist.png" alt="HeistLine - Prison Escape & Heist MMO"
@@ -402,25 +317,31 @@
                     </div>
                 </div>
                 <div class="glassmorphism rounded-xl overflow-hidden shadow-xl project-card"
-                    data-tags="ai-ml python transformers hugging-face">
-                    <img src="https://placehold.co/600x400/2c7a7b/FFFFFF?text=Gemma+Toxic+LLM"
-                        alt="Gemma-2b-it-Toxic-v2.0 Sprachmodell" class="w-full h-56 object-cover" loading="lazy">
+                    data-tags="ai-ml python onnx quantization hugging-face">
+                    <img src="https://placehold.co/600x400/FFD21E/000000?text=Hugging+Face+Profil"
+                        alt="Sven Maibaum Hugging Face Profil" class="w-full h-56 object-cover" loading="lazy">
+
                     <div class="p-6 flex flex-col flex-grow">
                         <div class="flex-grow">
-                            <h3 class="text-xl font-semibold mb-2 text-teal-400">Gemma-2b-it-Toxic-v2.0</h3>
-                            <p class="text-sm mb-2">Fine-Tuning eines Sprachmodells für Forschungszwecke
-                                auf unzensierten und toxischen Daten.</p>
+                            <h3 class="text-xl font-semibold mb-2 text-yellow-400">Hugging Face & AI Research</h3>
+                            <p class="text-sm mb-2">
+                                Mein Hub für optimierte KI-Modelle. Ich fokussiere mich auf das
+                                <strong>Fine-Tuning</strong> von LLMs,
+                                <strong>Quantisierung</strong> zur Effizienzsteigerung und
+                                <strong>ONNX-Konvertierungen</strong> für
+                                breite Kompatibilität.
+                            </p>
                             <div class="mb-4">
-                                <span class="tech-tag tech-tag-teal">AI/ML</span>
-                                <span class="tech-tag tech-tag-yellow">Python</span>
-                                <span class="tech-tag tech-tag-gray">Transformers</span>
-                                <span class="tech-tag tech-tag-blue">Hugging Face</span>
+                                <span class="tech-tag tech-tag-yellow">Hugging Face</span>
+                                <span class="tech-tag tech-tag-teal">Fine-Tuning</span>
+                                <span class="tech-tag tech-tag-blue">ONNX</span>
+                                <span class="tech-tag tech-tag-purple">Quantization</span>
                             </div>
                         </div>
                         <div class="mt-auto pt-4">
-                            <a href="pages/projekt-gemma-toxic.html" target="_self"
-                                class="inline-block bg-teal-500 hover:bg-teal-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300 transform hover:scale-105 text-sm">
-                                Mehr anzeigen &rarr;
+                            <a href="https://huggingface.co/Svenni551" target="_blank" rel="noopener noreferrer"
+                                class="inline-block bg-yellow-500 hover:bg-yellow-600 text-black font-medium py-2 px-4 rounded-lg transition duration-300 transform hover:scale-105 text-sm">
+                                Zum Profil &rarr;
                             </a>
                         </div>
                     </div>
@@ -528,7 +449,7 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12"><span class="gradient-text">Nehmen Sie Kontakt
                     auf</span></h2>
             <div class="max-w-2xl mx-auto glassmorphism p-8 md:p-10 rounded-xl shadow-2xl">
-                <p class="text-center mb-6">
+                <p class="text-center mb-6 max-w-lg mx-auto">
                     Ich freue mich auf Ihre Anfrage! Füllen Sie einfach das Formular aus oder kontaktieren Sie mich
                     direkt.
                 </p>
@@ -583,7 +504,9 @@
     <script src="/js/philosophy.js" defer></script>
     <script src="/js/footer.js" defer></script>
     <script src="js/script.js" defer></script>
+
     <script src="js/theme.js" defer></script>
+    <script src="js/header.js" defer></script>
 </body>
 
 </html>
