@@ -38,28 +38,28 @@
 </div>
 
 <div id="mobile-menu"
-    class="md:hidden fixed inset-0 z-40 bg-opacity-95 backdrop-blur-xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-center"
-    style="background-color: var(--bg-color-alt);">
+    class="md:hidden fixed inset-0 z-[60] bg-opacity-95 backdrop-blur-xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-center shadow-2xl"
+    style="background-color: var(--bg-color-alt);" role="dialog" aria-modal="true">
 
     <button id="close-mobile-menu-button"
-        class="absolute top-6 right-6 p-4 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        class="absolute top-6 right-6 p-4 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
         aria-label="Menü schließen">
         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
     </button>
 
-    <nav class="flex flex-col items-center space-y-8 text-xl font-medium">
+    <nav class="flex flex-col items-center space-y-8 text-xl font-medium w-full">
         <a href="/index.html#home"
-            class="mobile-menu-link py-2 px-6 rounded-lg hover:bg-teal-500/10 transition-colors">Home</a>
+            class="mobile-menu-link block w-full text-center py-4 hover:bg-teal-500/10 transition-colors">Home</a>
         <a href="/index.html#about"
-            class="mobile-menu-link py-2 px-6 rounded-lg hover:bg-teal-500/10 transition-colors">Über Mich</a>
+            class="mobile-menu-link block w-full text-center py-4 hover:bg-teal-500/10 transition-colors">Über Mich</a>
         <a href="/pages/architect-showcase.html"
-            class="mobile-menu-link py-2 px-6 rounded-lg hover:bg-purple-500/10 transition-colors">Architektur
+            class="mobile-menu-link block w-full text-center py-4 hover:bg-purple-500/10 transition-colors">Architektur
             Showcase</a>
         <a href="/index.html#projects"
-            class="mobile-menu-link py-2 px-6 rounded-lg hover:bg-teal-500/10 transition-colors">Projekte</a>
+            class="mobile-menu-link block w-full text-center py-4 hover:bg-teal-500/10 transition-colors">Projekte</a>
         <a href="/index.html#contact"
-            class="mobile-menu-link py-2 px-6 rounded-lg hover:bg-teal-500/10 transition-colors">Kontakt</a>
+            class="mobile-menu-link block w-full text-center py-4 hover:bg-teal-500/10 transition-colors">Kontakt</a>
     </nav>
 </div>
