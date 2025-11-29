@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt LikeTik: Social Commerce Revolution - Sven Maibaum</title>
+    <meta name="description"
+        content="Details zu LikeTik by Axinity: Eine KI-gestützte Social Commerce Plattform, die Influencer Marketing und E-Commerce Fulfillment automatisiert. Lead Architecture von Sven Maibaum.">
+    <meta name="keywords"
+        content="LikeTik, Axinity, Social Commerce, Influencer Marketing, KI, TikTok Shop, E-Commerce Automatisierung, Sven Maibaum, Software Architektur, Mobile App">
+    <meta name="author" content="Sven Maibaum">
+    <link rel="canonical" href="https://www.svenmaibaum.dev/pages/projekt-liketik.html" />
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9SXPLL2SY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-P9SXPLL2SY');
+    </script>
+
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } else if (prefersDark) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.svenmaibaum.dev/pages/projekt-liketik.html"
+          },
+          "name": "LikeTik",
+          "headline": "LikeTik - Der KI Influencer Boost",
+          "description": "LikeTik automatisiert Social Commerce von der Produktauswahl bis zum Versand durch KI-gestützte Analysen und nahtlose E-Commerce Integrationen.",
+          "image": "https://placehold.co/900x500/0a0f1f/8b5cf6?text=LikeTik+App+Showcase",
+          "author": {
+            "@id": "https://www.svenmaibaum.dev/#person"
+          },
+          "publisher": {
+             "@type": "Organization",
+             "name": "Axinity GmbH"
+          },
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "iOS, Android, Web",
+          "datePublished": "2025-01-01",
+          "keywords": "Social Commerce, AI, TikTok Shop, Automation"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Portfolio Sven Maibaum",
+            "item": "https://www.svenmaibaum.dev/index.html"
+          },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projekte",
+            "item": "https://www.svenmaibaum.dev/index.html#projects"
+          },{
+            "@type": "ListItem",
+            "position": 3,
+            "name": "LikeTik"
+          }]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="antialiased">
+
+    <header class="sticky top-0 z-40 glassmorphism shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html#home" class="text-xl font-bold gradient-text">Sven Maibaum</a>
+            <div class="flex items-center">
+                <a href="../index.html#projects" class="hover:text-teal-400 transition duration-300">
+                    <i class="fas fa-arrow-left mr-2"></i>Zurück zu Projekten
+                </a>
+                <button id="theme-toggle" type="button" class="theme-switcher" title="Toggle theme">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="project-detail-container section-padding fade-in-up visible">
+        <div class="project-detail-header">
+            <h1 class="gradient-text">LikeTik</h1>
+            <p class="project-subtitle">Die automatisierte Social Commerce Plattform für Creator, Brands & Agenturen.
+            </p>
+        </div>
+
+        <img src="https://placehold.co/900x500/0a0f1f/8b5cf6?text=LikeTik+App+Showcase"
+            alt="LikeTik Dashboard Visualisierung" class="project-image-full" loading="lazy">
+
+        <div class="project-detail-content">
+            <h2 class="gradient-text">Projektübersicht</h2>
+            <p>
+                <strong>LikeTik</strong> ist eine revolutionäre Plattform, die Social Commerce automatisiert.
+                Als <strong>Leitender Software-Architekt</strong> bei Axinity verantworte ich die technische Konzeption
+                und Umsetzung dieses komplexen Ökosystems. Die App verbindet Content Creator direkt mit Brands und
+                übernimmt die komplette Logistikkette – von der KI-basierten Produktauswahl bis zum Versand.
+            </p>
+            <p>
+                Das Ziel: Follower in echte Käufer zu verwandeln, indem Creator ohne eigenes Lager oder kompliziertes
+                Management sofort Produkte verkaufen können, die perfekt zu ihrer Zielgruppe passen.
+            </p>
+
+            <h3>Kernfeatures & Innovationen</h3>
+            <ul>
+                <li><strong>KI-Produkt Matching:</strong> Algorithmen analysieren die Zielgruppe des Creators und
+                    schlagen Produkte mit der höchsten Kaufwahrscheinlichkeit vor.</li>
+                <li><strong>Automatisches Fulfillment:</strong> Vollständige Integration von Logistikprozessen – der
+                    Creator fokussiert sich nur auf Content.</li>
+                <li><strong>Real-Time Analytics:</strong> Ein Dashboard, das nicht nur vergangene Umsätze zeigt, sondern
+                    durch KI-Prognosen ("Future Predictions") Wachstumspotenziale aufzeigt.</li>
+                <li><strong>Multi-Channel Support:</strong> Integration von TikTok Shop, Shopify und eigenen Landing
+                    Pages.</li>
+                <li><strong>Brand Building:</strong> Tools, mit denen Creator in Sekunden ihre eigene Marke (Whitelabel)
+                    aufbauen können.</li>
+            </ul>
+
+            <h3>Eingesetzte Technologien</h3>
+            <div class="my-4">
+                <span class="tech-tag tech-tag-teal">Microservices</span>
+                <span class="tech-tag tech-tag-purple">KI & ML</span>
+                <span class="tech-tag tech-tag-blue">Cloud (AWS/GCP)</span>
+                <span class="tech-tag tech-tag-green">Node.js / Spring Boot</span>
+                <span class="tech-tag tech-tag-orange">React / Vue.js</span>
+                <span class="tech-tag tech-tag-red">Big Data</span>
+                <span class="tech-tag tech-tag-gray">TikTok API</span>
+            </div>
+
+            <h3>Ergebnisse</h3>
+            <p>
+                LikeTik ermöglicht es Creatorn und Agenturen, ihre Monetarisierung drastisch zu vereinfachen.
+                Die Plattform skaliert automatisch mit dem Traffic viraler Videos und bietet eine der
+                fortschrittlichsten
+                Lösungen im europäischen Social Commerce Markt.
+            </p>
+
+            <div class="mt-8">
+                <a href="https://www.liketik.com/" target="_blank" rel="noopener noreferrer"
+                    class="bg-gradient-to-r from-purple-600 to-pink-500 text-white font-medium py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105 inline-block shadow-md button-like-class">
+                    Zur offiziellen Website <i class="fas fa-external-link-alt ml-2"></i>
+                </a>
+            </div>
+        </div>
+
+        <a href="../index.html#projects" class="back-to-portfolio">
+            <i class="fas fa-arrow-left mr-2"></i>Alle Projekte anzeigen
+        </a>
+    </main>
+
+    <footer class="py-8 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; <span id="currentYearDetailLikeTik"></span> Sven Maibaum. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+    <script>
+        const currentYearDetailElementLikeTik = document.getElementById('currentYearDetailLikeTik');
+        if (currentYearDetailElementLikeTik) {
+            currentYearDetailElementLikeTik.textContent = new Date().getFullYear();
+        }
+    </script>
+    <script src="../js/theme.js" defer></script>
+</body>
+
+</html>

@@ -6,20 +6,40 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
   <url>
     <loc>https://www.sven-maibaum.com/pages/architect-showcase.html</loc>
     <lastmod>2025-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://www.sven-maibaum.com/pages/projekt-exambyte.html</loc>
+    <loc>https://www.sven-maibaum.com/pages/projekt-liketik.html</loc>
+    <lastmod>2025-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.sven-maibaum.com/pages/projekt-heistline.html</loc>
+    <lastmod>2025-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.sven-maibaum.com/pages/projekt-mrdork3.html</loc>
+    <lastmod>2025-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.sven-maibaum.com/pages/projekt-itchio-games.html</loc>
     <lastmod>2025-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.sven-maibaum.com/pages/projekt-gemma-toxic.html</loc>
+    <loc>https://www.sven-maibaum.com/pages/projekt-exambyte.html</loc>
     <lastmod>2025-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -31,17 +51,42 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.sven-maibaum.com/pages/projekt-prisonbreak.html</loc>
+    <loc>https://www.sven-maibaum.com/pages/_archiv_projekt-gemma.html</loc>
     <lastmod>2025-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
+
+  <url>
+    <loc>https://www.sven-maibaum.com/blog/index.html</loc>
+    <lastmod>2025-06-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sven-maibaum.com/pages/impressum.html</loc>
+    <lastmod>2025-06-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.sven-maibaum.com/pages/datenschutz.html</loc>
+    <lastmod>2025-06-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.sven-maibaum.com/pages/agb.html</loc>
+    <lastmod>2025-06-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
   <url>
     <loc>https://www.sven-maibaum.com/404.html</loc>
     <lastmod>2025-06-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.1</priority>
   </url>
-  <!-- Die projekt-detail-layout.html wird hier ausgelassen, da sie eine Vorlage ist. -->
-  <!-- Falls du weitere Seiten hinzufügst, sollten diese hier ebenfalls eingetragen werden. -->
 </urlset>
