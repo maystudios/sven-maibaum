@@ -41,7 +41,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        xintegrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../css/style.css">
@@ -112,29 +112,79 @@
             </p>
 
             <div class="mt-8 grid gap-8">
+                <!-- Terrafix & Game Jam Winner Section -->
                 <div class="glassmorphism p-6 rounded-lg border border-gray-700/30 shadow-lg">
-                    <h3 class="text-xl font-bold text-orange-400 mt-0">Terrafix</h3>
-                    <p class="mb-4">
-                        Ein Projekt, das im Rahmen eines <strong>Uni Game Jams</strong> vom Team „Vegan & Natural“ zum
-                        Thema "Weltenretter" entwickelt wurde.
-                    </p>
-                    <p class="mb-4">
-                        <strong>Das Konzept:</strong> Terrafix ist ein Third-Person-Aufbauspiel. Der Spieler landet in
-                        einer zerstörten, kargen Welt und muss diese durch geschicktes Ressourcenmanagement und den
-                        Einsatz von Terraforming-Technologien wiederbeleben. Ziel war es, innerhalb kürzester Zeit eine
-                        atmosphärische Welt zu schaffen, die auf die Aktionen des Spielers visuell reagiert (z.B. durch
-                        wachsendes Gras oder zurückkehrendes Wasser).
-                    </p>
-                    <div class="mb-4">
-                        <span class="tech-tag tech-tag-orange">Game Jam</span>
-                        <span class="tech-tag tech-tag-green">Aufbau / Strategy</span>
-                        <span class="tech-tag tech-tag-gray">3D</span>
-                        <span class="tech-tag tech-tag-blue">Team Project</span>
+                    <div class="flex flex-col lg:flex-row gap-8">
+
+                        <!-- Linke Spalte: Text & Infos -->
+                        <div class="lg:w-1/2">
+                            <div class="flex items-center flex-wrap gap-3 mb-4">
+                                <h3 class="text-xl font-bold text-orange-400 m-0">Terrafix</h3>
+                                <!-- Winner Badge -->
+                                <span
+                                    class="bg-yellow-500/20 text-yellow-500 border border-yellow-500/50 text-xs font-bold px-3 py-1 rounded-full flex items-center shadow-sm">
+                                    <i class="fas fa-trophy mr-2 text-yellow-400"></i> 1. Platz HHU Game Jam
+                                </span>
+                            </div>
+
+                            <p class="mb-4">
+                                Ein Projekt, das im Rahmen eines <strong>Uni Game Jams</strong> an der HHU Düsseldorf
+                                vom Team „Vegan & Natural“ zum Thema "Weltenretter" entwickelt wurde.
+                            </p>
+                            <p class="mb-4">
+                                <strong>Das Konzept:</strong> Terrafix ist ein Third-Person-Aufbauspiel. Der Spieler
+                                landet in
+                                einer zerstörten, kargen Welt und muss diese durch geschicktes Ressourcenmanagement und
+                                den
+                                Einsatz von Terraforming-Technologien wiederbeleben. Ziel war es, innerhalb kürzester
+                                Zeit eine
+                                atmosphärische Welt zu schaffen, die auf die Aktionen des Spielers visuell reagiert.
+                            </p>
+                            <p class="mb-6 font-medium text-teal-400 flex items-center">
+                                <i class="fas fa-star mr-2"></i> Unser Team konnte die Jury überzeugen und wir haben den
+                                1. Platz des Game Jams belegt!
+                            </p>
+
+                            <div class="mb-6">
+                                <span class="tech-tag tech-tag-orange">Game Jam Winner</span>
+                                <span class="tech-tag tech-tag-green">Aufbau / Strategy</span>
+                                <span class="tech-tag tech-tag-gray">3D</span>
+                                <span class="tech-tag tech-tag-blue">Team Project</span>
+                            </div>
+
+                            <a href="https://maystudios.itch.io/terrafix" target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center justify-center bg-gradient-to-r from-orange-500 to-red-500 text-white font-medium py-2 px-6 rounded-lg transition duration-300 transform hover:scale-105 shadow-md w-full sm:w-auto">
+                                Terrafix auf itch.io spielen <i class="fas fa-gamepad ml-2"></i>
+                            </a>
+                        </div>
+
+                        <!-- Rechte Spalte: Bilder -->
+                        <div class="lg:w-1/2 flex flex-col gap-4">
+                            <!-- Siegerfoto -->
+                            <figure
+                                class="rounded-lg overflow-hidden border border-gray-700/50 shadow-md group relative h-64 lg:h-auto">
+                                <img src="../assets/projects/itchio/gamejam-winner.jpg"
+                                    alt="Team Vegan & Natural - 1. Platz Siegerehrung"
+                                    class="w-full h-full object-cover transform transition duration-500 group-hover:scale-105">
+                                <figcaption
+                                    class="absolute bottom-0 left-0 right-0 bg-black/70 backdrop-blur-sm text-white text-xs py-2 px-3 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    Siegerehrung: 1. Platz für unser Team
+                                </figcaption>
+                            </figure>
+
+                            <!-- Präsentationsfoto -->
+                            <figure
+                                class="rounded-lg overflow-hidden border border-gray-700/50 shadow-md h-48 relative group">
+                                <img src="../assets/projects/itchio/gamejam-presentation.jpg"
+                                    alt="Game Jam Präsentation und Entwicklung"
+                                    class="w-full h-full object-cover object-center transform transition duration-500 group-hover:scale-105">
+                                <figcaption
+                                    class="absolute bottom-0 left-0 right-0 bg-black/70 backdrop-blur-sm text-white text-xs py-2 px-3 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    Präsentation unseres Konzepts
+                                </figcaption>
+                            </figure>
+                        </div>
                     </div>
-                    <a href="https://maystudios.itch.io/terrafix" target="_blank" rel="noopener noreferrer"
-                        class="text-sm font-semibold text-orange-400 hover:underline">
-                        Terrafix auf itch.io spielen <i class="fas fa-external-link-alt ml-1"></i>
-                    </a>
                 </div>
             </div>
 
