@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sven Maibaum - Kontaktkarte</title>
+    <meta name="description" content="Digitale Visitenkarte von Sven Maibaum.">
+    <meta name="author" content="Sven Maibaum">
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+
+    <!-- Tailwind Config für Dark Mode Support via Klasse -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+
+    <!-- Theme Init -->
+    <script>
+            (function () {
+                const savedTheme = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+                if (theme === 'dark') document.documentElement.classList.add('dark');
+            })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        .vcard-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            transition: background 0.3s ease;
+
+            /* Default Light Mode Background */
+            background-color: #f3f4f6;
+            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        /* Dark Mode Background Override */
+        html.dark .vcard-container {
+            background-color: #0a0f1f;
+            background-image: linear-gradient(rgba(10, 15, 31, 0.85), rgba(10, 15, 31, 0.95)), url('../assets/images/hero_background.webp');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .profile-glow {
+            box-shadow: 0 0 25px rgba(56, 178, 172, 0.2);
+        }
+
+        .action-btn {
+            transition: all 0.2s ease;
+        }
+
+        .action-btn:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+
+<body class="antialiased text-base text-gray-800 dark:text-gray-100">
+
+    <!-- Theme Toggle -->
+    <div class="absolute top-4 right-4 z-50">
+        <button id="theme-toggle" type="button"
+            class="theme-switcher bg-white border-gray-200 shadow-sm dark:bg-white/10 dark:border-white/20 border rounded-full p-2 transition-all duration-300"
+            title="Toggle theme">
+            <!-- Icons mit expliziten Farben für beide Modi -->
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-gray-600 dark:text-white" fill="currentColor"
+                viewBox="0 0 20 20">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-gray-600 dark:text-white" fill="currentColor"
+                viewBox="0 0 20 20">
+                <path
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+        </button>
+    </div>
+
+    <main class="vcard-container">
+        <!-- Card Container: Weiß im Light Mode, Glass im Dark Mode -->
+        <div class="w-full max-w-sm rounded-2xl overflow-hidden shadow-2xl relative fade-in-up visible
+                    bg-white border border-gray-200
+                    dark:bg-white/10 dark:backdrop-blur-md dark:border-white/10 transition-colors duration-300">
+
+            <!-- Header Banner -->
+            <div class="h-32 bg-gradient-to-r from-teal-500 to-purple-600"></div>
+
+            <!-- Profile Content -->
+            <div class="px-6 pb-8 relative">
+                <!-- Profile Image -->
+                <div class="relative -mt-16 mb-4 flex justify-center">
+                    <img src="../assets/images/sven_maibaum_profile.webp" alt="Sven Maibaum" class="w-32 h-32 rounded-full object-cover border-4 bg-white profile-glow
+                                border-white dark:border-[#1a202c]">
+                </div>
+
+                <!-- Info -->
+                <div class="text-center mb-8">
+                    <h1 class="text-2xl font-bold mb-1 gradient-text">Sven Maibaum</h1>
+                    <p class="text-sm font-medium mb-2 text-gray-600 dark:text-gray-300">Software-Architekt &
+                        Spieleentwickler</p>
+                    <p class="text-xs font-semibold tracking-wide uppercase text-teal-600 dark:text-teal-400">MayStudios
+                    </p>
+                </div>
+
+                <!-- Buttons -->
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <button onclick="downloadVCard()"
+                        class="action-btn col-span-2 bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white font-bold py-3 px-4 rounded-xl shadow-lg flex items-center justify-center gap-2">
+                        <i class="fas fa-address-book"></i> Kontakt speichern
+                    </button>
+
+                    <!-- Secondary Buttons: Helles Grau im Light Mode, Transparenz im Dark Mode -->
+                    <a href="mailto:company@maystudios.net" class="action-btn py-3 px-4 rounded-xl shadow flex items-center justify-center gap-2 font-semibold transition-colors
+                       bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-200
+                       dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:border-white/10">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+
+                    <a href="https://www.sven-maibaum.com" target="_blank" class="action-btn py-3 px-4 rounded-xl shadow flex items-center justify-center gap-2 font-semibold transition-colors
+                       bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-200
+                       dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:border-white/10">
+                        <i class="fas fa-globe"></i> Website
+                    </a>
+                </div>
+
+                <!-- Social Links: Dunkelgrau im Light Mode, Hellgrau im Dark Mode -->
+                <div class="flex justify-center gap-6 mt-6 pt-6 border-t border-gray-200 dark:border-white/10">
+                    <a href="https://www.linkedin.com/in/sven-maibaum-034122326" target="_blank"
+                        class="transition-colors transform hover:scale-110 text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                    </a>
+                    <a href="https://github.com/Svenni551" target="_blank"
+                        class="transition-colors transform hover:scale-110 text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white">
+                        <i class="fab fa-github fa-2x"></i>
+                    </a>
+                    <a href="https://maystudios.itch.io/" target="_blank"
+                        class="transition-colors transform hover:scale-110 text-gray-600 hover:text-red-600 dark:text-gray-400 dark:hover:text-red-500">
+                        <i class="fab fa-itch-io fa-2x"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Footer Link -->
+            <div class="py-3 text-center transition-colors bg-gray-50 dark:bg-black/20">
+                <a href="../index.html"
+                    class="text-xs transition-colors text-gray-500 hover:text-teal-600 dark:text-gray-400 dark:hover:text-white">
+                    &larr; Zurück zum Portfolio
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/vcard.js"></script>
+</body>
+
+</html>
