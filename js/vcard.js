@@ -12,9 +12,9 @@ function downloadVCard() {
         'ORG:MayStudios',
         'TITLE:Software-Architekt & Spieleentwickler',
         'EMAIL;type=INTERNET;type=WORK:company@maystudios.net',
-        'URL;type=WORK:https://www.svenmaibaum.dev',
-        'URL;type=LINKEDIN:https://www.linkedin.com/in/sven-maibaum-034122326',
-        'URL;type=GITHUB:https://github.com/Svenni551',
+        'URL;type=WORK:https://www.sven-maibaum.com',
+        'URL;type=LINKEDIN:https://www.linkedin.com/in/sven-maibaum/',
+        'URL;type=GITHUB:https://github.com/maystudios',
         // Optional: Foto-URL (funktioniert nicht in allen Clients direkt beim Import ohne Bilddaten)
         // 'PHOTO;VALUE=URI:https://www.svenmaibaum.dev/assets/images/sven_maibaum_profile.webp',
         'END:VCARD'
