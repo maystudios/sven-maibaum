@@ -1,26 +1,37 @@
 /* css/style.css */
 
-/* Light Theme (Default) & Dark Theme Variablen */
+/* =========================================
+   1. VARIABLES & THEME CONFIGURATION
+   ========================================= */
 :root,
 html[data-theme="light"] {
+    /* Core Colors */
     --bg-color: #f0f4f8;
     --bg-color-alt: #ffffff;
     --text-color: #1a202c;
     --text-muted-color: #4a5568;
+    --text-hero-color: #1a202c;
+
+    /* Gradients */
     --text-gradient-from: #2b6cb0;
     --text-gradient-to: #5a67d8;
 
+    /* Glass & Overlay */
     --glass-bg: rgba(255, 255, 255, 0.95);
     --glass-border: rgba(0, 0, 0, 0.05);
     --header-bg: rgba(255, 255, 255, 0.98);
+    --hero-overlay-start: rgba(255, 255, 255, 0.90);
+    --hero-overlay-end: rgba(255, 255, 255, 0.50);
+    --hero-background-image: url('../assets/images/hero_background.webp');
 
+    /* Cards */
     --card-bg: var(--bg-color-alt);
     --card-border: #e2e8f0;
-
     --card-shadow-main: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
     --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
     --card-hover-glow-color: rgba(43, 108, 176, 0.0);
 
+    /* Actions & Links */
     --link-color: #2b6cb0;
     --link-hover-color: #2c5282;
 
@@ -30,39 +41,27 @@ html[data-theme="light"] {
     --button-gradient-hover-to: #4c51bf;
     --button-text-color: #ffffff;
 
+    /* Scrollbar */
     --scrollbar-track: #e2e8f0;
     --scrollbar-thumb: #a0aec0;
     --scrollbar-thumb-hover: #718096;
 
+    /* UI Elements */
     --theme-switcher-icon-color: var(--text-color);
     --theme-switcher-hover-bg: rgba(0, 0, 0, 0.05);
 
-    --hero-overlay-start: rgba(255, 255, 255, 0.90);
-    --hero-overlay-end: rgba(255, 255, 255, 0.50);
-    --text-hero-color: #1a202c;
-    --hero-background-image: url('../assets/images/hero_background.webp');
+    /* Tech Tags (Light) */
+    --tech-tag-teal-bg: rgba(44, 122, 123, 0.1);   --tech-tag-teal-text: #236667;
+    --tech-tag-purple-bg: rgba(107, 70, 193, 0.1); --tech-tag-purple-text: #553c9a;
+    --tech-tag-gray-bg: rgba(74, 85, 104, 0.1);    --tech-tag-gray-text: #4a5568;
+    --tech-tag-blue-bg: rgba(43, 108, 176, 0.1);   --tech-tag-blue-text: #2a67a8;
+    --tech-tag-green-bg: rgba(56, 161, 105, 0.1);  --tech-tag-green-text: #2f855a;
+    --tech-tag-yellow-bg: rgba(221, 107, 32, 0.1); --tech-tag-yellow-text: #c05621;
+    --tech-tag-red-bg: rgba(197, 48, 48, 0.1);     --tech-tag-red-text: #b32424;
+    --tech-tag-orange-bg: rgba(192, 86, 33, 0.1);  --tech-tag-orange-text: #a2471b;
+    --tech-tag-indigo-bg: rgba(90, 103, 216, 0.1); --tech-tag-indigo-text: #4c51bf;
 
-    /* Tech Tags Light */
-    --tech-tag-teal-bg: rgba(44, 122, 123, 0.1);
-    --tech-tag-teal-text: #236667;
-    --tech-tag-purple-bg: rgba(107, 70, 193, 0.1);
-    --tech-tag-purple-text: #553c9a;
-    --tech-tag-gray-bg: rgba(74, 85, 104, 0.1);
-    --tech-tag-gray-text: #4a5568;
-    --tech-tag-blue-bg: rgba(43, 108, 176, 0.1);
-    --tech-tag-blue-text: #2a67a8;
-    --tech-tag-green-bg: rgba(56, 161, 105, 0.1);
-    --tech-tag-green-text: #2f855a;
-    --tech-tag-yellow-bg: rgba(221, 107, 32, 0.1);
-    --tech-tag-yellow-text: #c05621;
-    --tech-tag-red-bg: rgba(197, 48, 48, 0.1);
-    --tech-tag-red-text: #b32424;
-    --tech-tag-orange-bg: rgba(192, 86, 33, 0.1);
-    --tech-tag-orange-text: #a2471b;
-    --tech-tag-indigo-bg: rgba(90, 103, 216, 0.1);
-    --tech-tag-indigo-text: #4c51bf;
-
-    /* Formspree Light */
+    /* Formspree */
     --formspree-bg: #ffffff;
     --formspree-bg-alt: #f7fafc;
     --formspree-border-active: var(--link-color);
@@ -77,7 +76,7 @@ html[data-theme="light"] {
     --formspree-button-gradient-hover-from: var(--button-gradient-hover-from);
     --formspree-button-gradient-hover-to: var(--button-gradient-hover-to);
 
-    /* Showcase Light */
+    /* Showcase / Diagrams */
     --diagram-component-border: #cbd5e0;
     --diagram-component-hover-border: var(--link-color);
     --diagram-component-text-color: var(--text-color);
@@ -91,8 +90,11 @@ html[data-theme="light"] {
     --diagram-component-event-bus-border: #f56565;
     --diagram-component-database-bg: rgba(107, 114, 128, 0.1);
     --diagram-component-database-border: #a0aec0;
+    
     --connector-color: #a0aec0;
     --arrow-color: var(--connector-color);
+
+    /* Modals */
     --info-modal-backdrop-bg: rgba(226, 232, 240, 0.85);
     --info-modal-content-bg: #ffffff;
     --info-modal-content-border: #e2e8f0;
@@ -101,121 +103,150 @@ html[data-theme="light"] {
 }
 
 html[data-theme="dark"] {
-    --bg-color: #0a0f1f;
-    --bg-color-alt: #1a202c;
+    /* =========================
+       CORE COLORS (Ihre neuen Werte)
+       ========================= */
+    --bg-color: #1a2837;
+    --bg-color-alt: #283e52;
     --text-color: #e2e8f0;
-    --text-muted-color: #a0aec0;
-    --text-gradient-from: #38b2ac;
-    --text-gradient-to: #805ad5;
+    --text-muted-color: #94a3b8; /* Etwas kühleres Grau angepasst an den blauen Hintergrund */
+    --text-hero-color: #ffffff;
 
+    /* =========================
+       GRADIENTS (Ihre neuen Werte)
+       ========================= */
+    --text-gradient-from: #66ABFF;
+    --text-gradient-to: #99C7FF;
+
+    /* =========================
+       GLASS & OVERLAY (Angepasst an #1a2837)
+       ========================= */
+    /* Wir nutzen hier RGB Werte passend zum BG für Transparenz */
     --glass-bg: rgba(17, 24, 39, 0.65);
     --glass-border: rgba(255, 255, 255, 0.1);
     --header-bg: var(--glass-bg);
 
-    --card-bg: var(--glass-bg);
-    --card-border: #374151;
-    --card-shadow-main: rgba(0, 0, 0, 0.15);
-    --card-shadow-hover: rgba(0, 0, 0, 0.2);
-    --card-hover-glow-color: rgba(56, 178, 172, 0.3);
-
-    --link-color: #38b2ac;
-    --link-hover-color: #4fd1c5;
-
-    --button-gradient-from: var(--text-gradient-from);
-    --button-gradient-to: var(--text-gradient-to);
-    --button-gradient-hover-from: #2c7a7b;
-    --button-gradient-hover-to: #6b46c1;
-    --button-text-color: #ffffff;
-
-    --scrollbar-track: #1a202c;
-    --scrollbar-thumb: #4a5568;
-    --scrollbar-thumb-hover: #718096;
-
-    --theme-switcher-icon-color: var(--text-color);
-    --theme-switcher-hover-bg: rgba(255, 255, 255, 0.1);
-
-    --hero-overlay-start: rgba(10, 15, 31, 0.85);
-    --hero-overlay-end: rgba(10, 15, 31, 0.98);
-    --text-hero-color: #ffffff;
+    --hero-overlay-start: rgba(17, 24, 39, 0.65);
+    --hero-overlay-end: rgba(10, 15, 31, 0);
+    /* Das Bild bleibt gleich, aber der Overlay passt jetzt */
     --hero-background-image: url('../assets/images/hero_background.webp');
 
-    /* Tech Tags Dark */
-    --tech-tag-teal-bg: rgba(56, 178, 172, 0.2);
-    --tech-tag-teal-text: #38b2ac;
-    --tech-tag-purple-bg: rgba(128, 90, 213, 0.2);
-    --tech-tag-purple-text: #805ad5;
-    --tech-tag-gray-bg: rgba(74, 85, 104, 0.2);
-    --tech-tag-gray-text: #a0aec0;
-    --tech-tag-blue-bg: rgba(66, 153, 225, 0.2);
-    --tech-tag-blue-text: #4299e1;
-    --tech-tag-green-bg: rgba(72, 187, 120, 0.2);
-    --tech-tag-green-text: #48bb78;
-    --tech-tag-yellow-bg: rgba(237, 137, 54, 0.2);
-    --tech-tag-yellow-text: #ed8936;
-    --tech-tag-red-bg: rgba(245, 101, 101, 0.2);
-    --tech-tag-red-text: #f56565;
-    --tech-tag-orange-bg: rgba(221, 107, 32, 0.2);
-    --tech-tag-orange-text: #dd6b20;
-    --tech-tag-indigo-bg: rgba(99, 102, 241, 0.2);
-    --tech-tag-indigo-text: #6366f1;
+    --card-bg: var(--glass-bg);
+    /* Der Rand sollte etwas heller als der BG sein, passend zum Farbschema */
+    --card-border: rgba(12, 19, 34, 0.65); 
+    --card-shadow-main: rgba(0, 0, 0, 0.25);
+    --card-shadow-hover: rgba(0, 0, 0, 0.4);
+    /* WICHTIG: Der Glow ist jetzt Blau statt Türkis */
+    --card-hover-glow-color: rgba(102, 171, 255, 0.15);
 
-    /* Formspree Dark */
-    --formspree-bg: #1f2937;
-    --formspree-bg-alt: #374151;
-    --formspree-border-active: #14b8a6;
-    --formspree-border-default: #4b5563;
-    --formspree-highlight: #5eead4;
-    --formspree-primary: #14b8a6;
-    --formspree-primary-active: #0d9488;
-    --formspree-text-default: #e5e7eb;
-    --formspree-text-muted: #9ca3af;
-    --formspree-button-gradient-from: var(--formspree-primary);
-    --formspree-button-gradient-to: #8b5cf6;
-    --formspree-button-gradient-hover-from: var(--formspree-primary-active);
-    --formspree-button-gradient-hover-to: #7c3aed;
+    /* =========================
+       LINKS & ACTIONS
+       ========================= */
+    /* Link Farbe passend zum Text-Gradient Start */
+    --link-color: #66ABFF; 
+    --link-hover-color: #99C7FF;
 
-    /* Showcase Dark */
-    --diagram-component-border: #4b5563;
-    --diagram-component-hover-border: #14b8a6;
+    /* BUTTONS (Ihre neuen Werte) */
+    --button-gradient-from: #005CCC;
+    --button-gradient-to: #338FFF;
+    
+    /* Hover-Werte automatisch etwas heller berechnet */
+    --button-gradient-hover-from: #338FFF;
+    --button-gradient-hover-to: #66ABFF;
+    --button-text-color: #ffffff;
+
+    /* =========================
+       SCROLLBAR & UI
+       ========================= */
+    --scrollbar-track: #1a2837;
+    --scrollbar-thumb: #3E5C76;
+    --scrollbar-thumb-hover: #66ABFF;
+
+    --theme-switcher-icon-color: #99C7FF;
+    --theme-switcher-hover-bg: rgba(102, 171, 255, 0.1);
+
+    /* =========================
+       TECH TAGS (Angepasst für Lesbarkeit auf Dunkelblau)
+       ========================= */
+    /* Hier habe ich die Deckkraft leicht erhöht, damit sie auf dem dunklen Blau gut stehen */
+    --tech-tag-teal-bg: rgba(56, 178, 172, 0.15);   --tech-tag-teal-text: #4fd1c5;
+    --tech-tag-purple-bg: rgba(128, 90, 213, 0.15); --tech-tag-purple-text: #d6bcfa;
+    --tech-tag-gray-bg: rgba(148, 163, 184, 0.15);  --tech-tag-gray-text: #cbd5e1;
+    --tech-tag-blue-bg: rgba(51, 143, 255, 0.20);   --tech-tag-blue-text: #99C7FF; /* Eigener Blauton */
+    --tech-tag-green-bg: rgba(72, 187, 120, 0.15);  --tech-tag-green-text: #68d391;
+    --tech-tag-yellow-bg: rgba(237, 137, 54, 0.15); --tech-tag-yellow-text: #f6ad55;
+    --tech-tag-red-bg: rgba(245, 101, 101, 0.15);   --tech-tag-red-text: #fc8181;
+    --tech-tag-orange-bg: rgba(237, 137, 54, 0.15); --tech-tag-orange-text: #fbd38d;
+    --tech-tag-indigo-bg: rgba(99, 102, 241, 0.15); --tech-tag-indigo-text: #818cf8;
+
+    /* =========================
+       FORMSPREE (Harmonisierung)
+       ========================= */
+    --formspree-bg: #1e2e3e; /* Ein Tick heller als der Main BG */
+    --formspree-bg-alt: #283e52;
+    --formspree-border-active: #66ABFF;
+    --formspree-border-default: #3E5C76;
+    --formspree-highlight: #005CCC;
+    --formspree-primary: #66ABFF;
+    --formspree-primary-active: #338FFF;
+    --formspree-text-default: #e2e8f0;
+    --formspree-text-muted: #94a3b8;
+    --formspree-button-gradient-from: var(--button-gradient-from);
+    --formspree-button-gradient-to: var(--button-gradient-to);
+    --formspree-button-gradient-hover-from: var(--button-gradient-hover-from);
+    --formspree-button-gradient-hover-to: var(--button-gradient-hover-to);
+
+    /* =========================
+       SHOWCASE & DIAGRAMS
+       ========================= */
+    --diagram-component-border: #3E5C76;
+    --diagram-component-hover-border: #66ABFF;
     --diagram-component-text-color: var(--text-color);
-    --diagram-component-hexagon-core-bg: rgba(128, 90, 213, 0.2);
-    --diagram-component-hexagon-core-border: #805ad5;
-    --diagram-component-adapter-bg: rgba(59, 130, 246, 0.2);
-    --diagram-component-adapter-border: #3b82f6;
-    --diagram-component-port-bg: rgba(16, 185, 129, 0.2);
-    --diagram-component-port-border: #10b981;
-    --diagram-component-event-bus-bg: rgba(239, 68, 68, 0.2);
-    --diagram-component-event-bus-border: #ef4444;
-    --diagram-component-database-bg: rgba(107, 114, 128, 0.2);
-    --diagram-component-database-border: #9ca3af;
-    --connector-color: #6b7280;
+    
+    /* Farben leicht abgedunkelt für besseren Kontrast */
+    --diagram-component-hexagon-core-bg: rgba(128, 90, 213, 0.15);
+    --diagram-component-hexagon-core-border: #9f7aea;
+    --diagram-component-adapter-bg: rgba(59, 130, 246, 0.15);
+    --diagram-component-adapter-border: #63b3ed;
+    --diagram-component-port-bg: rgba(16, 185, 129, 0.15);
+    --diagram-component-port-border: #48bb78;
+    --diagram-component-event-bus-bg: rgba(239, 68, 68, 0.15);
+    --diagram-component-event-bus-border: #f56565;
+    --diagram-component-database-bg: rgba(148, 163, 184, 0.15);
+    --diagram-component-database-border: #94a3b8;
+    
+    --connector-color: #64748b;
     --arrow-color: var(--connector-color);
-    --info-modal-backdrop-bg: rgba(17, 24, 39, 0.85);
-    --info-modal-content-bg: #1f2937;
-    --info-modal-content-border: #374151;
-    --info-modal-text-color: #d1d5db;
-    --info-modal-muted-text-color: #9ca3af;
+
+    /* =========================
+       MODALS
+       ========================= */
+    --info-modal-backdrop-bg: rgba(26, 40, 55, 0.90);
+    --info-modal-content-bg: #1f2f40;
+    --info-modal-content-border: #3E5C76;
+    --info-modal-text-color: #f1f5f9;
+    --info-modal-muted-text-color: #94a3b8;
 }
+
+/* =========================================
+   2. GLOBAL RESETS & BASE STYLES
+   ========================================= */
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
 }
-
 ::-webkit-scrollbar-track {
     background: var(--scrollbar-track);
 }
-
 ::-webkit-scrollbar-thumb {
     background: var(--scrollbar-thumb);
     border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
     background: var(--scrollbar-thumb-hover);
 }
 
-/* Globale Stile - Mobile Optimized */
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-color);
@@ -224,14 +255,21 @@ body {
     -moz-osx-font-smoothing: grayscale;
     transition: background-color 0.3s ease, color 0.3s ease;
     overflow-x: hidden;
-    /* WICHTIG für Mobile: Kein seitliches Scrollen */
     width: 100%;
 }
 
-/* HEADER FIX: Reserviert Platz gegen Layout Shift */
+h1, h2, h3 {
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+/* =========================================
+   3. LAYOUT & UTILITIES
+   ========================================= */
+
+/* Header & Navigation */
 header {
-    min-height: 88px;
-    /* Entspricht der Höhe des Headers inkl. Padding */
+    min-height: 88px; /* Reserviert Platz gegen Layout Shift */
     display: flex;
     align-items: center;
 }
@@ -243,6 +281,16 @@ header.sticky.glassmorphism {
     will-change: background-color, backdrop-filter;
 }
 
+#mobile-menu {
+    transition: transform 0.3s ease-in-out;
+    background-color: var(--bg-color-alt);
+    box-shadow: 0 10px 15px -3px var(--card-shadow-main);
+}
+#mobile-menu a:hover {
+    background-color: rgba(127, 127, 127, 0.1);
+}
+
+/* Hero Section */
 .hero-section {
     background-image: linear-gradient(var(--hero-overlay-start), var(--hero-overlay-end)), var(--hero-background-image);
     background-size: cover;
@@ -250,6 +298,18 @@ header.sticky.glassmorphism {
     background-repeat: no-repeat;
     transition: background-image 0.3s ease;
     color: var(--text-hero-color);
+}
+
+/* Common Classes */
+.section-padding {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+@media (min-width: 768px) {
+    .section-padding {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
 }
 
 .glassmorphism {
@@ -260,28 +320,7 @@ header.sticky.glassmorphism {
     transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-#mobile-menu {
-    transition: transform 0.3s ease-in-out;
-    background-color: var(--bg-color-alt);
-    box-shadow: 0 10px 15px -3px var(--card-shadow-main);
-}
-
-#mobile-menu a:hover {
-    background-color: rgba(127, 127, 127, 0.1);
-}
-
-.section-padding {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-}
-
-@media (min-width: 768px) {
-    .section-padding {
-        padding-top: 6rem;
-        padding-bottom: 6rem;
-    }
-}
-
+/* Typography Utilities */
 .gradient-text {
     background-image: linear-gradient(to right, var(--text-gradient-from), var(--text-gradient-to));
     -webkit-background-clip: text;
@@ -290,14 +329,7 @@ header.sticky.glassmorphism {
     text-fill-color: transparent;
 }
 
-/* Typografie-Sicherheit für Mobile */
-h1,
-h2,
-h3 {
-    overflow-wrap: break-word;
-    hyphens: auto;
-}
-
+/* Buttons & Gradients */
 a.bg-gradient-to-r,
 button.bg-gradient-to-r {
     background-image: linear-gradient(to right, var(--button-gradient-from), var(--button-gradient-to));
@@ -310,22 +342,15 @@ button.bg-gradient-to-r:hover {
     background-image: linear-gradient(to right, var(--button-gradient-hover-from), var(--button-gradient-hover-to));
 }
 
+/* Animations */
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .fade-in-up {
     opacity: 0;
 }
-
 .fade-in-up.visible {
     animation-name: fadeInUp;
     animation-duration: 0.8s;
@@ -333,7 +358,39 @@ button.bg-gradient-to-r:hover {
     animation-fill-mode: forwards;
 }
 
-/* Cards & Hover Effects - Mobile Optimized */
+/* Theme Switcher */
+.theme-switcher {
+    background: none;
+    border: 1px solid transparent;
+    color: var(--theme-switcher-icon-color);
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-switcher:hover {
+    background-color: var(--theme-switcher-hover-bg);
+    border-color: var(--glass-border);
+}
+.theme-switcher svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+.theme-switcher .hidden {
+    display: none;
+}
+
+/* =========================================
+   4. COMPONENTS
+   ========================================= */
+
+/* --- Cards --- */
+/* Grouping common card classes for better readability */
 .project-card,
 .skill-card,
 .experience-card,
@@ -346,9 +403,13 @@ button.bg-gradient-to-r:hover {
     transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, background-color 0.3s ease, border-color 0.3s ease;
 }
 
-/* WICHTIG: Hover nur auf Geräten mit Maus (verhindert Sticky Hover auf Touch) */
-@media (hover: hover) and (pointer: fine) {
+.project-card:active {
+    transform: scale(0.98);
+    transition: transform 0.1s;
+}
 
+/* Hover effects only on devices with mouse */
+@media (hover: hover) and (pointer: fine) {
     .project-card:hover,
     .skill-card:hover,
     .experience-card:hover,
@@ -358,20 +419,9 @@ button.bg-gradient-to-r:hover {
         transform: translateY(-5px) scale(1.02);
         box-shadow: var(--card-shadow-hover), 0 0 25px var(--card-hover-glow-color);
     }
-
-    .filter-btn:hover {
-        background-color: var(--tech-tag-gray-text);
-        color: #fff;
-    }
 }
 
-/* Active State für Mobile Feedback */
-.project-card:active {
-    transform: scale(0.98);
-    transition: transform 0.1s;
-}
-
-/* Tech Tags */
+/* --- Tech Tags --- */
 .tech-tag {
     background: color-mix(in oklab, var(--info-modal-content-bg) 85%, transparent);
     border: 1px solid var(--glass-border);
@@ -386,52 +436,18 @@ button.bg-gradient-to-r:hover {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.tech-tag-teal {
-    background-color: var(--tech-tag-teal-bg);
-    color: var(--tech-tag-teal-text);
-}
+/* Consolidated Tag Colors */
+.tech-tag-teal { background-color: var(--tech-tag-teal-bg); color: var(--tech-tag-teal-text); }
+.tech-tag-purple { background-color: var(--tech-tag-purple-bg); color: var(--tech-tag-purple-text); }
+.tech-tag-gray { background-color: var(--tech-tag-gray-bg); color: var(--tech-tag-gray-text); }
+.tech-tag-blue { background-color: var(--tech-tag-blue-bg); color: var(--tech-tag-blue-text); }
+.tech-tag-green { background-color: var(--tech-tag-green-bg); color: var(--tech-tag-green-text); }
+.tech-tag-yellow { background-color: var(--tech-tag-yellow-bg); color: var(--tech-tag-yellow-text); }
+.tech-tag-red { background-color: var(--tech-tag-red-bg); color: var(--tech-tag-red-text); }
+.tech-tag-orange { background-color: var(--tech-tag-orange-bg); color: var(--tech-tag-orange-text); }
+.tech-tag-indigo { background-color: var(--tech-tag-indigo-bg); color: var(--tech-tag-indigo-text); }
 
-.tech-tag-purple {
-    background-color: var(--tech-tag-purple-bg);
-    color: var(--tech-tag-purple-text);
-}
-
-.tech-tag-gray {
-    background-color: var(--tech-tag-gray-bg);
-    color: var(--tech-tag-gray-text);
-}
-
-.tech-tag-blue {
-    background-color: var(--tech-tag-blue-bg);
-    color: var(--tech-tag-blue-text);
-}
-
-.tech-tag-green {
-    background-color: var(--tech-tag-green-bg);
-    color: var(--tech-tag-green-text);
-}
-
-.tech-tag-yellow {
-    background-color: var(--tech-tag-yellow-bg);
-    color: var(--tech-tag-yellow-text);
-}
-
-.tech-tag-red {
-    background-color: var(--tech-tag-red-bg);
-    color: var(--tech-tag-red-text);
-}
-
-.tech-tag-orange {
-    background-color: var(--tech-tag-orange-bg);
-    color: var(--tech-tag-orange-text);
-}
-
-.tech-tag-indigo {
-    background-color: var(--tech-tag-indigo-bg);
-    color: var(--tech-tag-indigo-text);
-}
-
-/* Filter Buttons */
+/* --- Filter Buttons --- */
 .filter-btn {
     background-color: var(--tech-tag-gray-bg);
     color: var(--tech-tag-gray-text);
@@ -444,12 +460,17 @@ button.bg-gradient-to-r:hover {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.filter-btn:hover {
+    background-color: var(--tech-tag-gray-text);
+    color: var(--button-text-color); /* Fixed inconsistency: was #fff */
+}
+
 .filter-btn.active {
     background-image: linear-gradient(to right, var(--button-gradient-from), var(--button-gradient-to));
     color: var(--button-text-color);
 }
 
-/* Restliche Styles (Detail Pages, Forms, etc.) ... */
+/* --- Project Detail Page --- */
 .project-detail-container {
     max-width: 900px;
     margin-left: auto;
@@ -473,7 +494,6 @@ button.bg-gradient-to-r:hover {
     border-bottom: 1px solid var(--glass-border);
     color: var(--text-color);
 }
-
 .project-detail-content h2.gradient-text {
     border-bottom: none;
 }
@@ -486,18 +506,20 @@ button.bg-gradient-to-r:hover {
     color: var(--text-color);
 }
 
+.project-detail-content p,
+.project-detail-content ul {
+    color: var(--text-muted-color);
+    margin-bottom: 1rem;
+}
+
 .project-detail-content p {
     line-height: 1.7;
-    margin-bottom: 1rem;
-    color: var(--text-muted-color);
 }
 
 .project-detail-content ul {
     list-style-type: disc;
     margin-left: 1.5rem;
-    margin-bottom: 1rem;
     padding-left: 0.5rem;
-    color: var(--text-muted-color);
 }
 
 .project-detail-content li {
@@ -549,15 +571,12 @@ button.bg-gradient-to-r:hover {
     transform: translateY(-2px);
 }
 
-/* Formspree */
+/* --- Formspree Forms --- */
 .formspree-form-container {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif; 
 }
-
 .formspree-form-container button,
-input,
-textarea,
-select {
+input, textarea, select {
     font-family: inherit;
     font-size: 100%;
     margin: 0;
@@ -567,20 +586,17 @@ select {
     display: grid;
     row-gap: 1.5rem;
 }
-
 .fs-field {
     display: flex;
     flex-direction: column;
     row-gap: 0.5rem;
 }
-
 .fs-label {
     color: var(--formspree-text-default);
     display: block;
     font-size: 0.875rem;
     font-weight: 500;
 }
-
 .fs-description {
     color: var(--formspree-text-muted);
     display: block;
@@ -609,9 +625,7 @@ select {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-.fs-input,
-.fs-select,
-.fs-textarea {
+.fs-input, .fs-select, .fs-textarea {
     appearance: none;
     border-radius: 0.5rem;
     border-width: 0;
@@ -624,10 +638,7 @@ select {
     transition: box-shadow 0.2s ease, background-color 0.3s ease;
 }
 
-.fs-input {
-    height: 3rem;
-}
-
+.fs-input { height: 3rem; }
 .fs-textarea {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
@@ -646,7 +657,7 @@ select {
     opacity: 0.7;
 }
 
-/* Diagram Components */
+/* --- Diagram Components --- */
 .diagram-component {
     border-width: 2px;
     border-style: solid;
@@ -673,12 +684,10 @@ select {
     background-color: var(--diagram-component-hexagon-core-bg);
     border-color: var(--diagram-component-hexagon-core-border);
 }
-
 .diagram-component.adapter {
     background-color: var(--diagram-component-adapter-bg);
     border-color: var(--diagram-component-adapter-border);
 }
-
 .diagram-component.port {
     background-color: var(--diagram-component-port-bg);
     border-color: var(--diagram-component-port-border);
@@ -686,35 +695,26 @@ select {
     padding: 0.5rem;
     min-height: 40px;
 }
-
 .diagram-component.event-bus {
     background-color: var(--diagram-component-event-bus-bg);
     border-color: var(--diagram-component-event-bus-border);
 }
-
 .diagram-component.database {
     background-color: var(--diagram-component-database-bg);
     border-color: var(--diagram-component-database-border);
 }
 
-.connector,
-.arrow {
+.connector, .arrow {
     color: var(--connector-color);
     border-color: var(--connector-color);
     transition: all 0.3s ease;
 }
+.arrow { font-size: 1.5rem; }
 
-.arrow {
-    font-size: 1.5rem;
-}
-
-/* Modal */
+/* --- Modals --- */
 .info-modal {
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    top: 0; right: 0; bottom: 0; left: 0;
     background-color: var(--info-modal-backdrop-bg);
     display: flex;
     align-items: center;
@@ -735,6 +735,7 @@ select {
     max-height: 80vh;
     overflow-y: auto;
     transition: transform 0.3s ease-out;
+    transform: scale(0.95); /* Start state for animation */
 }
 
 @media (min-width: 768px) {
@@ -766,60 +767,21 @@ select {
     pointer-events: none;
 }
 
-.info-modal-content {
-    transform: scale(0.95);
-}
-
 .info-modal:not(.hidden) .info-modal-content {
     transform: scale(1);
 }
 
-/* Theme Switcher */
-.theme-switcher {
-    background: none;
-    border: 1px solid transparent;
-    color: var(--theme-switcher-icon-color);
-    cursor: pointer;
-    padding: 0.5rem;
-    margin-left: 0.5rem;
-    border-radius: 9999px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-
-.theme-switcher:hover {
-    background-color: var(--theme-switcher-hover-bg);
-    border-color: var(--glass-border);
-}
-
-.theme-switcher svg {
-    width: 1.25rem;
-    height: 1.25rem;
-}
-
-.theme-switcher .hidden {
-    display: none;
-}
-
-/* Lightbox & Media */
+/* --- Lightbox & Media --- */
 .media-grid {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 1rem;
 }
-
 @media (min-width: 640px) {
-    .media-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .media-grid { grid-template-columns: repeat(2, 1fr); }
 }
-
 @media (min-width: 1024px) {
-    .media-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    .media-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 .media-item {
@@ -832,13 +794,21 @@ select {
     transition: transform .25s ease, box-shadow .25s ease;
     cursor: zoom-in;
     outline: none;
+    /* Animation start state */
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.media-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity .4s ease, transform .4s ease;
 }
 
 .media-item:focus-visible {
     border-color: var(--link-color);
     box-shadow: 0 0 0 3px color-mix(in oklab, var(--link-color) 40%, transparent);
 }
-
 .media-item:hover {
     transform: translateY(-3px);
     box-shadow: var(--card-shadow-hover);
@@ -851,16 +821,13 @@ select {
     object-fit: cover;
     transition: transform .4s ease;
 }
-
 .media-item:hover img.media-thumb {
     transform: scale(1.03);
 }
 
 .media-item figcaption {
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    left: 0; right: 0; bottom: 0;
     padding: .5rem .75rem;
     font-size: .875rem;
     color: var(--text-color);
@@ -881,10 +848,7 @@ select {
     z-index: 1000;
     padding: 1rem;
 }
-
-.lightbox.hidden {
-    display: none;
-}
+.lightbox.hidden { display: none; }
 
 .lightbox__figure {
     grid-column: 1 / -1;
@@ -892,7 +856,7 @@ select {
     max-width: min(92vw, 1600px);
     width: 100%;
     text-align: center;
-    color: #fff;
+    color: var(--button-text-color); /* Was #fff */
 }
 
 .lightbox__figure img {
@@ -913,7 +877,7 @@ select {
 .lightbox__nav {
     position: absolute;
     background: rgba(0, 0, 0, .45);
-    color: #fff;
+    color: var(--button-text-color); /* Was #fff */
     border: 1px solid rgba(255, 255, 255, .25);
     height: 2.5rem;
     width: 2.5rem;
@@ -931,41 +895,20 @@ select {
 }
 
 .lightbox__close {
-    top: 1rem;
-    right: 1rem;
+    top: 1rem; right: 1rem;
     font-size: 1.5rem;
     line-height: 1;
 }
 
-.lightbox__prev {
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-}
+.lightbox__prev { left: 1rem; top: 50%; transform: translateY(-50%); }
+.lightbox__next { right: 1rem; top: 50%; transform: translateY(-50%); }
 
-.lightbox__next {
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
+/* Reduced Motion Preference */
 @media (prefers-reduced-motion: reduce) {
-
     .media-item,
     .media-item img.media-thumb,
     .lightbox__close,
     .lightbox__nav {
         transition: none;
     }
-}
-
-.media-item {
-    opacity: 0;
-    transform: translateY(10px);
-}
-
-.media-item.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity .4s ease, transform .4s ease;
 }
